@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../css/design.css">
+		<title>Under construction | Viraj Chitnis</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="body">
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
+				<?php
+        			if (file_exists(".git")) {
+        				$git_branch = exec("git branch | grep '*' | awk '{print $2}'");
+        				$branch;
+        				if ($git_branch == "master") {
+        					$branch = "stable";
+        				}
+        				else {
+        					$branch = $git_branch;
+        				}
+        		?>
+						<p><?php echo exec("git describe"); ?> (<?php echo $branch; ?>) <a href="../scripts/gitupdate.php"><button>Update</button></a></p>
+				<?php
+					}
+				?>
+			</div>
+			<div class="push"></div>
+		</div>
+		<?php include("../common/footer.php"); ?>
+    </body>
+</html>

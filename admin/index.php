@@ -10,6 +10,9 @@
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>
+				<p><a href="../">Home</a></p>
+				<p>&nbsp;</p>
+				<p>&nbsp;</p>
 				<?php
         			if (file_exists("../.git")) {
         				$git_branch = exec("git branch | grep '*' | awk '{print $2}'");

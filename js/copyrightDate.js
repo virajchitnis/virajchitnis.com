@@ -3,4 +3,3 @@ function copyrightDate () {
 	var year = date.getFullYear();
 	return year;
 }
-document.write(copyrightDate());

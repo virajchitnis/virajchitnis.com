@@ -2,6 +2,7 @@
 	<head>
 		<link rel="stylesheet" href="../css/design.css">
 		<script src="../js/gitupdate.js"></script>
+		<script src="../js/copyrightDate.js></script>
 		<title>Admin | Viraj Chitnis</title>
 	</head>
 	<body>

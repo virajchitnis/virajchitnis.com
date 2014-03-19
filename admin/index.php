@@ -11,7 +11,7 @@
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>
 				<?php
-        			if (file_exists(".git")) {
+        			if (file_exists("../.git")) {
         				$git_branch = exec("git branch | grep '*' | awk '{print $2}'");
         				$branch;
         				if ($git_branch == "master") {

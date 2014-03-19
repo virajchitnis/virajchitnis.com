@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
 		<link rel="stylesheet" href="../css/design.css">
 		<script src="../js/gitupdate.js"></script>
 		<title>Admin | Viraj Chitnis</title>

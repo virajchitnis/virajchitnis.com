@@ -1,3 +1,3 @@
 <div class="footer">
-	<p class="footer_text">&copy; <span id="copyright_year"></span> Viraj Chitnis</p>
+	<p class="footer_text">&copy; <script type="text/javascript">document.write(copyrightDate());</script> Viraj Chitnis</p>
 </div>

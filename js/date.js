@@ -1,3 +1,5 @@
-var date = new Date();
-var year = date.getFullYear();
-document.getElementById("copyright_year").innerHTML = year;
+function copyrightDate () {
+	var date = new Date();
+	var year = date.getFullYear();
+	return year;
+}

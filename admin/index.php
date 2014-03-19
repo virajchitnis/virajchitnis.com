@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="../css/design.css">
+		<script src="../js/gitupdate.js"></script>
 		<title>Admin | Viraj Chitnis</title>
 	</head>
 	<body>
@@ -20,7 +21,7 @@
         					$branch = $git_branch;
         				}
         		?>
-						<p><?php echo exec("git describe"); ?> (<?php echo $branch; ?>) <a href="../scripts/gitupdate.php"><button>Update</button></a></p>
+						<p><?php echo exec("git describe"); ?> (<?php echo $branch; ?>) <button onclick="gitUpdate()">Update</button></p>
 				<?php
 					}
 				?>

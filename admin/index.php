@@ -1,7 +1,8 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="../css/design.css">
-		<title>Under construction | Viraj Chitnis</title>
+		<script src="../js/date.js"></script>
+		<title>Admin | Viraj Chitnis</title>
 	</head>
 	<body>
 		<div class="wrapper">

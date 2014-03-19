@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="css/design.css">
-		<script src="js/copyrightDate.js></script>
+		<script src="js/copyrightDate.js"></script>
 		<title>Under construction | Viraj Chitnis</title>
 	</head>
 	<body>

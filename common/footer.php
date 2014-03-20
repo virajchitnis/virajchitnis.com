@@ -3,13 +3,46 @@
 		<tr>
 			<td class="footer_table_data_left"></td>
 			<td class="footer_table_data_links">
-				<p class="footer_links">resumé</p>
+				<?php
+					if (file_exists('css')) {
+				?>
+						<a href="resume/"><div><p class="footer_links">resumé</p></div></a>
+				<?php
+					}
+					else {
+				?>
+						<a href="../resume/"><div><p class="footer_links">resumé</p></div></a>
+				<?php
+					}
+				?>
 			</td>
 			<td class="footer_table_data_links">
-				<p class="footer_links">contact me</p>
+				<?php
+					if (file_exists('css')) {
+				?>
+						<a href="contact/"><div><p class="footer_links">contact me</p></div></a>
+				<?php
+					}
+					else {
+				?>
+						<a href="../contact/"><div><p class="footer_links">contact me</p></div></a>
+				<?php
+					}
+				?>
 			</td>
 			<td class="footer_table_data_links">
-				<p class="footer_links">credits</p>
+				<?php
+					if (file_exists('css')) {
+				?>
+						<a href="credits/"><div><p class="footer_links">credits</p></div></a>
+				<?php
+					}
+					else {
+				?>
+						<a href="../credits/"><div><p class="footer_links">credits</p></div></a>
+				<?php
+					}
+				?>
 			</td>
 			<td class="footer_table_data_right"></td>
 		</tr>

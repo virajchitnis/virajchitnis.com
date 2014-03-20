@@ -1,3 +1,16 @@
+.body_content {
+	opacity:0.5;
+	background-color: #000000;
+}
+.name_header {
+	color: #FFFFFF;
+	font-size: 60pt;
+	font-weight:bold;
+}
+.name_desc {
+	color: #FFFFFF;
+	font-size: 17pt;
+}
 .footer_text {
 	color: #FFFFFF;
 }

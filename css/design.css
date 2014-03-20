@@ -15,7 +15,7 @@ h1, h2, h3, p {
 }
 body {
 	//background-color: #F2F2F2;
-	background:url(data:image/gif;base64,R0lGODlhFAAUAIAAAMDAwP///yH5BAEAAAEALAAAAAAUABQAAAImhI+pwe3vAJxQ0hssnnq/7jVgmJGfGaGiyoyh68GbjNGXTeEcGxQAOw==);
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHUlEQVQYGWM8ePN2PQMxgFiFTMQYBlIzqhBvSAEA/bAF+sZTAWMAAAAASUVORK5CYII=);
 }
 .wrapper {
 	min-height: 100%;

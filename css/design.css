@@ -19,6 +19,9 @@ p {
 .body {
 	text-align: center;
 }
+.header {
+	width: 100%;
+}
 .footer, .push {
 	height: 2em;
 }

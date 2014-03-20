@@ -3,15 +3,28 @@
 		<meta charset="UTF-8">
 		<meta name="author" content="Viraj Chitnis">
 		<link rel="stylesheet" href="css/design.css">
+		<link rel="stylesheet" href="css/index.css">
 		<title>Under construction | Viraj Chitnis</title>
 	</head>
 	<body>
 		<div class="wrapper">
 			<div class="body">
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
-				<h3>Website under construction, please come back in a few days.</h3>
+				<div class="header">
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+				</div>
+				<div class="body_content">
+					<table class="body_table">
+						<td class="body_table_data_left"></td>
+						<td class="body_table_data_center">
+							<div class="body_table_content">
+								<h3>Viraj Chitnis</h3>
+							</div>
+						</td>
+						<td class="body_table_data_right"></td>
+					</table>
+				</div>
 			</div>
 			<div class="push"></div>
 		</div>

@@ -14,7 +14,8 @@ h1, h2, h3, p {
 	font-family: "Courier New", Courier, monospace;
 }
 body {
-	background-color: #F2F2F2;
+	//background-color: #F2F2F2;
+	background:url(data:image/gif;base64,R0lGODlhFAAUAIAAAMDAwP///yH5BAEAAAEALAAAAAAUABQAAAImhI+pwe3vAJxQ0hssnnq/7jVgmJGfGaGiyoyh68GbjNGXTeEcGxQAOw==);
 }
 .wrapper {
 	min-height: 100%;

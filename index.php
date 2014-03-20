@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="author" content="Viraj Chitnis">
 		<link rel="stylesheet" href="css/design.css">
 		<title>Under construction | Viraj Chitnis</title>
 	</head>

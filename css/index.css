@@ -16,6 +16,7 @@
 .body_table_content {
 	text-align: left;
 	background-color: #FFFFFF;
+	border-radius:15px;
 }
 .body_table_content_text {
 	margin-left: 5px;

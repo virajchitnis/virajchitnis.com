@@ -20,7 +20,7 @@ h1, h2, h3, p {
 	min-height: 100%;
 	height: auto !important;
 	height: 100%;
-	margin: 0 auto -2em;
+	margin: 0 auto -4em;
 }
 .body {
 	text-align: center;
@@ -29,10 +29,23 @@ h1, h2, h3, p {
 	width: 100%;
 }
 .footer, .push {
-	height: 2em;
+	height: 4em;
 }
 .footer {
 	text-align: center;
+}
+.footer_table {
+	width: 100%;
+}
+.footer_table_data_left {
+	width: 22.5%;
+}
+.footer_table_data_links {
+	width: 15%;
+	text-align: center;
+}
+.footer_table_data_right {
+	width: 22.5%;
 }
 .footer_text {
 	font-size: 8pt;

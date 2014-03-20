@@ -4,7 +4,7 @@
 		<meta name="author" content="Viraj Chitnis">
 		<link rel="stylesheet" href="css/design.css">
 		<link rel="stylesheet" href="css/index.css">
-		<title>Under construction | Viraj Chitnis</title>
+		<title>Viraj Chitnis</title>
 	</head>
 	<body>
 		<div class="wrapper">

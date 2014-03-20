@@ -16,6 +16,11 @@
 						<td class="body_table_data_center">
 							<div class="body_table_content">
 								<h2>Viraj Chitnis</h2>
+								<p><a href="mailto:chitnisviraj@gmail.com">chitnisviraj@gmail.com</a></p>
+								<p>I am crazy about computers, gadgets, cars and any kind of technology. 
+								I am interested in web programming and have built multiple web applications.</p>
+								<p>I am from Mumbai, India and I currently live in Wynnewood, PA</p>
+								<p></p>
 							</div>
 						</td>
 						<td class="body_table_data_right"></td>

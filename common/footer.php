@@ -1,3 +1,3 @@
 <div class="footer">
-	<p class="footer_text">&copy; <?php echo date("Y"); ?> Viraj Chitnis</p>
+	<p class="footer_text">&copy; <script>document.write(new Date().getFullYear());</script> Viraj Chitnis</p>
 </div>

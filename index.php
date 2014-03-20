@@ -15,6 +15,7 @@
 						<td class="body_table_data_left"></td>
 						<td class="body_table_data_center">
 							<div class="body_table_content">
+								<p class="body_table_content_text_space">&nbsp;</p>
 								<h2 class="body_table_content_text">Viraj Chitnis</h2>
 								<p class="body_table_content_text"><a href="mailto:chitnisviraj@gmail.com">chitnisviraj@gmail.com</a></p>
 								<p class="body_table_content_text">I am crazy about computers, gadgets, cars and any kind of technology. 
@@ -25,6 +26,7 @@
 								<p class="body_table_content_text">I am an expert in Linux server setup and management. I run multiple Linux servers at home 
 								which host web , database , mail, dhcp, dns, web proxy and storage services.</p>
 								<p class="body_table_content_text">I also troubleshoot and provide support to my family and friends for their computing needs.</p>
+								<p class="body_table_content_text_space">&nbsp;</p>
 							</div>
 						</td>
 						<td class="body_table_data_right"></td>

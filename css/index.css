@@ -20,6 +20,9 @@
 	border:2px solid #A1A1A1;
 }
 .body_table_content_text {
-	margin-left: 5px;
-	margin-right: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.body_table_content_text_space {
+	font-size: 10px;
 }

@@ -4,10 +4,7 @@
 html, body {
 	height: 100%;
 }
-h3 {
-	font-family: "Courier New", Courier, monospace;
-}
-p {
+h1, h2, h3, p {
 	font-family: "Courier New", Courier, monospace;
 }
 .wrapper {

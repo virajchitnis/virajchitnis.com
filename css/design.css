@@ -13,10 +13,6 @@ html, body {
 h1, h2, h3, p {
 	font-family: "Courier New", Courier, monospace;
 }
-body {
-	//background-color: #F2F2F2;
-	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHUlEQVQYGWM8ePN2PQMxgFiFTMQYBlIzqhBvSAEA/bAF+sZTAWMAAAAASUVORK5CYII=);
-}
 .wrapper {
 	min-height: 100%;
 	height: auto !important;

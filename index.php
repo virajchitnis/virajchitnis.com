@@ -4,6 +4,7 @@
 		<meta name="author" content="Viraj Chitnis">
 		<link rel="stylesheet" href="css/design.css">
 		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/background-image.css">
 		<title>Viraj Chitnis</title>
 	</head>
 	<body>

@@ -3,6 +3,7 @@
 		<meta charset="UTF-8">
 		<meta name="author" content="Viraj Chitnis">
 		<link rel="stylesheet" href="../css/design.css">
+		<link rel="stylesheet" href="../css/background-grid.css">
 		<script src="../js/gitupdate.js"></script>
 		<title>Admin | Viraj Chitnis</title>
 	</head>

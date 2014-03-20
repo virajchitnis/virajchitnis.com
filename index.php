@@ -9,11 +9,7 @@
 	<body>
 		<div class="wrapper">
 			<div class="body">
-				<div class="header">
-					<p>&nbsp;</p>
-					<p>&nbsp;</p>
-					<p>&nbsp;</p>
-				</div>
+				<?php include("common/header.php"); ?>
 				<div class="body_content">
 					<table class="body_table">
 						<td class="body_table_data_left"></td>

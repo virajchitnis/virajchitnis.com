@@ -9,9 +9,7 @@
 	<body>
 		<div class="wrapper">
 			<div class="body">
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
+				<?php include("../common/header.php"); ?>
 				<p><a href="../">Home</a></p>
 				<p>&nbsp;</p>
 				<p>&nbsp;</p>

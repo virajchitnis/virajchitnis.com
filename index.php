@@ -19,7 +19,7 @@
 						<td class="body_table_data_left"></td>
 						<td class="body_table_data_center">
 							<div class="body_table_content">
-								<h3>Viraj Chitnis</h3>
+								<h2>Viraj Chitnis</h2>
 							</div>
 						</td>
 						<td class="body_table_data_right"></td>

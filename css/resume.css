@@ -1,0 +1,32 @@
+.body_content {
+	width: 100%;
+}
+.body_table {
+	width: 100%;
+}
+.body_table_data_left {
+	width: 55%;
+}
+.body_table_data_center {
+	width: 40%;
+}
+.body_table_data_right {
+	width: 5%;
+}
+.body_table_content {
+	text-align: left;
+	background-color: #FFFFFF;
+	border-radius:15px;
+	border:2px solid #A1A1A1;
+	box-shadow: 10px 10px 5px #888888;
+	//transform: rotate(30deg);
+	//-ms-transform: rotate(30deg); /* IE 9 */
+	//-webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
+}
+.body_table_content_text {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.body_table_content_text_space {
+	font-size: 10px;
+}

@@ -19,9 +19,9 @@
 	border-radius:15px;
 	border:2px solid #A1A1A1;
 	box-shadow: 10px 10px 5px #888888;
-	transform: rotate(30deg);
-	-ms-transform: rotate(30deg); /* IE 9 */
-	-webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
+	//transform: rotate(30deg);
+	//-ms-transform: rotate(30deg); /* IE 9 */
+	//-webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
 }
 .body_table_content_text {
 	margin-left: 10px;

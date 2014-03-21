@@ -27,7 +27,7 @@
 											<h2 class="body_table_content_text">font</h2>
 										</td>
 										<td class="body_table_data">
-											<p class="body_table_content_text">The font used for this website is called Architect's Daughter and is designed by Kimberly Geswein. It is an open font and is available at the Open Font Library.</p>
+											<p class="body_table_content_text">The font used for this website is called <a href="http://openfontlibrary.org/en/font/architect-s-daughter">Architect's Daughter</a> and is designed by <a href="http://www.kimberlygeswein.com">Kimberly Geswein</a>. It is an open font and is available at the <a href="http://openfontlibrary.org">Open Font Library</a>.</p>
 										</td>
 									</tr>
 									<tr>

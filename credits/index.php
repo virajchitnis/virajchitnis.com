@@ -35,7 +35,7 @@
 											<h2 class="body_table_content_text">server</h2>
 										</td>
 										<td class="body_table_data">
-											<p class="body_table_content_text"><a href="http://www.gentoo.org"><img src="../images/gentoo_badge.png"></a></p>
+											<p class="body_table_content_text"><a href="http://www.gentoo.org"><img src="../images/gentoo_badge.png"></a> <a href=""><img src="../images/apache_logo.png" width="322"></a> <a href=""><img src="../images/php_logo.gif"></a></p>
 										</td>
 									</tr>
 								</table>

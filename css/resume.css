@@ -2,14 +2,14 @@
 	margin-left: 3cm;
 	margin-right: 3cm;
 	text-align: left;
-	background-color: #FFFFFF;
+	background-color: #000000;
 	border-radius:15px;
-	border:2px solid #A1A1A1;
-	box-shadow: 10px 10px 5px #888888;
+	background-color: rgba(0,0,0,0.50);
 }
 .body_table_content_text {
 	margin-left: 10px;
 	margin-right: 10px;
+	color: #FFFFFF;
 }
 .body_table_content_text_space {
 	font-size: 10px;

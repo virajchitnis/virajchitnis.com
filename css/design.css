@@ -24,6 +24,27 @@ h1, h2, h3, p {
 .header {
 	width: 100%;
 }
+.body_content {
+	background-color: rgba(0,0,0,0.50);
+}
+.body_table {
+	width: 100%;
+}
+.body_table_headers {
+	vertical-align: top;
+	text-align: right;
+}
+.body_table_data {
+	text-align: left;
+}
+.body_table_content_text {
+	margin-left: 10px;
+	margin-right: 10px;
+	color: #FFFFFF;
+}
+.body_table_content_text_space {
+	font-size: 10px;
+}
 .footer, .push {
 	height: 4em;
 }

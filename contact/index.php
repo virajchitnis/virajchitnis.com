@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="author" content="Viraj Chitnis">
-		<link rel="stylesheet" href="../css/resume.css">
+		<link rel="stylesheet" href="../css/contact.css">
 		<?php include("../common/headers.php"); ?>
 		<title>Contact me | Viraj Chitnis</title>
 	</head>

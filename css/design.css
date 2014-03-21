@@ -46,6 +46,10 @@ h1, h2, h3, p {
 .footer_table_data_right {
 	width: 22.5%;
 }
+.footer_links {
+	color: #FFFFFF;
+}
 .footer_text {
 	font-size: 8pt;
+	color: #FFFFFF;
 }

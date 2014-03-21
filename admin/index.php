@@ -2,10 +2,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="author" content="Viraj Chitnis">
-		<link rel="stylesheet" href="../css/design.css">
-		<link rel="stylesheet" href="../css/background-grid.css">
-		<link rel="stylesheet" href="../css/footer_links.css">
-		<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/architect-s-daughter" rel="stylesheet" type="text/css"/>
+		<?php include("../common/headers.php"); ?>
 		<script src="../js/openlink.js"></script>
 		<title>Admin | Viraj Chitnis</title>
 	</head>

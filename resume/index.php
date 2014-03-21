@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="../css/design.css">
 		<link rel="stylesheet" href="../css/resume.css">
 		<link rel="stylesheet" href="../css/background-grid.css">
+		<link rel="stylesheet" href="../css/footer_links.css">
 		<link rel="stylesheet" media="screen" href="http://openfontlibrary.org/face/architect-s-daughter" rel="stylesheet" type="text/css"/>
 		<title>Resumé | Viraj Chitnis</title>
 	</head>

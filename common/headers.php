@@ -9,6 +9,7 @@
 		<link rel="stylesheet" media="only screen and (min-width: 1728px) and (max-width: 2160px)" href="css/background-2160-1620.css">
 		<link rel="stylesheet" media="only screen and (min-width: 2160px) and (max-width: 3240px)" href="css/background-3240-2430.css">
 		<link rel="stylesheet" media="only screen and (min-width: 3240px)" href="css/background-4320-3240.css">
+		<link rel="stylesheet" media="only screen" href="css/font-architects-daughter.css" rel="stylesheet" type="text/css"/>
 <?php
 	}
 	else {
@@ -21,7 +22,7 @@
 		<link rel="stylesheet" media="only screen and (min-width: 1728px) and (max-width: 2160px)" href="../css/background-2160-1620.css">
 		<link rel="stylesheet" media="only screen and (min-width: 2160px) and (max-width: 3240px)" href="../css/background-3240-2430.css">
 		<link rel="stylesheet" media="only screen and (min-width: 3240px)" href="../css/background-4320-3240.css">
+		<link rel="stylesheet" media="only screen" href="../css/font-architects-daughter.css" rel="stylesheet" type="text/css"/>
 <?php
 	}
 ?>
-		<link rel="stylesheet" media="only screen" href="http://openfontlibrary.org/face/architect-s-daughter" rel="stylesheet" type="text/css"/>

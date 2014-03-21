@@ -6,12 +6,12 @@
 				<?php
 					if (file_exists('css')) {
 				?>
-						<a href="resume/"><div><p class="footer_links">resumé</p></div></a>
+						<a href="resume/"><div class="footer_nav"><p class="footer_links">resumé</p></div></a>
 				<?php
 					}
 					else {
 				?>
-						<a href="../resume/"><div><p class="footer_links">resumé</p></div></a>
+						<a href="../resume/"><div class="footer_nav"><p class="footer_links">resumé</p></div></a>
 				<?php
 					}
 				?>
@@ -20,12 +20,12 @@
 				<?php
 					if (file_exists('css')) {
 				?>
-						<a href="contact/"><div><p class="footer_links">contact me</p></div></a>
+						<a href="contact/"><div class="footer_nav"><p class="footer_links">contact me</p></div></a>
 				<?php
 					}
 					else {
 				?>
-						<a href="../contact/"><div><p class="footer_links">contact me</p></div></a>
+						<a href="../contact/"><div class="footer_nav"><p class="footer_links">contact me</p></div></a>
 				<?php
 					}
 				?>
@@ -34,12 +34,12 @@
 				<?php
 					if (file_exists('css')) {
 				?>
-						<a href="credits/"><div><p class="footer_links">credits</p></div></a>
+						<a href="credits/"><div class="footer_nav"><p class="footer_links">credits</p></div></a>
 				<?php
 					}
 					else {
 				?>
-						<a href="../credits/"><div><p class="footer_links">credits</p></div></a>
+						<a href="../credits/"><div class="footer_nav"><p class="footer_links">credits</p></div></a>
 				<?php
 					}
 				?>

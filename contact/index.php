@@ -19,8 +19,8 @@
 											<h2 class="body_table_content_text">email</h2>
 										</td>
 										<td class="body_table_data">
-											<p class="body_table_content_text">chitnisviraj@gmail.com</p>
-											<p class="body_table_content_text">viraj.chitnis@temple.edu</p>
+											<p class="body_table_content_text"><a class="body_href" href="mailto:chitnisviraj@gmail.com">chitnisviraj@gmail.com</a></p>
+											<p class="body_table_content_text"><a class="body_href" href="mailto:viraj.chitnis@temple.edu">viraj.chitnis@temple.edu</a></p>
 										</td>
 									</tr>
 									<tr>

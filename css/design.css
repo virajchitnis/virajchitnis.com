@@ -1,9 +1,6 @@
 * {
 	margin: 0;
 }
-a {
-	text-decoration:none;
-}
 html, body {
 	height: 100%;
 }
@@ -26,6 +23,9 @@ h1, h2, h3, p {
 }
 .body_content {
 	background-color: rgba(0,0,0,0.50);
+}
+.body_href {
+	color: #FFFF00;
 }
 .body_table {
 	width: 100%;
@@ -63,6 +63,9 @@ h1, h2, h3, p {
 }
 .footer_table_data_right {
 	width: 22.5%;
+}
+.footer_href {
+	text-decoration:none;
 }
 .footer_links {
 	color: #FFFFFF;

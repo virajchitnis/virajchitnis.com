@@ -54,8 +54,8 @@
 											<h2 class="body_table_content_text">experience</h2>
 										</td>
 										<td class="body_table_data">
-											<p class="body_table_content_text">Interned at <a href="http://www.careerknowledgeresources.com">Career Knowledge Resources</a> in Mumbai, India during summer 2009.</p>
-											<p class="body_table_content_text">Interned at <a href="http://bisil.net">Bisil</a> in Philadelphia, PA during summer 2013.</p>
+											<p class="body_table_content_text">Interned at <a class="body_href" href="http://www.careerknowledgeresources.com">Career Knowledge Resources</a> in Mumbai, India during summer 2009.</p>
+											<p class="body_table_content_text">Interned at <a class="body_href" href="http://bisil.net">Bisil</a> in Philadelphia, PA during summer 2013.</p>
 										</td>
 									</tr>
 								</table>

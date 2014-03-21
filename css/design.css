@@ -4,9 +4,6 @@
 a {
 	text-decoration:none;
 }
-a:hover {
-	background-color: #F2F5A9;
-}
 html, body {
 	height: 100%;
 }

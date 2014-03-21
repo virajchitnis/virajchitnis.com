@@ -12,14 +12,14 @@
 				<?php include("../common/header.php"); ?>
 				<div class="body_content">
 								<p class="body_table_content_text_space">&nbsp;</p>
-								<h2 class="body_table_content_text">credits</h2>
+								<h2 class="body_table_content_text">Credits</h2>
 								<p class="body_table_content_text_space">&nbsp;</p>
 								<table class="body_table">
 										<td class="body_table_headers">
 											<h2 class="body_table_content_text">background</h2>
 										</td>
 										<td class="body_table_data">
-											<p class="body_table_content_text">The photograph being used as the background image for this website was taken by my brother Rajas Chitnis during our family holiday to Shenandoa National Park in May 2012.</p>
+											<p class="body_table_content_text">The photograph being used as the background image for this website was taken by my brother Rajas Chitnis during our family holiday to Shenandoah National Park, VA in May 2012.</p>
 										</td>
 									</tr>
 									<tr>
@@ -35,7 +35,7 @@
 											<h2 class="body_table_content_text">server</h2>
 										</td>
 										<td class="body_table_data">
-											<p class="body_table_content_text"><a href="http://www.gentoo.org"><img src="../images/gentoo_badge.png"></a> <a href=""><img src="../images/apache_logo.png" width="322"></a> <a href=""><img src="../images/php_logo.gif"></a></p>
+											<p class="body_table_content_text"><a href="http://www.gentoo.org"><img src="../images/gentoo_badge.png"></a> <a href=""><img src="../images/apache_logo.png" width="322"></a> <a href="http://www.php.net"><img src="../images/php_logo.gif"></a></p>
 										</td>
 									</tr>
 								</table>

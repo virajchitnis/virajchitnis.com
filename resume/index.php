@@ -2,7 +2,7 @@
 	<head>
 		<link rel="stylesheet" href="../css/resume.css">
 		<?php include("../common/headers.php"); ?>
-		<title>Resumé | Viraj Chitnis</title>
+		<title>Resumé - Viraj Chitnis</title>
 	</head>
 	<body>
 		<div class="wrapper">

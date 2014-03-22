@@ -2,7 +2,7 @@
 	<head>
 		<link rel="stylesheet" href="../css/contact.css">
 		<?php include("../common/headers.php"); ?>
-		<title>Contact me | Viraj Chitnis</title>
+		<title>Contact me - Viraj Chitnis</title>
 	</head>
 	<body>
 		<div class="wrapper">

@@ -1,0 +1,12 @@
+.body_content {
+	margin-left: 3cm;
+	margin-right: 3cm;
+	background-color: #000000;
+	border-radius:15px;
+}
+.body_table_headers {
+	width: 30%;
+}
+.body_table_data {
+	width: 70%;
+}

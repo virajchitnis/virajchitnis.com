@@ -1,7 +1,5 @@
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<meta name="author" content="Viraj Chitnis">
 		<link rel="stylesheet" href="../css/admin.css">
 		<?php include("../common/headers.php"); ?>
 		<script src="../js/openlink.js"></script>

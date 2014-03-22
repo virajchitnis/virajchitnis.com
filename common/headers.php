@@ -1,3 +1,8 @@
+		<meta charset="UTF-8">
+		<meta name="author" content="Viraj Chitnis">
+		<meta name="description" content="Web developer & tech enthusiast">
+		<meta name="copyright" content="&copy; 2014 Viraj Chitnis">
+		<meta name="robots" content="index,follow">
 <?php
 	if (file_exists('css')) {
 ?>

@@ -2,7 +2,7 @@
 	<head>
 		<link rel="stylesheet" href="../css/credits.css">
 		<?php include("../common/headers.php"); ?>
-		<title>Credits | Viraj Chitnis</title>
+		<title>Credits - Viraj Chitnis</title>
 	</head>
 	<body>
 		<div class="wrapper">

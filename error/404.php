@@ -1,7 +1,7 @@
 <html>
 	<head>
-		<?php include("../common/headers.php"); ?>
 		<link rel="stylesheet" href="../css/error.css">
+		<?php include("../common/headers.php"); ?>
 		<script src="../js/autoredirect.js"></script>
 		<title>Oops... - Viraj Chitnis</title>
 	</head>

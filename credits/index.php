@@ -3,8 +3,8 @@
 		<link rel="stylesheet" href="../css/credits.css">
 		<?php include("../common/headers.php"); ?>
 		<?php
-		if (file_exists("../common/google_analytics.php")) {
-			include("../common/google_analytics.php");
+		if (file_exists("../common/googleanalytics.php")) {
+			include("../common/googleanalytics.php");
 		}
 		?>
 		<title>Credits - Viraj Chitnis</title>

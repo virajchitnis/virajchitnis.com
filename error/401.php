@@ -3,8 +3,8 @@
 		<link rel="stylesheet" href="../css/error.css">
 		<?php include("../common/headers.php"); ?>
 		<?php
-		if (file_exists("../common/google_analytics.php")) {
-			include("../common/google_analytics.php");
+		if (file_exists("../common/googleanalytics.php")) {
+			include("../common/googleanalytics.php");
 		}
 		?>
 		<script src="../js/autoredirect.js"></script>

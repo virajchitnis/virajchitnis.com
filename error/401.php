@@ -2,6 +2,11 @@
 	<head>
 		<link rel="stylesheet" href="../css/error.css">
 		<?php include("../common/headers.php"); ?>
+		<?php
+		if (file_exists("../common/google_analytics.php")) {
+			include("../common/google_analytics.php");
+		}
+		?>
 		<script src="../js/autoredirect.js"></script>
 		<title>Oops... - Viraj Chitnis</title>
 	</head>

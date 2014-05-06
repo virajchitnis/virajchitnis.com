@@ -2,6 +2,11 @@
 	<head>
 		<link rel="stylesheet" href="../css/contact.css">
 		<?php include("../common/headers.php"); ?>
+		<?php
+		if (file_exists("../common/google_analytics.php")) {
+			include("../common/google_analytics.php");
+		}
+		?>
 		<title>Contact me - Viraj Chitnis</title>
 	</head>
 	<body>

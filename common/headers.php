@@ -16,9 +16,6 @@
 		<link rel="stylesheet" media="only screen and (min-width: 3240px)" href="css/background-4320-3240.css">
 		<link rel="stylesheet" media="only screen" href="css/font-architects-daughter.css" rel="stylesheet" type="text/css"/>
 <?php
-		if (file_exists("common/google_analytics.php")) {
-			include("common/google_analytics.php");
-		}
 	}
 	else {
 ?>
@@ -32,8 +29,5 @@
 		<link rel="stylesheet" media="only screen and (min-width: 3240px)" href="../css/background-4320-3240.css">
 		<link rel="stylesheet" media="only screen" href="../css/font-architects-daughter.css" rel="stylesheet" type="text/css"/>
 <?php
-		if (file_exists("../common/google_analytics.php")) {
-			include("../common/google_analytics.php");
-		}
 	}
 ?>

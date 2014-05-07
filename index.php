@@ -13,10 +13,7 @@
 		<div class="wrapper">
 			<div class="body">
 				<?php include("common/header.php"); ?>
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
-				<p>&nbsp;</p>
+				<div id="sub_header"></div>
 				<div class="body_content">
 					<h1 class="name_header">Viraj Chitnis</h1>
 					<h1 class="name_desc">web developer & tech enthusiast</h1>

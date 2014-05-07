@@ -55,14 +55,14 @@ h1, h2, h3, p {
 	width: 100%;
 }
 .footer_table_data_left {
-	width: 22.5%;
+	width: 20%;
 }
 .footer_table_data_links {
 	width: 15%;
 	text-align: center;
 }
 .footer_table_data_right {
-	width: 22.5%;
+	width: 20%;
 }
 .footer_href {
 	text-decoration:none;

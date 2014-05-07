@@ -20,6 +20,20 @@
 				<?php
 					if (file_exists('css')) {
 				?>
+						<a href="blog/" class="footer_href"><div class="footer_nav"><p class="footer_links">blog</p></div></a>
+				<?php
+					}
+					else {
+				?>
+						<a href="../blog/" class="footer_href"><div class="footer_nav"><p class="footer_links">blog</p></div></a>
+				<?php
+					}
+				?>
+			</td>
+			<td class="footer_table_data_links">
+				<?php
+					if (file_exists('css')) {
+				?>
 						<a href="contact/" class="footer_href"><div class="footer_nav"><p class="footer_links">contact me</p></div></a>
 				<?php
 					}

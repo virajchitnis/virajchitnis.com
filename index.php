@@ -16,7 +16,7 @@
 				<div id="sub_header"></div>
 				<div class="body_content">
 					<h1 class="name_header">Viraj Chitnis</h1>
-					<h1 class="name_desc">web developer & tech enthusiast</h1>
+					<h1 class="name_desc">iOS developer, web developer & tech enthusiast</h1>
 				</div>
 			</div>
 			<div class="push"></div>

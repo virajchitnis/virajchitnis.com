@@ -61,6 +61,7 @@
 										<td class="body_table_data">
 											<p class="body_table_content_text">Interned at <a class="body_href" href="http://www.careerknowledgeresources.com">Career Knowledge Resources</a> in Mumbai, India during summer 2009.</p>
 											<p class="body_table_content_text">Interned at <a class="body_href" href="http://bisil.net">Bisil</a> in Philadelphia, PA during summer 2013. There I worked on a web application that was basically a web version of Microsoft Visio and all its data was stored in a database.</p>
+											<p class="body_table_content_text">Currently interning at L&T Infotech where I am working on mobile applications.</p>
 										</td>
 									</tr>
 								</table>

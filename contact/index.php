@@ -26,14 +26,14 @@
 											<p class="body_table_content_text"><a class="body_href" href="mailto:viraj.chitnis@temple.edu">viraj.chitnis@temple.edu</a></p>
 										</td>
 									</tr>
-									<tr>
+									<!--<tr>
 										<td class="body_table_headers">
 											<h2 class="body_table_content_text">phone</h2>
 										</td>
 										<td class="body_table_data">
 											<p class="body_table_content_text">+1 (215) 407-5224</p>
 										</td>
-									</tr>
+									</tr>-->
 								</table>
 								<p class="body_table_content_text_space">&nbsp;</p>
 				</div>

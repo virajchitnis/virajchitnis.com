@@ -6,6 +6,20 @@
 				<?php
 					if (file_exists('css')) {
 				?>
+						<a href="apps/" class="footer_href"><div class="footer_nav"><p class="footer_links">apps</p></div></a>
+				<?php
+					}
+					else {
+				?>
+						<a href="../apps/" class="footer_href"><div class="footer_nav"><p class="footer_links">apps</p></div></a>
+				<?php
+					}
+				?>
+			</td>
+			<td class="footer_table_data_links">
+				<?php
+					if (file_exists('css')) {
+				?>
 						<a href="resume/" class="footer_href"><div class="footer_nav"><p class="footer_links">resumé</p></div></a>
 				<?php
 					}

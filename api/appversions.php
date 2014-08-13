@@ -4,6 +4,7 @@ $all_apps = array(
 	"Movies" => array(
 		0 => "v1.0",
 		1 => "v2.0",
+		2 => "v2.0.1",
 	),
 	"Weight" => array(
 		0 => "v1.0",

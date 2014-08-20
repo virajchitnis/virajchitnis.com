@@ -47,10 +47,10 @@
 											<h2 class="body_table_content_text">skills</h2>
 										</td>
 										<td class="body_table_data">
-											<p class="body_table_content_text">Program in PHP, HTML, CSS, JavaScript, Java, C, C#, Objective-C and SQL.</p>
+											<p class="body_table_content_text">Program in Objective-C, PHP, HTML, CSS, JavaScript, Java, C, C# and SQL.</p>
+											<p class="body_table_content_text">I enjoy making iOS apps and I have released a few apps on the App Store.</p>
 											<p class="body_table_content_text">Expert in Linux server setup and management and run multiple Linux servers at home which host web, database, mail, dhcp, dns, web proxy and storage services.</p>
 											<p class="body_table_content_text">Troubleshoot and provide support to my family and friends for their computing needs.</p>
-											<p class="body_table_content_text">I enjoy making iOS apps and I have released a few apps on the App Store.</p>
 											<p class="body_table_content_text">This website serves as an example of my work and is hosted on one of my servers at home. If you wish to see more of my work, get in touch with me via email and I will send you the links to my other work.</p>
 										</td>
 									</tr>

@@ -1,9 +1,19 @@
 <?php
-if (isset($_POST['uuid'])) {
-	$uuid = $_POST['uuid'];
+if (isset($_POST['token'])) {
+	$token = $_POST['token'];
+	$permittedTokens = array(
+		"jayshrichitnis@gmail.com",
+		"rajaschitnis@gmail.com",
+		"rahulchitnis@gmail.com",
+	);
+	
+	$access = "Not Permitted";
+	if (in_array($token, $permittedTokens)) {
+		$access = "Permitted";
+	}
 	
 	$response = array(
-		"udid" => $uuid,
+		"access" => $access,
 		"response" => "True",
 	);
 	

@@ -2,7 +2,6 @@
 if (isset($_POST['token'])) {
 	$token = $_POST['token'];
 	$permittedTokens = array(
-		"jayshrichitnis@gmail.com",
 		"rahulchitnis@gmail.com",
 	);
 	

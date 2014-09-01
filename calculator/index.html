@@ -15,40 +15,40 @@
 	
 	var calcNumbers = [];							// Array of numbers.
 	var calcOperations = [];						// Array of operations.
-	var currentNumberIsAnswer = false;				// Whether the current number is an answer or user entered.
+	var currentNumberIsAnswer = true;				// Whether the current number is an answer or user entered.
 	
 	function clearEverything() {
-		document.getElementById("calc_textbox").innerHTML = "0";
+		document.getElementById("calc_textbox").value = "0";
 		window.currentNumberIsAnswer = false;
 		window.calcNumbers = [];
 		window.calcOperations = [];
 		document.getElementById("calc_history").innerHTML = "";
 	}
 	function addNumberToTextField(number) {
-		var currentNumber = document.getElementById("calc_textbox").innerHTML;
+		var currentNumber = document.getElementById("calc_textbox").value;
 		if ((currentNumber == 0) || (window.currentNumberIsAnswer)) {
-			document.getElementById("calc_textbox").innerHTML = number;
+			document.getElementById("calc_textbox").value = number;
 			window.currentNumberIsAnswer = false;
 		}
 		else {
-			document.getElementById("calc_textbox").innerHTML = currentNumber + "" + number;
+			document.getElementById("calc_textbox").value = currentNumber + "" + number;
 		}
 	}
 	function positiveOrNegative() {
-		var currentNumber = parseFloat(document.getElementById("calc_textbox").innerHTML);
+		var currentNumber = parseFloat(document.getElementById("calc_textbox").value);
 		if (currentNumber < 0) {
-			document.getElementById("calc_textbox").innerHTML = (currentNumber + (Math.abs(currentNumber) * 2));
+			document.getElementById("calc_textbox").value = (currentNumber + (Math.abs(currentNumber) * 2));
 		}
 		else {
-			document.getElementById("calc_textbox").innerHTML = (currentNumber - (currentNumber * 2));
+			document.getElementById("calc_textbox").value = (currentNumber - (currentNumber * 2));
 		}
 	}
 	function percentiviseTheNumber() {
-		var currentNumber = parseFloat(document.getElementById("calc_textbox").innerHTML);
-		document.getElementById("calc_textbox").innerHTML = (currentNumber / 100);
+		var currentNumber = parseFloat(document.getElementById("calc_textbox").value);
+		document.getElementById("calc_textbox").value = (currentNumber / 100);
 	}
 	function performOperation(operation) {
-		var currentNumber = parseFloat(document.getElementById("calc_textbox").innerHTML);
+		var currentNumber = parseFloat(document.getElementById("calc_textbox").value);
 		window.calcNumbers.push(currentNumber);
 		console.log("Number of numbers: " + window.calcNumbers.length);
 		
@@ -69,21 +69,21 @@
 			document.getElementById("calc_history").innerHTML = currentHistory + " " + displayOperation;
 		}
 		else {
-			document.getElementById("calc_textbox").innerHTML = currentNumber;
+			document.getElementById("calc_textbox").value = currentNumber;
 			window.currentNumberIsAnswer = true;
 			document.getElementById("calc_history").innerHTML = currentNumber + " " + displayOperation;
 		}
 		window.calcOperations.push(operation);
 	}
 	function equalTo() {
-		var currentNumber = parseFloat(document.getElementById("calc_textbox").innerHTML);
+		var currentNumber = parseFloat(document.getElementById("calc_textbox").value);
 		window.calcNumbers.push(currentNumber);
 		console.log("Number of numbers: " + window.calcNumbers.length);
 		if (window.calcNumbers.length > 1) {
 			calculateTotal();
 		}
 		else {
-			document.getElementById("calc_textbox").innerHTML = currentNumber;
+			document.getElementById("calc_textbox").value = currentNumber;
 			window.currentNumberIsAnswer = true;
 		}
 		window.calcNumbers = [];
@@ -121,20 +121,32 @@
 					}
 				}
 			}
-			document.getElementById("calc_textbox").innerHTML = total;
+			document.getElementById("calc_textbox").value = total;
 			document.getElementById("calc_history").innerHTML = calcHistory;
 			window.currentNumberIsAnswer = true;
 		}
 	}
 	function sqrtOrNumber() {
-		var currentNumber = parseFloat(document.getElementById("calc_textbox").innerHTML);
+		var currentNumber = parseFloat(document.getElementById("calc_textbox").value);
 		if (currentNumber > 0) {
 			document.getElementById("calc_history").innerHTML = "&radic; " + currentNumber;
 			console.log("Square root: " + Math.sqrt(currentNumber));
-			document.getElementById("calc_textbox").innerHTML = Math.sqrt(currentNumber);
+			document.getElementById("calc_textbox").value = Math.sqrt(currentNumber);
 			window.currentNumberIsAnswer = true;
 			window.calcNumbers = [];
 			window.calcOperations = [];
+		}
+	}
+	function clearNumbers() {
+		var currentNumber = parseFloat(document.getElementById("calc_textbox").value);
+		if (currentNumber == 0) {
+			document.getElementById("calc_textbox").value = "";
+		}
+	}
+	function checkInput() {
+		var currentNumber = parseFloat(document.getElementById("calc_textbox").value);
+		if (isNaN(currentNumber)) {
+			document.getElementById("calc_textbox").value = "0";
 		}
 	}
 	</script>
@@ -181,6 +193,8 @@
 		top: calc(50% - 54pt);
 		left: 10px;
 		right: 10px;
+		border-width: 0;
+		border: none;
 	}
 	#calc_buttons_list {
 		width: 100%;
@@ -216,7 +230,7 @@
 </head>
 <body>
 	<div id="calc_div">
-		<p id="calc_textbox">0</p>
+		<input type="text" id="calc_textbox" value="0" onfocus="clearNumbers()" onblur="checkInput()">
 		<p id="calc_history"></p>
 	</div>
 	<ul id="calc_buttons_list">

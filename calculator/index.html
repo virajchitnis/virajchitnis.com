@@ -17,6 +17,12 @@
 	var calcOperations = [];						// Array of operations.
 	var currentNumberIsAnswer = true;				// Whether the current number is an answer or user entered.
 	
+	function onLoad() {
+		// Check if the browser is Internet Explorer.
+		if (navigator.userAgent.toLowerCase().indexOf('msie') > -1) {
+			alert("It is recommended that you use a different browser, everything may not work as expected in Internet Explorer.");
+		}
+	}
 	function clearEverything() {
 		document.getElementById("calc_textbox").value = "0";
 		window.currentNumberIsAnswer = false;
@@ -158,12 +164,10 @@
 		//font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
 	}
 	#calc_div {
-		overflow: auto;
 		position: relative;
 		width: 100%;
 		height: 22%;
 		border-bottom: 1px solid #ccc;
-		white-space: nowrap;
 	}
 	#copyright_info {
 		position: absolute;
@@ -184,6 +188,7 @@
 		width: 100%;
 		text-align: center;
 		bottom: 5px;
+		left: 0px;
 	}
 	#calc_textbox {
 		font-size: 90pt;
@@ -192,7 +197,7 @@
 		position: absolute;
 		top: calc(50% - 54pt);
 		left: 10px;
-		right: 10px;
+		width: calc(100% - 20px);
 		border-width: 0;
 		border: none;
 	}
@@ -228,7 +233,7 @@
 	}
 	</style>
 </head>
-<body>
+<body onload="onLoad()">
 	<div id="calc_div">
 		<input type="text" id="calc_textbox" value="0" onfocus="clearNumbers()" onblur="checkInput()">
 		<p id="calc_history"></p>

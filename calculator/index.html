@@ -5,6 +5,9 @@
 	<meta name="description" content="A calculator written in pure javascript">
 	<meta name="copyright" content="&copy; 2014 Viraj Chitnis. All Rights Reserved.">
 	<meta name="robots" content="index,follow">
+	<meta name="apple-mobile-web-app-title" content="Calculator">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="user-scalable=no">
 	<title>Viraj's Calculator</title>
 	<script>
 	// Clear the console when the page loads.
@@ -153,8 +156,8 @@
 	#copyright_info {
 		position: absolute;
 		width: 100%;
-		top: 5px;
-		font-size: 7pt;
+		bottom: 10px;
+		font-size: 8pt;
 		font-weight: 100pt;
 		text-align: center;
 		-webkit-touch-callout: none;
@@ -182,12 +185,13 @@
 	#calc_buttons_list {
 		width: 100%;
 		list-style-type: none;
-		padding: 1px;
+		padding: 0px;
+		text-align: center;
 	}
 	.calc_buttons_div {
 		position: relative;
-		width: calc(25% - 1.8px);
-		height: calc(15.6% - 2.1px);
+		width: 24%;
+		height: 14.5%;
 		border: 1px solid #ccc;
 		display: inline-block;
 		-webkit-touch-callout: none;
@@ -212,7 +216,6 @@
 </head>
 <body>
 	<div id="calc_div">
-		<p id="copyright_info">&copy; 2014 Viraj Chitnis. All Rights Reserved.</p>
 		<p id="calc_textbox">0</p>
 		<p id="calc_history"></p>
 	</div>
@@ -278,5 +281,6 @@
 			<p class="calc_buttons_body">=</p>
 		</li>
 	</ul>
+	<p id="copyright_info">&copy; 2014 Viraj Chitnis. All Rights Reserved.</p>
 </body>
 </html>

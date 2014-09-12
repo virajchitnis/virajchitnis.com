@@ -9,6 +9,7 @@
 		?>
 		<title>Viraj Chitnis</title>
 		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.transit.min.js"></script>
 		<script type="text/javascript">
 		function setCSS() {
 			var welcome_wall_height = $("#welcome_wall").height();
@@ -22,6 +23,14 @@
 		}
 		$(document).ready(function() {
 			setCSS();
+			
+			var welcome_wall_height = $("#welcome_wall").height();
+			$("#welcome_wall").css("top", "-" + welcome_wall_height);
+		});
+		$(window).load(function() {
+			$("#welcome_wall").transition({
+				top: 0
+			}, {queue: true, duration: "slow"});
 		});
 		$(window).resize(function() {
 			setCSS();
@@ -151,7 +160,7 @@
 		</div>
 		<div id="footer_div" class="nice_font">
 			<div id="footer_content">
-				<div class="footer_buttons">apps</div>
+				<div id="apps_link" class="footer_buttons">apps</div>
 				<div class="footer_buttons">resume</div>
 				<div class="footer_buttons">blog</div>
 				<div class="footer_buttons">contact</div>

@@ -10,7 +10,13 @@
 		<title>Viraj Chitnis</title>
 		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.transit.min.js"></script>
+		<script type="text/javascript" src="js/jquery.lettering.js"></script>
+		<script type="text/javascript" src="js/jquery.textillate.js"></script>
 		<script type="text/javascript">
+		function checkURLHash() {
+		    var hash = document.location.hash;    
+		    console.log("Hash: " + hash);
+		}
 		function setCSS() {
 			var welcome_wall_height = $("#welcome_wall").height();
 			var welcome_headers_height = $("#welcome_headers").height();
@@ -23,20 +29,77 @@
 		}
 		$(document).ready(function() {
 			setCSS();
+			$("#welcome_name").css("visibility", "hidden");
+			$("#welcome_title").css("visibility", "hidden");
+			$(".footer_buttons").css("visibility", "hidden");
 			
 			var welcome_wall_height = $("#welcome_wall").height();
 			$("#welcome_wall").css("top", "-" + welcome_wall_height);
+			
+			$("#apps_link").click(function() {
+				document.location.hash = "apps";
+			});
 		});
 		$(window).load(function() {
 			$("#welcome_wall").transition({
 				top: 0
-			}, {queue: true, duration: "slow"});
+			}, 500, 'in', function() {
+				checkURLHash();
+				
+				$("#welcome_name").textillate({
+					in: {
+						effect: 'bounceInDown',
+						callback: function() {
+							$("#welcome_title").textillate({
+								in: {
+									effect: 'bounceInUp',
+									callback: function() {
+										$("#apps_link").textillate({
+											in: {
+												effect: 'bounceInLeft',
+												duration: 1000,
+												callback: function() {
+													$("#resume_link").textillate({
+														in: {
+															effect: 'bounceInLeft',
+															duration: 1000
+														}
+													});
+												}
+											}
+										});
+				
+										$("#contact_link").textillate({
+											in: {
+												effect: 'bounceInRight',
+												duration: 1000,
+												callback: function() {
+													$("#blog_link").textillate({
+														in: {
+															effect: 'bounceInRight',
+															duration: 1000
+														}
+													});
+												}
+											}
+										});
+									}
+								}
+							});
+						}
+					}
+				});
+			});
 		});
 		$(window).resize(function() {
 			setCSS();
 		});
+		window.onhashchange = function(){
+		    checkURLHash();
+		}
 		</script>
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+		<link rel="stylesheet" href="css/animate.min.css">
 		<style>
 		* {
 			position: relative;
@@ -161,9 +224,9 @@
 		<div id="footer_div" class="nice_font">
 			<div id="footer_content">
 				<div id="apps_link" class="footer_buttons">apps</div>
-				<div class="footer_buttons">resume</div>
-				<div class="footer_buttons">blog</div>
-				<div class="footer_buttons">contact</div>
+				<div id="resume_link" class="footer_buttons">resume</div>
+				<div id="blog_link" class="footer_buttons">blog</div>
+				<div id="contact_link" class="footer_buttons">contact</div>
 			</div>
 		</div>
     </body>

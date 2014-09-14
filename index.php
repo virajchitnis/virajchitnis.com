@@ -14,8 +14,31 @@
 		<script type="text/javascript" src="js/jquery.textillate.js"></script>
 		<script type="text/javascript">
 		function checkURLHash() {
-		    var hash = document.location.hash;    
+		    var hash = document.location.hash;
 		    console.log("Hash: " + hash);
+			return hash;
+		}
+		function urlHashChanged() {
+			var hash = document.location.hash;
+			if (hash.length > 0) {
+				var welcome_wall_height = $("#welcome_wall").height();
+				$("#welcome_wall").transition({
+					top: ((welcome_wall_height - (welcome_wall_height * 2)) - 10)
+				}, 500, 'out');
+				
+				if (hash == "#apps") {
+					// Display apps content.
+				}
+				else if (hash == "#resume") {
+					// Display resume content.
+				}
+				else if (hash == "#blog") {
+					// Display blog content.
+				}
+				else if (hash == "#contact") {
+					// Display contact form.
+				}
+			}
 		}
 		function setCSS() {
 			var welcome_wall_height = $("#welcome_wall").height();
@@ -29,9 +52,12 @@
 		}
 		$(document).ready(function() {
 			setCSS();
-			$("#welcome_name").css("visibility", "hidden");
-			$("#welcome_title").css("visibility", "hidden");
-			$(".footer_buttons").css("visibility", "hidden");
+			
+			if (checkURLHash() == "") {
+				$("#welcome_name").css("visibility", "hidden");
+				$("#welcome_title").css("visibility", "hidden");
+				$(".footer_buttons").css("visibility", "hidden");
+			}
 			
 			var welcome_wall_height = $("#welcome_wall").height();
 			$("#welcome_wall").css("top", "-" + welcome_wall_height);
@@ -39,63 +65,80 @@
 			$("#apps_link").click(function() {
 				document.location.hash = "apps";
 			});
+			$("#resume_link").click(function() {
+				document.location.hash = "resume";
+			});
+			$("#blog_link").click(function() {
+				document.location.hash = "blog";
+			});
+			$("#contact_link").click(function() {
+				document.location.hash = "contact";
+			});
 		});
 		$(window).load(function() {
 			$("#welcome_wall").transition({
 				top: 0
 			}, 500, 'in', function() {
-				checkURLHash();
-				
-				$("#welcome_name").textillate({
-					in: {
-						effect: 'bounceInDown',
-						callback: function() {
-							$("#welcome_title").textillate({
-								in: {
-									effect: 'bounceInUp',
-									callback: function() {
-										$("#apps_link").textillate({
-											in: {
-												effect: 'bounceInLeft',
-												duration: 1000,
-												callback: function() {
-													$("#resume_link").textillate({
-														in: {
-															effect: 'bounceInLeft',
-															duration: 1000
-														}
-													});
-												}
-											}
-										});
-				
-										$("#contact_link").textillate({
-											in: {
-												effect: 'bounceInRight',
-												duration: 1000,
-												callback: function() {
-													$("#blog_link").textillate({
-														in: {
-															effect: 'bounceInRight',
-															duration: 1000
-														}
-													});
-												}
-											}
-										});
+				if (checkURLHash() == "") {
+					$("#welcome_name").textillate({
+						in: {
+							effect: 'bounceInDown',
+							callback: function() {
+								$("#welcome_title").textillate({
+									in: {
+										effect: 'bounceInUp',
+										callback: function() {
+										
+										}
 									}
-								}
-							});
+								});
+							}
 						}
-					}
-				});
+					});
+				
+					$("#apps_link").textillate({
+						in: {
+							effect: 'bounceInLeft',
+							duration: 1000,
+							callback: function() {
+								$("#resume_link").textillate({
+									in: {
+										effect: 'bounceInLeft',
+										duration: 1000
+									}
+								});
+							}
+						}
+					});
+
+					$("#contact_link").textillate({
+						in: {
+							effect: 'bounceInRight',
+							duration: 1000,
+							callback: function() {
+								$("#blog_link").textillate({
+									in: {
+										effect: 'bounceInRight',
+										duration: 1000
+									}
+								});
+							}
+						}
+					});
+				}
+				else {
+					 urlHashChanged();
+				}
 			});
 		});
 		$(window).resize(function() {
 			setCSS();
 		});
+		$(window).unload(function() {
+			console.log("Handler for .unload() called.");
+		});
 		window.onhashchange = function(){
-		    checkURLHash();
+		    urlHashChanged();
 		}
 		</script>
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />

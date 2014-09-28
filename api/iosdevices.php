@@ -127,8 +127,25 @@ $all_devices = array(
 		"camera_mp" => "8 MP",
 		"response" => true,
 	),
+	"unknown" => array(
+		"cpu" => "Unknown",
+		"cpu_cores" => 0,
+		"arch" => "ARM",
+		"gpu" => "Unknown",
+		"gpu_cores" => 0,
+		"memory" => "Unknown",
+		"wifi" => "Unknown",
+		"bluetooth" => "Unknown",
+		"sim" => "Unknown",
+		"power" => "Unknown",
+		"camera_mp" => "Unknown",
+		"response" => false,
+	),
 );
 
+echo '<pre>'.json_encode($all_devices, JSON_PRETTY_PRINT).'</pre>';
+
+/*
 $unknown_device = array(
 	"cpu" => "Unknown",
 	"cpu_cores" => 0,
@@ -161,4 +178,5 @@ if ((isset($_GET["device"])) || (isset($_POST["device"]))) {
 		echo '<pre>'.json_encode($unknown_device, JSON_PRETTY_PRINT).'</pre>';
 	}
 }
+*/
 ?>

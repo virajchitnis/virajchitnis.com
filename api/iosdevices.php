@@ -143,40 +143,24 @@ $all_devices = array(
 	),
 );
 
-echo '<pre>'.json_encode($all_devices, JSON_PRETTY_PRINT).'</pre>';
-
-/*
-$unknown_device = array(
-	"cpu" => "Unknown",
-	"cpu_cores" => 0,
-	"arch" => "ARM",
-	"gpu" => "Unknown",
-	"gpu_cores" => 0,
-	"memory" => "Unknown",
-	"wifi" => "Unknown",
-	"bluetooth" => "Unknown",
-	"sim" => "Unknown",
-	"power" => "Unknown",
-	"camera_mp" => "Unknown",
-	"response" => false,
-);
-
-if ((isset($_GET["device"])) || (isset($_POST["device"]))) {
-	$device;
-	if (isset($_GET["device"])) {
-		$device = $_GET["device"];
+if (isset($_GET["q"])) {
+	$query = $_GET["q"];
+	if ($query == "hash") {
+		$json_hash = hash('sha256', json_encode($device_info));
+		$response = array(
+			"checksum" => $json_hash,
+			"response" => "true",
+		);
+		echo '<pre>'.json_encode($response, JSON_PRETTY_PRINT).'</pre>';
 	}
-	else if (isset($_POST["device"])) {
-		$device = $_POST["device"];
-	}
-	
-	if ($all_devices[$device]) {
-		$device_info = $all_devices[$device];
-		echo '<pre>'.json_encode($device_info, JSON_PRETTY_PRINT).'</pre>';
-	}
-	else {
-		echo '<pre>'.json_encode($unknown_device, JSON_PRETTY_PRINT).'</pre>';
+	else if ($query == "updates") {
+		$app_version = array(
+			0 => "v1.0",
+		);
+		echo '<pre>'.json_encode($app_version, JSON_PRETTY_PRINT).'</pre>';
 	}
 }
-*/
+else {
+	echo '<pre>'.json_encode($all_devices, JSON_PRETTY_PRINT).'</pre>';
+}
 ?>

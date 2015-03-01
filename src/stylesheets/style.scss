@@ -1,3 +1,4 @@
+@import "glyphicon-font";
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
 
 $font-stack: 'Poiret One', cursive;
@@ -48,12 +49,12 @@ $font-stack: 'Poiret One', cursive;
 	transform: $value;
 }
 
-@mixin blur($size) {
-	-webkit-filter: blur($size);
-	-moz-filter: blur($size);
-	-ms-filter: blur($size);
-	-o-filter: blur($size);
-	filter: blur($size);
+@mixin filter($value) {
+	-webkit-filter: $value;
+	-moz-filter: $value;
+	-ms-filter: $value;
+	-o-filter: $value;
+	filter: $value;
 }
 
 @mixin animation($value) {

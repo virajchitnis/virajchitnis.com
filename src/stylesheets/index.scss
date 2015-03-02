@@ -1,5 +1,16 @@
 @import 'style';
 
+@include keyframes(nav-bar-item-fade) {
+	0% {
+		background-color: transparent;
+		@include box-shadow(none);
+	}
+	100% {
+		background-color: rgba(50, 50, 50, 0.7);
+		@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.7));
+	}
+}
+
 body {
 	overflow: hidden;
 }
@@ -68,6 +79,7 @@ body {
 		padding-left: 9.5px;
 		padding-right: 9.5px;
 		border-radius: 23px;
+		cursor: pointer;
 	}
 	
 	.button-left {
@@ -75,6 +87,7 @@ body {
 		left: $side-button-margin;
 		
 		.glyphicon {
+			cursor: pointer;
 			color: $side-button-color;
 		}
 	}
@@ -84,6 +97,7 @@ body {
 		right: $side-button-margin;
 		
 		.glyphicon {
+			cursor: pointer;
 			color: $side-button-color;
 		}
 	}
@@ -91,5 +105,42 @@ body {
 	.button-left:hover, .button-right:hover {
 		@include box-shadow(0px 0px 10px 10px rgba(20, 20, 20, 0.2));
 		background-color: rgba(20, 20, 20, 0.2);
+	}
+	
+	ul.nav-bar {
+		position: absolute;
+		top: 80%;
+		list-style-type: none;
+		padding: 0;
+		z-index: 2;
+		text-align: center;
+		@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.2));
+		border-radius: 10px;
+		background-color: rgba(50, 50, 50, 0.2);
+		
+		@include breakpoint(xs) {
+			width: 80%;
+			left: 10%;
+		}
+		@include breakpoint(sm) {
+			left: 50%;
+			@include transform(translateX(-50%));
+		}
+		
+		li {
+			padding: 5px;
+			padding-left: 10px;
+			padding-right: 10px;
+			color: $side-button-color;
+			display: inline-block;
+			cursor: pointer;
+			border-radius: 10px;
+		}
+		
+		li:hover {
+			background-color: rgba(50, 50, 50, 0.7);
+			@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.7));
+			@include animation(nav-bar-item-fade 0.45s);
+		}
 	}
 }

@@ -1,5 +1,9 @@
 @import 'style';
 
+body {
+	overflow: hidden;
+}
+
 #welcome-section {
 	$side-button-margin: 10px;
 	$side-button-color: rgba(250, 250, 250, 1);
@@ -9,6 +13,21 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
+	
+	.backdrop {
+		content: url("/images/main-backdrop.jpg");
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		@include filter(blur(25px));
+		
+		@include breakpoint(sm) {
+			@include transform(translate3d(0, 0, 0));
+		}
+	}
 	
 	.profile {
 		z-index: 0;
@@ -21,6 +40,19 @@
 			height: 100px;
 			border-radius: 50px;
 			border: 1px solid rgb(200, 200, 200);
+			@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.2));
+		}
+		
+		.profile-info {
+			@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.2));
+			border-radius: 10px;
+			padding: 5px;
+			background-color: rgba(50, 50, 50, 0.2);
+			display: inline-block;
+			
+			h1, h4 {
+				color: white;
+			}
 		}
 	}
 	
@@ -29,8 +61,8 @@
 		position: absolute;
 		top: 50%;
 		font-size: 20pt;
+		color: $side-button-color;
 		@include transform(translateY(-50%));
-		background-color: purple;
 		padding-top: 3px;
 		padding-bottom: 3px;
 		padding-left: 9.5px;
@@ -54,5 +86,10 @@
 		.glyphicon {
 			color: $side-button-color;
 		}
+	}
+	
+	.button-left:hover, .button-right:hover {
+		@include box-shadow(0px 0px 10px 10px rgba(20, 20, 20, 0.2));
+		background-color: rgba(20, 20, 20, 0.2);
 	}
 }

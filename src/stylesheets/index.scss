@@ -94,7 +94,6 @@
 	.down-button {
 		z-index: 1;
 		position: absolute;
-		bottom: 5px;
 		left: 50%;
 		font-size: 20pt;
 		color: $button-color;
@@ -106,21 +105,29 @@
 		border-radius: 23px;
 		cursor: pointer;
 		
+		@include breakpoint(xs) {
+			bottom: 0px;
+		}
+		@include breakpoint(sm) {
+			bottom: 5px;
+		}
+		
 		.glyphicon {
 			cursor: pointer;
 			color: $button-color;
 		}
 	}
 	
-	.down-button:hover {
-		background-color: rgba(50, 50, 50, 0.7);
-		@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.7));
-		@include animation(nav-bar-item-fade 0.45s);
+	@include breakpoint(sm) {
+		.down-button:hover {
+			background-color: rgba(50, 50, 50, 0.7);
+			@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.7));
+			@include animation(nav-bar-item-fade 0.45s);
+		}
 	}
 	
 	ul.nav-bar {
 		position: absolute;
-		top: 80%;
 		list-style-type: none;
 		padding: 0;
 		z-index: 2;
@@ -130,10 +137,12 @@
 		background-color: rgba(50, 50, 50, 0.2);
 		
 		@include breakpoint(xs) {
+			top: 79%;
 			width: 80%;
 			left: 10%;
 		}
 		@include breakpoint(sm) {
+			top: 80%;
 			left: 50%;
 			@include transform(translateX(-50%));
 		}
@@ -148,10 +157,54 @@
 			border-radius: 10px;
 		}
 		
-		li:hover {
-			background-color: rgba(50, 50, 50, 0.7);
-			@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.7));
-			@include animation(nav-bar-item-fade 0.45s);
+		@include breakpoint(sm) {
+			li:hover {
+				background-color: rgba(50, 50, 50, 0.7);
+				@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.7));
+				@include animation(nav-bar-item-fade 0.45s);
+			}
+		}
+	}
+}
+
+#main-section {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	
+	div.relative-wrapper div.container-page {
+		p.link-btn {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			background-color: #efe;
+			display: inline-block;
+			padding-bottom: 3px;
+			padding-left: 4px;
+			padding-right: 4px;
+			border-radius: 5px;
+			border: 1px solid rgba(220, 220, 220, 0.3);
+			
+			img.github {
+				content: url("/images/github.png");
+				height: 10px;
+			}
+		}
+		
+		h2 {
+			margin-left: 0.5cm;
+		}
+		div.project {
+			margin-left: 1cm;
+			
+			h3 img {
+				content: url("/images/app_store_51px.png");
+				height: 15px;
+			}
+			
+			p {
+				margin-left: 0.5cm;
+			}
 		}
 	}
 }

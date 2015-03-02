@@ -116,13 +116,50 @@ $font-stack: 'Poiret One', cursive;
 	cursor: default;
 }
 
+p {
+	font-size: 12pt;
+}
+
+hr {
+	height: 1px;
+	border: none;
+	background-color: rgb(221, 221, 221);
+}
+
+.relative-wrapper {
+	position: relative;
+	width: 100%;
+}
+
 .container {
 	width: 90%;
 	margin: 0 auto;
+}
+
+.container-page {
+	@include breakpoint(xs) {
+		@extend .container;
+	}
+	@include breakpoint(sm) {
+		max-width: 17.78cm;
+		margin: 0 auto !important;
+		float: none !important;
+	}
 }
 
 .vertical-center {
 	position: relative;
 	top: 50%;
 	@include transform(translateY(-50%));
+}
+
+div.footer {
+	margin-top: 20px;
+	border-top: 1px solid rgb(221, 221, 221);
+	text-align: center;
+	padding: 15px;
+	
+	p.copyright {
+		font-size: 8pt;
+	}
 }

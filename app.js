@@ -30,6 +30,17 @@ if (configJSON.deployment) {
 	app.use(morgan('combined'));
 }
 
+// node-minify setup
+var compressor = require('node-minify');
+new compressor.minify({
+	type: 'yui-js',
+	fileIn: 'src/javascripts/index.js',
+	fileOut: 'public/javascripts/index.min.js',
+	callback: function(err, min){
+		if (err) { console.log(err); }
+	}
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

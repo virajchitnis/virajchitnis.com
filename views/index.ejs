@@ -7,6 +7,12 @@
 	<link rel='stylesheet' href='/stylesheets/index.css' />
 </head>
 <body>
+	<ul class="nav-bar">
+		<li onclick="scrollToResume()">Resumé</li>
+		<li onclick="scrollToAbout()">About me</li>
+		<li onclick="scrollToBlog()">Blog</li>
+	</ul>
+	
 	<div id="welcome-section">
 		<img class="backdrop">
 		
@@ -19,19 +25,24 @@
 			</div>
 		</div>
 		
-		<div class="button-left">
-			<span class="glyphicon glyphicon-chevron-left"></span>
+		<div class="link-down">
+			<span class="glyphicon glyphicon-chevron-down"></span>
 		</div>
-		
-		<div class="button-right">
-			<span class="glyphicon glyphicon-chevron-right"></span>
-		</div>
-		
-		<ul class="nav-bar">
-			<li>Resumé</li>
-			<li>About me</li>
-			<li>Blog</li>
-		</ul>
 	</div>
+	
+	<div id="about-section">
+		<h1>About</h1>
+	</div>
+	
+	<div id="resume-section">
+		<h1>Resumé</h1>
+	</div>
+	
+	<div id="blog-section">
+		<h1>Blog</h1>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="/javascripts/index.min.js"></script>
 </body>
 </html>

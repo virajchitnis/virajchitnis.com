@@ -1,5 +1,7 @@
 @import 'style';
 
+$button-color: rgba(250, 250, 250, 1);
+
 @include keyframes(nav-bar-item-fade) {
 	0% {
 		background-color: transparent;
@@ -38,17 +40,94 @@
 	}
 }
 
-body {
+@include breakpoint(xs) {
+	@include keyframes(nav-bar-position-resume) {
+		0% {
+			top: 75%;
+			left: 110%;
+		}
+		100% {
+			top: 5px;
+			left: 10%;
+		}
+	}
+}
+
+@include breakpoint(sm) {
+	@include keyframes(nav-bar-position-resume) {
+		0% {
+			top: 80%;
+			left: 150%;
+		}
+		100% {
+			top: 5px;
+			left: 50%;
+		}
+	}
+}
+
+html, body {
 	overflow: hidden;
 }
 
-#welcome-section {
-	$side-button-margin: 10px;
-	$side-button-color: rgba(250, 250, 250, 1);
+.nav-bar-animate-resume {
+	@include animation(nav-bar-position-resume 0.75s);
 	
+	@include breakpoint(xs) {
+		top: 5px;
+		left: 10%;
+	}
+	@include breakpoint(sm) {
+		top: 5px;
+		left: 50%;
+	}
+}
+
+ul.nav-bar {
+	position: absolute;
+	list-style-type: none;
+	padding: 0;
+	z-index: 5;
+	text-align: center;
+	@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.2));
+	border-radius: 10px;
+	background-color: rgba(50, 50, 50, 0.2);
+	
+	@include breakpoint(xs) {
+		top: 75%;
+		width: 80%;
+		left: 110%;
+	}
+	@include breakpoint(sm) {
+		top: 80%;
+		min-width: 225px;
+		left: 150%;
+		@include transform(translateX(-50%));
+	}
+	
+	li {
+		padding: 5px;
+		padding-left: 10px;
+		padding-right: 10px;
+		color: $button-color;
+		display: inline-block;
+		cursor: pointer;
+		border-radius: 10px;
+	}
+	
+	@include breakpoint(sm) {
+		li:hover {
+			background-color: rgba(50, 50, 50, 0.7);
+			@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.7));
+			@include animation(nav-bar-item-fade 0.45s);
+		}
+	}
+}
+
+#welcome-section {
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: 100%;
 	width: 100%;
 	height: 100%;
 	
@@ -96,81 +175,62 @@ body {
 		}
 	}
 	
-	.side-button {
+	.link-down {
 		z-index: 1;
 		position: absolute;
-		top: 50%;
+		left: 50%;
 		font-size: 20pt;
-		color: $side-button-color;
-		@include transform(translateY(-50%));
-		padding-top: 3px;
-		padding-bottom: 3px;
-		padding-left: 9.5px;
-		padding-right: 9.5px;
+		color: $button-color;
+		@include transform(translateX(-50%));
+		padding-top: 6px;
+		padding-bottom: 0px;
+		padding-left: 11px;
+		padding-right: 8px;
 		border-radius: 23px;
 		cursor: pointer;
-	}
-	
-	.button-left {
-		@extend .side-button;
-		left: $side-button-margin;
-		
-		.glyphicon {
-			cursor: pointer;
-			color: $side-button-color;
-		}
-	}
-	
-	.button-right {
-		@extend .side-button;
-		right: $side-button-margin;
-		
-		.glyphicon {
-			cursor: pointer;
-			color: $side-button-color;
-		}
-	}
-	
-	.button-left:hover, .button-right:hover {
-		background-color: rgba(50, 50, 50, 0.7);
-		@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.7));
-		@include animation(nav-bar-item-fade 0.45s);
-	}
-	
-	ul.nav-bar {
-		position: absolute;
-		top: 80%;
-		list-style-type: none;
-		padding: 0;
-		z-index: 2;
-		text-align: center;
-		@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.2));
-		border-radius: 10px;
-		background-color: rgba(50, 50, 50, 0.2);
 		
 		@include breakpoint(xs) {
-			width: 80%;
-			left: 10%;
+			bottom: 0px;
 		}
 		@include breakpoint(sm) {
-			left: 50%;
-			@include transform(translateX(-50%));
+			bottom: 10px;
 		}
 		
-		li {
-			padding: 5px;
-			padding-left: 10px;
-			padding-right: 10px;
-			color: $side-button-color;
-			display: inline-block;
+		.glyphicon {
 			cursor: pointer;
-			border-radius: 10px;
+			color: $button-color;
 		}
-		
-		li:hover {
+	}
+	
+	@include breakpoint(sm) {
+		.link-down:hover {
 			background-color: rgba(50, 50, 50, 0.7);
 			@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.7));
 			@include animation(nav-bar-item-fade 0.45s);
 		}
 	}
+}
+
+#about-section {
+	position: absolute;
+	top: 100%;
+	left: 100%;
+	width: 100%;
+	height: 100%;
+}
+
+#resume-section {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#blog-section {
+	position: absolute;
+	top: 0;
+	left: 200%;
+	width: 100%;
+	height: 100%;
 }

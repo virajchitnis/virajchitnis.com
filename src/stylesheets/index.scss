@@ -1,210 +1,204 @@
 @import 'style';
-
 @include keyframes(nav-bar-item-fade) {
-	0% {
-		background-color: transparent;
-		@include box-shadow(none);
-	}
-	100% {
-		background-color: rgba(50, 50, 50, 0.7);
-		@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.7));
-	}
+    0% {
+        background-color: transparent;
+        @include box-shadow(none);
+    }
+    100% {
+        background-color: rgba(50, 50, 50, 0.7);
+        @include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.7));
+    }
 }
-
 @include keyframes(profile-image-bounce) {
-	0% {
-		border-radius: 40px;
-		height: 80px;
-		width: 80px;
-	}
-	25% {
-		border-radius: 60px;
-		height: 120px;
-		width: 120px;
-	}
-	50% {
-		border-radius: 45px;
-		height: 90px;
-		width: 90px;
-	}
-	75% {
-		border-radius: 52.5px;
-		height: 105px;
-		width: 105px;
-	}
-	100% {
-		border-radius: 50px;
-		height: 100px;
-	}
+    0% {
+        border-radius: 40px;
+        height: 80px;
+        width: 80px;
+    }
+    25% {
+        border-radius: 60px;
+        height: 120px;
+        width: 120px;
+    }
+    50% {
+        border-radius: 45px;
+        height: 90px;
+        width: 90px;
+    }
+    75% {
+        border-radius: 52.5px;
+        height: 105px;
+        width: 105px;
+    }
+    100% {
+        border-radius: 50px;
+        height: 100px;
+    }
 }
-
 #welcome-section {
-	$button-color: rgba(250, 250, 250, 1);
-	
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	
-	.backdrop {
-		content: url("/images/main-backdrop.jpg");
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		@include filter(blur(25px));
-		
-		@include breakpoint(sm) {
-			@include transform(translate3d(0, 0, 0));
-		}
-	}
-	
-	.profile {
-		z-index: 0;
-		width: 100%;
-		text-align: center;
-		
-		.profile-image {
-			content: url("/images/profile.jpg");
-			width: 100px;
-			height: 100px;
-			border-radius: 50px;
-			border: 1px solid rgb(200, 200, 200);
-			@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.2));
-			@include animation(profile-image-bounce 1s);
-			@include transform(translate3d(0, 0, 0));
-		}
-		
-		.profile-info {
-			@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.2));
-			border-radius: 10px;
-			padding: 5px;
-			background-color: rgba(50, 50, 50, 0.2);
-			display: inline-block;
-			
-			h1, h4 {
-				color: white;
-			}
-		}
-	}
-	
-	.down-button {
-		z-index: 1;
-		position: absolute;
-		left: 50%;
-		font-size: 20pt;
-		color: $button-color;
-		@include transform(translateX(-50%));
-		padding-top: 6px;
-		padding-bottom: 0px;
-		padding-left: 11.5px;
-		padding-right: 7.5px;
-		border-radius: 23px;
-		cursor: pointer;
-		
-		@include breakpoint(xs) {
-			bottom: 0px;
-		}
-		@include breakpoint(sm) {
-			bottom: 5px;
-		}
-		
-		.glyphicon {
-			cursor: pointer;
-			color: $button-color;
-		}
-	}
-	
-	@include breakpoint(sm) {
-		.down-button:hover {
-			background-color: rgba(50, 50, 50, 0.7);
-			@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.7));
-			@include animation(nav-bar-item-fade 0.45s);
-		}
-	}
-	
-	ul.nav-bar {
-		position: absolute;
-		list-style-type: none;
-		padding: 0;
-		z-index: 2;
-		text-align: center;
-		@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.2));
-		border-radius: 10px;
-		background-color: rgba(50, 50, 50, 0.2);
-		
-		@include breakpoint(xs) {
-			top: 79%;
-			width: 80%;
-			left: 10%;
-		}
-		@include breakpoint(sm) {
-			top: 80%;
-			left: 50%;
-			@include transform(translateX(-50%));
-		}
-		
-		li {
-			padding: 5px;
-			padding-left: 10px;
-			padding-right: 10px;
-			color: $button-color;
-			display: inline-block;
-			cursor: pointer;
-			border-radius: 10px;
-		}
-		
-		@include breakpoint(sm) {
-			li:hover {
-				background-color: rgba(50, 50, 50, 0.7);
-				@include box-shadow(0px 0px 10px 10px rgba(50, 50, 50, 0.7));
-				@include animation(nav-bar-item-fade 0.45s);
-			}
-		}
-	}
+    $button-color: rgba(250, 250, 250, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .backdrop {
+        content: url("/images/main-backdrop.jpg");
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        @include filter(blur(25px));
+        @include breakpoint(sm) {
+            @include transform(translate3d(0, 0, 0));
+        }
+    }
+    .profile {
+        z-index: 0;
+        width: 100%;
+        text-align: center;
+        .profile-image {
+            content: url("/images/profile.jpg");
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            border: 1px solid rgb(200, 200, 200);
+            @include box-shadow(0px 0px 10px 10px rgba(50,
+            50,
+            50,
+            0.2));
+            @include animation(profile-image-bounce 1s);
+            @include transform(translate3d(0,
+            0,
+            0));
+        }
+        .profile-info {
+            @include box-shadow(0px 0px 10px 10px rgba(50,
+            50,
+            50,
+            0.2));
+            border-radius: 10px;
+            padding: 5px;
+            background-color: rgba(50, 50, 50, 0.2);
+            display: inline-block;
+            h1,
+            h4 {
+                color: white;
+            }
+        }
+    }
+    .down-button {
+        z-index: 1;
+        position: absolute;
+        left: 50%;
+        font-size: 20pt;
+        color: $button-color;
+        @include transform(translateX(-50%));
+        padding-top: 6px;
+        padding-bottom: 0px;
+        padding-left: 11.5px;
+        padding-right: 7.5px;
+        border-radius: 23px;
+        cursor: pointer;
+        @include breakpoint(xs) {
+            bottom: 50px;
+        }
+        @include breakpoint(sm) {
+            bottom: 100px;
+        }
+        .glyphicon {
+            cursor: pointer;
+            color: $button-color;
+        }
+    }
+    @include breakpoint(sm) {
+        .down-button:hover {
+            background-color: rgba(50, 50, 50, 0.7);
+            @include box-shadow(0px 0px 10px 10px rgba(50,
+            50,
+            50,
+            0.7));
+            @include animation(nav-bar-item-fade 0.45s);
+        }
+    }
+    ul.nav-bar {
+        position: absolute;
+        list-style-type: none;
+        padding: 0;
+        z-index: 2;
+        text-align: center;
+        @include box-shadow(0px 0px 10px 10px rgba(50,
+        50,
+        50,
+        0.2));
+        border-radius: 10px;
+        background-color: rgba(50, 50, 50, 0.2);
+        @include breakpoint(xs) {
+            top: 79%;
+            width: 80%;
+            left: 10%;
+        }
+        @include breakpoint(sm) {
+            top: 80%;
+            left: 50%;
+            @include transform(translateX(-50%));
+        }
+        li {
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: $button-color;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        @include breakpoint(sm) {
+            li:hover {
+                background-color: rgba(50, 50, 50, 0.7);
+                @include box-shadow(0px 0px 10px 10px rgba(50,
+                50,
+                50,
+                0.7));
+                @include animation(nav-bar-item-fade 0.45s);
+            }
+        }
+    }
 }
-
 #main-section {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	
-	div.relative-wrapper div.container-page {
-		p.link-btn {
-			margin-top: 10px;
-			margin-bottom: 10px;
-			background-color: #efe;
-			display: inline-block;
-			padding-bottom: 3px;
-			padding-left: 4px;
-			padding-right: 4px;
-			border-radius: 5px;
-			border: 1px solid rgba(220, 220, 220, 0.3);
-			
-			img.github {
-				content: url("/images/github.png");
-				height: 10px;
-			}
-		}
-		
-		h2 {
-			margin-left: 0.5cm;
-		}
-		div.project {
-			margin-left: 1cm;
-			
-			h3 img {
-				content: url("/images/app_store_51px.png");
-				height: 15px;
-			}
-			
-			p {
-				margin-left: 0.5cm;
-			}
-		}
-	}
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    div.relative-wrapper div.container-page {
+        p.link-btn {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: #efe;
+            display: inline-block;
+            padding-bottom: 3px;
+            padding-left: 4px;
+            padding-right: 4px;
+            border-radius: 5px;
+            border: 1px solid rgba(220, 220, 220, 0.3);
+            img.github {
+                content: url("/images/github.png");
+                height: 10px;
+            }
+        }
+        h2 {
+            margin-left: 0.5cm;
+        }
+        div.project {
+            margin-left: 1cm;
+            h3 img {
+                content: url("/images/app_store_51px.png");
+                height: 15px;
+            }
+            p {
+                margin-left: 0.5cm;
+            }
+        }
+    }
 }

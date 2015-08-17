@@ -62,24 +62,67 @@ app.controller('AboutController', ['$scope', 'dataset', '$location', '$rootScope
 
 app.run(function ($rootScope, $location) {
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
-        $rootScope.animationClass = (next.$$route.animate) ? 'reveal-animation' : '';
+        if (current && next && (current.$$route.controller == 'WelcomeController') && (next.$$route.controller == 'AboutController')) {
+            $rootScope.animationClass = 'slide-animation';
+        } else if (current && next && (current.$$route.controller == 'AboutController') && (next.$$route.controller == 'WelcomeController')) {
+            $rootScope.animationClass = 'slide-animation';
+        } else {
+            $rootScope.animationClass = '';
+        }
     });
 });
 
-/*app.animation('.reveal-animation', [function () {
+app.animation('.slide-animation', [function () {
     return {
         enter: function (element, done) {
-            element.css('display', 'none');
-            element.fadeIn(2000, done);
-            return function () {
-                element.stop();
+            var first_child = element[0].children[0];
+            if (first_child.id == 'welcome-section') {
+                var negative_window_height = ($(window).height() - ($(window).height() * 2));
+                element.css('top', negative_window_height);
+                element.animate({
+                    top: 0
+                }, 1000, function () {
+                    element.css('top', 0);
+                });
+                return function () {
+                    element.stop();
+                }
+            } else if (first_child.id == 'main-section') {
+                element.css('top', $(window).height());
+                element.animate({
+                    top: 0
+                }, 1000, function () {
+                    element.css('top', 0);
+                });
+                return function () {
+                    element.stop();
+                }
             }
         },
         leave: function (element, done) {
-            element.fadeOut(2000, done)
-            return function () {
-                element.stop();
+            var first_child = element[0].children[0];
+            if (first_child.id == 'welcome-section') {
+                var negative_window_height = ($(window).height() - ($(window).height() * 2));
+                element.css('top', 0);
+                element.animate({
+                    top: negative_window_height
+                }, 1000, function () {
+                    element.remove();
+                });
+                return function () {
+                    element.stop();
+                }
+            } else if (first_child.id == 'main-section') {
+                element.css('top', 0);
+                element.animate({
+                    top: $(window).height()
+                }, 1000, function () {
+                    element.remove();
+                });
+                return function () {
+                    element.stop();
+                }
             }
         }
     }
-}]);*/
+}]);

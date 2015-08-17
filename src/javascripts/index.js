@@ -53,19 +53,12 @@ app.controller('AboutController', ['$scope', 'dataset', '$location', '$rootScope
     $scope.dataset = dataset;
 }]);
 
-/*app.run(['$scope', function ($scope) {
-    $scope.$on('$routeChangeStart', function (next, current) {
-        console.log('called');
-        $scope.animateViewChange = current.$routeProvider.animate;
-    });
-}]);*/
-
 app.run(function ($rootScope, $location) {
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
         if (current && next && (current.$$route.controller == 'WelcomeController') && (next.$$route.controller == 'AboutController')) {
-            $rootScope.animationClass = 'slide-animation';
+            $rootScope.animationClass = 'fade-animation';
         } else if (current && next && (current.$$route.controller == 'AboutController') && (next.$$route.controller == 'WelcomeController')) {
-            $rootScope.animationClass = 'slide-animation';
+            $rootScope.animationClass = 'fade-animation';
         } else {
             $rootScope.animationClass = '';
         }
@@ -79,7 +72,7 @@ app.animation('.slide-animation', [function () {
             if (first_child.id == 'welcome-section') {
                 var negative_window_height = ($(window).height() - ($(window).height() * 2));
                 element.css('top', negative_window_height);
-                element.animate({
+                element.transition({
                     top: 0
                 }, 1000, function () {
                     element.css('top', 0);
@@ -89,7 +82,7 @@ app.animation('.slide-animation', [function () {
                 }
             } else if (first_child.id == 'main-section') {
                 element.css('top', $(window).height());
-                element.animate({
+                element.transition({
                     top: 0
                 }, 1000, function () {
                     element.css('top', 0);
@@ -104,7 +97,7 @@ app.animation('.slide-animation', [function () {
             if (first_child.id == 'welcome-section') {
                 var negative_window_height = ($(window).height() - ($(window).height() * 2));
                 element.css('top', 0);
-                element.animate({
+                element.transition({
                     top: negative_window_height
                 }, 1000, function () {
                     element.remove();
@@ -114,9 +107,62 @@ app.animation('.slide-animation', [function () {
                 }
             } else if (first_child.id == 'main-section') {
                 element.css('top', 0);
-                element.animate({
+                element.transition({
                     top: $(window).height()
                 }, 1000, function () {
+                    element.remove();
+                });
+                return function () {
+                    element.stop();
+                }
+            }
+        }
+    }
+}]);
+
+app.animation('.fade-animation', [function () {
+    return {
+        enter: function (element, done) {
+            var first_child = element[0].children[0];
+            if (first_child.id == 'welcome-section') {
+                element.css('opacity', 0);
+                element.transition({
+                    opacity: 1
+                }, 2000, function () {
+                    element.css('opacity', 1);
+                });
+                return function () {
+                    element.stop();
+                }
+            } else if (first_child.id == 'main-section') {
+                element.css('opacity', 0);
+                element.transition({
+                    opacity: 1
+                }, 2000, function () {
+                    element.css('opacity', 1);
+                });
+                return function () {
+                    element.stop();
+                }
+            }
+        },
+        leave: function (element, done) {
+            var first_child = element[0].children[0];
+            if (first_child.id == 'welcome-section') {
+                element.css('opacity', 1);
+                element.transition({
+                    opacity: 0
+                }, 2000, function () {
+                    element.remove();
+                });
+                return function () {
+                    element.stop();
+                }
+            } else if (first_child.id == 'main-section') {
+                element.css('opacity', 1);
+                element.transition({
+                    opacity: 0
+                }, 2000, function () {
                     element.remove();
                 });
                 return function () {

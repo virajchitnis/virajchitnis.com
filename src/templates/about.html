@@ -5,11 +5,11 @@
         <div class="container-page">
             <h1>About me</h1>
             <hr>
-            <p class="link-btn"><img class="github"> {{dataset.github}}</p>
+            <p class="link-btn"><img class="github" src="/images/github.png"> {{dataset.github}}</p>
             <p>{{dataset.about_me}}</p>
             <h2>My projects</h2>
             <div class="project" ng-repeat="project in dataset.projects">
-                <h3>{{project.name}} <img></h3>
+                <h3>{{project.name}} <img src="/images/app_store_51px.png"></h3>
                 <p>{{project.description}}</p>
             </div>
 

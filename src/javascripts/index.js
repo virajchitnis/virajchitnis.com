@@ -24,22 +24,24 @@ app.factory('dataset', [function () {
     return dataset;
 }]);
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
         .when('/welcome', {
             templateUrl: '/templates/welcome.html',
-            controller: 'WelcomeController'
+            controller: 'WelcomeController',
+            animate: false
         })
         .when('/about', {
             templateUrl: '/templates/about.html',
-            controller: 'AboutController'
+            controller: 'AboutController',
+            animate: true
         })
         .otherwise({
             redirectTo: '/welcome'
         });
 });
 
-app.controller('WelcomeController', ['$scope', 'dataset', function ($scope, dataset) {
+app.controller('WelcomeController', ['$scope', 'dataset', '$location', '$rootScope', function ($scope, dataset, $location, $rootScope) {
     $scope.dataset = dataset;
 
     $scope.loadAbout = function () {
@@ -47,11 +49,24 @@ app.controller('WelcomeController', ['$scope', 'dataset', function ($scope, data
     };
 }]);
 
-app.controller('AboutController', ['$scope', 'dataset', function ($scope, dataset) {
+app.controller('AboutController', ['$scope', 'dataset', '$location', '$rootScope', function ($scope, dataset, $location, $rootScope) {
     $scope.dataset = dataset;
 }]);
 
-app.animation('.reveal-animation', function () {
+/*app.run(['$scope', function ($scope) {
+    $scope.$on('$routeChangeStart', function (next, current) {
+        console.log('called');
+        $scope.animateViewChange = current.$routeProvider.animate;
+    });
+}]);*/
+
+app.run(function ($rootScope, $location) {
+    $rootScope.$on("$routeChangeStart", function (event, next, current) {
+        $rootScope.animationClass = (next.$$route.animate) ? 'reveal-animation' : '';
+    });
+});
+
+/*app.animation('.reveal-animation', [function () {
     return {
         enter: function (element, done) {
             element.css('display', 'none');
@@ -67,4 +82,4 @@ app.animation('.reveal-animation', function () {
             }
         }
     }
-});
+}]);*/

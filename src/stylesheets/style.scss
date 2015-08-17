@@ -1,165 +1,157 @@
 @import "glyphicon-font";
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
-
-$font-stack: 'Poiret One', cursive;
-
+$font-stack: 'Poiret One',
+cursive;
 @mixin breakpoint($breakpoint) {
-	@if $breakpoint == "xs" {
-		@media (max-width: 767px) { @content; }
-	}
-	
-	@else if $breakpoint == "sm" {
-		@media (min-width: 768px) { @content; }
-	}
- 
-	@else if $breakpoint == "md" {
-		@media (min-width: 992px) { @content; }
-	}
- 
-	@else if $breakpoint == "lg" {
-		@media (min-width: 1200px) { @content; }
-	}
-	
-	@else {
-		@warn "Breakpoint mixin supports: xs, sm, md, lg only";
-	}
+    @if $breakpoint=="xs" {
+        @media (max-width: 767px) {
+            @content;
+        }
+    }
+    @else if $breakpoint=="sm" {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+    @else if $breakpoint=="md" {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+    @else if $breakpoint=="lg" {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else {
+        @warn "Breakpoint mixin supports: xs, sm, md, lg only";
+    }
 }
-
 @mixin preserve-3d {
-	-webkit-transform-style: preserve-3d;
-	-moz-transform-style: preserve-3d;
-	-ms-transform-style: preserve-3d;
-	-o-transform-style: preserve-3d;
-	transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
-
 @mixin user-select($value) {
-	-moz-user-select: $value;
-	-webkit-user-select: $value;
-	-ms-user-select: $value;
-	-o-user-select: $value;
-	user-select: $value;
+    -moz-user-select: $value;
+    -webkit-user-select: $value;
+    -ms-user-select: $value;
+    -o-user-select: $value;
+    user-select: $value;
 }
-
 @mixin transform($value) {
-	-moz-transform: $value;
-	-webkit-transform: $value;
-	-ms-transform: $value;
-	-o-transform: $value;
-	transform: $value;
+    -moz-transform: $value;
+    -webkit-transform: $value;
+    -ms-transform: $value;
+    -o-transform: $value;
+    transform: $value;
 }
-
 @mixin filter($value) {
-	-webkit-filter: $value;
-	-moz-filter: $value;
-	-ms-filter: $value;
-	-o-filter: $value;
-	filter: $value;
+    -webkit-filter: $value;
+    -moz-filter: $value;
+    -ms-filter: $value;
+    -o-filter: $value;
+    filter: $value;
 }
-
 @mixin box-shadow($value) {
-	-webkit-box-shadow: $value;
-	-moz-box-shadow: $value;
-	-ms-box-shadow: $value;
-	-o-box-shadow: $value;
-	box-shadow: $value;
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    -ms-box-shadow: $value;
+    -o-box-shadow: $value;
+    box-shadow: $value;
 }
-
 @mixin animation($value) {
-	-webkit-animation: $value;
-	-moz-animation: $value;
-	-ms-animation: $value;
-	-o-animation: $value;
-	animation: $value;
+    -webkit-animation: $value;
+    -moz-animation: $value;
+    -ms-animation: $value;
+    -o-animation: $value;
+    animation: $value;
 }
-
+@mixin transition($value) {
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    -ms-transition: $value;
+    -o-transition: $value;
+    transition: $value;
+}
 @mixin animation-delay($value) {
-	-webkit-animation-delay: $value;
-	-moz-animation-delay: $value;
-	-ms-animation-delay: $value;
-	animation-delay: $value;
+    -webkit-animation-delay: $value;
+    -moz-animation-delay: $value;
+    -ms-animation-delay: $value;
+    animation-delay: $value;
 }
-
 @mixin background-image-linear-gradient($left, $right) {
-	background-image: -webkit-linear-gradient($left, $right);
-	background-image: -moz-linear-gradient($left, $right);
-	background-image: -ms-linear-gradient($left, $right);
-	background-image: -o-linear-gradient($left, $right);
-	background-image: linear-gradient($left, $right);
+    background-image: -webkit-linear-gradient($left, $right);
+    background-image: -moz-linear-gradient($left, $right);
+    background-image: -ms-linear-gradient($left, $right);
+    background-image: -o-linear-gradient($left, $right);
+    background-image: linear-gradient($left, $right);
 }
-
 @mixin keyframes($name) {
-	@-webkit-keyframes #{$name} {
-		@content; 
-	}
-	@-moz-keyframes #{$name} {
-		@content;
-	}
-	@-ms-keyframes #{$name} {
-		@content;
-	}
-	@-o-keyframes #{$name} {
-		@content;
-	}
-	@keyframes #{$name} {
-		@content;
-	}
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @-o-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
 }
-
 * {
-	margin: 0;
-	font-family: $font-stack;
-	font-weight: 400;
-	line-height: 1.5;
-	color: rgb(51, 51, 51);
-	@include user-select(none);
-	cursor: default;
+    margin: 0;
+    font-family: $font-stack;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgb(51, 51, 51);
+    @include user-select(none);
+    cursor: default;
 }
-
 p {
-	font-size: 12pt;
+    font-size: 12pt;
 }
-
 hr {
-	height: 1px;
-	border: none;
-	background-color: rgb(221, 221, 221);
+    height: 1px;
+    border: none;
+    background-color: rgb(221, 221, 221);
 }
-
 .relative-wrapper {
-	position: relative;
-	width: 100%;
+    position: relative;
+    width: 100%;
 }
-
 .container {
-	width: 90%;
-	margin: 0 auto;
+    width: 90%;
+    margin: 0 auto;
 }
-
 .container-page {
-	@include breakpoint(xs) {
-		@extend .container;
-	}
-	@include breakpoint(sm) {
-		max-width: 17.78cm;
-		margin: 0 auto !important;
-		float: none !important;
-	}
+    @include breakpoint(xs) {
+        @extend .container;
+    }
+    @include breakpoint(sm) {
+        max-width: 17.78cm;
+        margin: 0 auto !important;
+        float: none !important;
+    }
 }
-
 .vertical-center {
-	position: relative;
-	top: 50%;
-	@include transform(translateY(-50%));
+    position: relative;
+    top: 50%;
+    @include transform(translateY(-50%));
 }
-
 div.footer {
-	margin-top: 20px;
-	border-top: 1px solid rgb(221, 221, 221);
-	text-align: center;
-	padding: 15px;
-	
-	p.copyright {
-		font-size: 8pt;
-	}
+    margin-top: 20px;
+    border-top: 1px solid rgb(221, 221, 221);
+    text-align: center;
+    padding: 15px;
+    p.copyright {
+        font-size: 8pt;
+    }
 }

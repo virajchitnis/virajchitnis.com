@@ -47,7 +47,7 @@
 											<h2 class="body_table_content_text">skills</h2>
 										</td>
 										<td class="body_table_data">
-											<p class="body_table_content_text">Program in Objective-C, PHP, HTML, CSS, JavaScript, Java, C, C# and SQL.</p>
+											<p class="body_table_content_text">Proficient in Objective-C, PHP, HTML, CSS, JavaScript, Java, C, C#, AngularJS, Node.js, JSON, XML, Rest API, SASS, Git, Mercurial and SQL.</p>
 											<p class="body_table_content_text">I enjoy making iOS apps and I have released a few apps on the App Store.</p>
 											<p class="body_table_content_text">Expert in Linux server setup and management and run multiple Linux servers at home which host web, database, mail, dhcp, dns, web proxy and storage services.</p>
 											<p class="body_table_content_text">Troubleshoot and provide support to my family and friends for their computing needs.</p>
@@ -61,7 +61,7 @@
 										<td class="body_table_data">
 											<p class="body_table_content_text">Interned at <a class="body_href" href="http://www.careerknowledgeresources.com">Career Knowledge Resources</a> in Mumbai, India during summer 2009.</p>
 											<p class="body_table_content_text">Interned at <a class="body_href" href="http://bisil.net">Bisil</a> in Philadelphia, PA during summer 2013. There I worked on a web application that was basically a web version of Microsoft Visio and all its data was stored in a database.</p>
-											<p class="body_table_content_text">Currently interning at L&T Infotech where I am working on mobile applications.</p>
+											<p class="body_table_content_text">Currently working at CapitalOne as an Associate Software Engineer.</p>
 										</td>
 									</tr>
 								</table>

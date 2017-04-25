@@ -5,13 +5,13 @@ const DEBUG = JSON.parse(process.env.DEBUG_ENV || '0');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: './src/index.html',
+  template: './src/App/index.html',
   filename: 'index.html',
   inject: 'body'
 });
 
 module.exports = {
-  entry: './src/jsx/index.jsx',
+  entry: './src/App/index.jsx',
   output: {
     path: path.resolve('public'),
     filename: DEBUG ? 'bundle.js' : 'bundle.min.js'
@@ -27,12 +27,12 @@ module.exports = {
       {
         test: /\.jsx$/,
         loader: 'babel-loader',
-        include: __dirname + '/src/jsx'
+        include: __dirname + '/src'
       },
       {
         test: /\.scss$/,
         loaders: ['style-loader', 'css-loader', 'sass-loader'],
-        include: __dirname + '/src/sass'
+        include: __dirname + '/src'
       }
     ]
   },

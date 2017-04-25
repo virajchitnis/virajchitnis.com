@@ -1,5 +1,5 @@
 import React from 'react';
-import TrianglifyCanvas from './TrianglifyCanvas.jsx';
+import TrianglifyCanvas from '../TrianglifyCanvas/TrianglifyCanvas.jsx';
 
 export default class App extends React.Component {
   render() {

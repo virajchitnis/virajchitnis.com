@@ -1,6 +1,6 @@
 import React from 'react';
 import Trianglify from 'trianglify';
-import '../sass/TrianglifyCanvas.scss';
+import './TrianglifyCanvas.scss';
 
 export default class TrianglifyCanvas extends React.Component {
   constructor(props) {

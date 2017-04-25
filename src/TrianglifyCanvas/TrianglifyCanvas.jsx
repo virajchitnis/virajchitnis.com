@@ -22,9 +22,7 @@ export default class TrianglifyCanvas extends React.Component {
 
   render() {
     return (
-      <div>
-        <canvas ref={(canvas) => { this.trianglifyCanvas = canvas; }} className="trianglify-canvas"></canvas>
-      </div>
+      <canvas ref={(canvas) => { this.trianglifyCanvas = canvas; }} className="trianglify-canvas"></canvas>
     );
   }
 };

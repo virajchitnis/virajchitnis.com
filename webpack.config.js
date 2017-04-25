@@ -28,6 +28,11 @@ module.exports = {
         test: /\.jsx$/,
         loader: 'babel-loader',
         include: __dirname + '/src/jsx'
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        include: __dirname + '/src/sass'
       }
     ]
   },

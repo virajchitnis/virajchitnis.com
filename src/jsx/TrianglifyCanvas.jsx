@@ -1,5 +1,6 @@
 import React from 'react';
 import Trianglify from 'trianglify';
+import '../sass/TrianglifyCanvas.scss';
 
 export default class TrianglifyCanvas extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ export default class TrianglifyCanvas extends React.Component {
   render() {
     return (
       <div>
-        <canvas ref={(canvas) => { this.trianglifyCanvas = canvas; }}></canvas>
+        <canvas ref={(canvas) => { this.trianglifyCanvas = canvas; }} className="trianglify-canvas"></canvas>
       </div>
     );
   }

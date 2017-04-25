@@ -2,6 +2,11 @@
 
 $profile_img_size_phone: 60px;
 $profile_img_size: 90px;
+$name_font_size_phone: 40px;
+$name_font_size: 60px;
+$occupation_font_size_phone: 16px;
+$occupation_font_size: 24px;
+$page_load_animation_duration: 5s;
 
 .my-info {
   margin: 0;
@@ -17,6 +22,8 @@ $profile_img_size: 90px;
   padding-top: 10px;
   padding-bottom: 10px;
   background-color: rgba(255, 255, 255, 0.2);
+  animation-name: profile-bar-appear;
+  animation-duration: $page_load_animation_duration;
 
   img {
     height: $profile_img_size;
@@ -25,7 +32,7 @@ $profile_img_size: 90px;
     border: 4px solid white;
     content: url('profile.jpg');
     animation-name: profile-image-appear;
-    animation-duration: 5s;
+    animation-duration: $page_load_animation_duration;
 
     @include phone {
       height: $profile_img_size_phone;
@@ -36,6 +43,8 @@ $profile_img_size: 90px;
 
   h1 {
     font-size: 60px;
+    animation-name: profile-name-appear;
+    animation-duration: $page_load_animation_duration;
 
     @include phone {
       font-size: 40px;
@@ -44,10 +53,23 @@ $profile_img_size: 90px;
 
   h2 {
     font-size: 24px;
+    animation-name: profile-occupation-appear;
+    animation-duration: $page_load_animation_duration;
 
     @include phone {
       font-size: 16px;
     }
+  }
+}
+
+@keyframes profile-bar-appear {
+  from {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  to {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -75,6 +97,40 @@ $profile_img_size: 90px;
       height: $profile_img_size;
       width: $profile_img_size;
       border-radius: $profile_img_size;
+    }
+  }
+}
+
+@keyframes profile-name-appear {
+  from {
+    font-size: 0;
+  }
+  to {
+    @include phone {
+      font-size: $name_font_size_phone;
+    }
+    @include tablet {
+      font-size: $name_font_size;
+    }
+    @include desktop {
+      font-size: $name_font_size;
+    }
+  }
+}
+
+@keyframes profile-occupation-appear {
+  from {
+    font-size: 0;
+  }
+  to {
+    @include phone {
+      font-size: $occupation_font_size_phone;
+    }
+    @include tablet {
+      font-size: $occupation_font_size;
+    }
+    @include desktop {
+      font-size: $occupation_font_size;
     }
   }
 }

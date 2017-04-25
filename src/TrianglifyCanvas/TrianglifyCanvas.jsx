@@ -13,11 +13,20 @@ export default class TrianglifyCanvas extends React.Component {
   componentDidMount() {
     this.setState({
       pattern: Trianglify({
-        cell_size: 40
+        width: this.trianglifyCanvas.clientWidth,
+        height: this.trianglifyCanvas.clientHeight,
+        cell_size: 40,
+        seed: 'Viraj Chitnis',
+        x_colors: 'YlGnBu',
+        y_colors: 'PuOr'
       })
     }, () => {
-      this.state.pattern.canvas(this.trianglifyCanvas);
+      this.drawCanvas();
     });
+  }
+
+  drawCanvas() {
+    this.state.pattern.canvas(this.trianglifyCanvas);
   }
 
   render() {

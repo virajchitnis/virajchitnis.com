@@ -25,6 +25,14 @@ module.exports = {
   module: {
     loaders: [
       {
+        test: /\.(jpg|png|svg)$/,
+        loader: 'url-loader',
+        include: __dirname + '/src',
+        options: {
+          limit: 25000,
+        },
+      },
+      {
         test: /\.jsx$/,
         loader: 'babel-loader',
         include: __dirname + '/src'

@@ -1,6 +1,7 @@
 import React from 'react';
 import MyInfo from '../MyInfo/MyInfo.jsx';
 import TrianglifyCanvas from '../TrianglifyCanvas/TrianglifyCanvas.jsx';
+import MenuBar from '../MenuBar/MenuBar.jsx';
 import './global.scss';
 
 export default class App extends React.Component {
@@ -9,6 +10,7 @@ export default class App extends React.Component {
       <div>
         <TrianglifyCanvas />
         <MyInfo />
+        <MenuBar />
       </div>
     );
   }

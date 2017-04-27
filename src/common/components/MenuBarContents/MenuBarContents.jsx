@@ -1,14 +1,14 @@
 import React from 'react';
-import './MenuBar.scss';
+import './MenuBarContents.scss';
 
-export default class MenuBar extends React.Component {
+export default class MenuBarContents extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div className="menu-bar">
+      <div>
         <div className="container">
           <div className="nav-link">
             <div className="nav-standard">resumé</div>

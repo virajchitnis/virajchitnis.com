@@ -1,7 +1,5 @@
 import React from 'react';
-import MyInfo from '../MyInfo/MyInfo.jsx';
-import TrianglifyCanvas from '../TrianglifyCanvas/TrianglifyCanvas.jsx';
-import MenuBar from '../MenuBar/MenuBar.jsx';
+import HomePage from '../HomePage/HomePage.jsx';
 import './global.scss';
 
 export default class App extends React.Component {
@@ -9,21 +7,13 @@ export default class App extends React.Component {
     var dom;
     if (window.location.pathname == '/') {
       dom = (
-        <div>
-          <TrianglifyCanvas />
-          <MyInfo />
-          <MenuBar />
-        </div>
+        <HomePage />
       );
     }
     else {
       window.location.pathname = '/';
       dom = (
-        <div>
-          <TrianglifyCanvas />
-          <MyInfo />
-          <MenuBar />
-        </div>
+        <HomePage />
       );
     }
 

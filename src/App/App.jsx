@@ -6,12 +6,27 @@ import './global.scss';
 
 export default class App extends React.Component {
   render() {
-    return (
-      <div>
-        <TrianglifyCanvas />
-        <MyInfo />
-        <MenuBar />
-      </div>
-    );
+    var dom;
+    if (window.location.pathname == '/') {
+      dom = (
+        <div>
+          <TrianglifyCanvas />
+          <MyInfo />
+          <MenuBar />
+        </div>
+      );
+    }
+    else {
+      window.location.pathname = '/';
+      dom = (
+        <div>
+          <TrianglifyCanvas />
+          <MyInfo />
+          <MenuBar />
+        </div>
+      );
+    }
+
+    return dom;
   }
 };

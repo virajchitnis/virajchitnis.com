@@ -1,0 +1,34 @@
+@import '../../common/mixins/media';
+@import '../../common/mixins/browser-specific';
+
+.main-contents {
+  margin: 0 auto;
+  width: 18.46cm;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Dosis', sans-serif;
+  @include animation(main-contents-invisible 0.5s, main-contents-appear 3s);
+  animation-delay: 0s, 0.5s;
+
+  * {
+    font-family: 'Dosis', sans-serif;
+  }
+}
+
+@keyframes main-contents-invisible {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes main-contents-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

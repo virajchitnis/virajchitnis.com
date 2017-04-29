@@ -1,0 +1,24 @@
+@import '../../common/mixins/media';
+@import '../../common/mixins/browser-specific';
+
+$background_color: white;
+
+.menu-bar-top {
+  background-color: $background_color;
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  width: 18.46cm;
+
+  @include phone {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  @include tablet {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @include desktop {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

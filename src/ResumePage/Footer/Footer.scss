@@ -1,0 +1,12 @@
+@import '../../common/mixins/media';
+@import '../../common/mixins/browser-specific';
+
+.footer {
+  width: 18.46cm;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid black;
+  font-family: 'Dancing Script', cursive;
+}

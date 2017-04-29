@@ -18,3 +18,9 @@ $desktop-width: 1024px;
     @content;
   }
 }
+
+@mixin print {
+  @media print {
+    @content;
+  }
+}

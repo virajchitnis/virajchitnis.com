@@ -9,10 +9,12 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "deploy": "webpack && node server.js"
+    "deploy": "webpack && forever start server.js",
+    "stop": "forever stopall"
   },
   "dependencies": {
     "express": "^4.15.2",
+    "forever": "^0.15.3",
     "path": "^0.12.7"
   },
   "devDependencies": {

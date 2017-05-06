@@ -11,36 +11,36 @@ export default class MenuBarContents extends React.Component {
       <div>
         <div className="container">
           <div className="nav-link">
-            <div className="nav-standard">resumé</div>
+            <a className="nav-standard" href='/resume'>resumé</a>
           </div>
           <div className="nav-link">
-            <div className="nav-standard">apps</div>
+            <a className="nav-standard" href='/apps'>apps</a>
           </div>
           <div className="nav-link">
-            <div className="nav-home">VC</div>
+            <a className="nav-home" href='/'>VC</a>
           </div>
           <div className="nav-link">
-            <div className="nav-standard">winery</div>
+            <a className="nav-standard" href='/winery'>winery</a>
           </div>
           <div className="nav-link">
-            <div className="nav-standard">credits</div>
+            <a className="nav-standard" href='/credits'>credits</a>
           </div>
         </div>
         <div className="container-mobile">
           <div className="nav-link">
-            <div className="nav-standard">resumé</div>
+            <a className="nav-standard" href='/resume'>resumé</a>
           </div>
           <div className="nav-link">
-            <div className="nav-standard">apps</div>
+            <a className="nav-standard" href='/apps'>apps</a>
           </div>
           <div className="nav-link">
-            <div className="nav-standard">winery</div>
+            <a className="nav-standard" href='/winery'>winery</a>
           </div>
           <div className="nav-link">
-            <div className="nav-standard">credits</div>
+            <a className="nav-standard" href='/credits'>credits</a>
           </div>
           <div className="nav-link">
-            <div className="nav-home">VC</div>
+            <a className="nav-home" href='/'>VC</a>
           </div>
         </div>
       </div>

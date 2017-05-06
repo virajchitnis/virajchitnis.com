@@ -15,12 +15,17 @@ $background_color: white;
     padding-top: 5px;
     padding-bottom: 5px;
 
-    div.nav-home {
-      padding: 5px;
-      padding-left: 8.075px;
-      padding-right: 8.075px;
-      border: 1px solid black;
-      border-radius: 23px;
+    a {
+      color: black;
+      text-decoration: none;
+
+      &.nav-home {
+        padding: 5px;
+        padding-left: 8.075px;
+        padding-right: 8.075px;
+        border: 1px solid black;
+        border-radius: 23px;
+      }
     }
   }
 }
@@ -35,10 +40,13 @@ $background_color: white;
     padding-right: 30px;
     font-size: 20px;
 
-    div {
+    a {
       cursor: pointer;
+      color: black;
 
       &.nav-standard {
+        text-decoration: none;
+
         @include desktop {
           border-bottom: 1px solid $background_color;
           animation-name: hoverover-standard;
@@ -59,6 +67,7 @@ $background_color: white;
         padding-right: 8.075px;
         border: 1px solid black;
         border-radius: 23px;
+        text-decoration: none;
 
         @include desktop {
           animation-name: hoverover-home;

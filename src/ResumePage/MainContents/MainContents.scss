@@ -4,7 +4,6 @@
 .main-contents {
   margin: 0 auto;
   width: 18.46cm;
-  margin-top: 20px;
   margin-bottom: 20px;
   font-family: 'Dosis', sans-serif;
   @include animation(main-contents-invisible 0.5s, main-contents-appear 3s);
@@ -12,6 +11,21 @@
 
   * {
     font-family: 'Dosis', sans-serif;
+  }
+  h2 {
+    margin-top: 40px;
+    border-bottom: 1px dotted black;
+  }
+  h3 {
+    margin-top: 30px;
+  }
+  p {
+    margin-top: 20px;
+  }
+  table {
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
   }
 }
 

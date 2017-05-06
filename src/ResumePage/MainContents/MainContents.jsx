@@ -33,6 +33,90 @@ export default class MainContents extends React.Component {
         <h3>Temple University; Philadelphia, PA – Bachelor of Science in Information Science & Technology, 2015</h3>
         <h4>Dean’s List, Fall 2014</h4>
         <p>Undertaken courses in Java (CIS 1068, CIS 2168), Discrete Mathematics (CIS 1166), Computational Probability & Statistics (CIS 2033), C# (CIS 3309), ASP.NET (CIS 3342), Databases (CIS 2109), Operating Systems (CIS 2229), Networking (CIS 3329), Quality Assurance & Testing (CIS 3374), Usability Engineering (CIS 4330), Capstone I (CIS 4296), Capstone II (CIS 4396), Network Security (CIS 4378), Project Management (CIS 4330).</p>
+        <h2>skills</h2>
+        <table>
+          <tr>
+            <td>HTML</td>
+            <td>CSS</td>
+            <td>SASS (SCSS)</td>
+          </tr>
+          <tr>
+            <td>JavaScript</td>
+            <td>jQuery</td>
+            <td>AngularJS</td>
+          </tr>
+          <tr>
+            <td>NodeJS</td>
+            <td>Bower</td>
+            <td>Gulp</td>
+          </tr>
+          <tr>
+            <td>ExpressJS</td>
+            <td>MongoDB</td>
+            <td>Linux</td>
+          </tr>
+          <tr>
+            <td>PHP</td>
+            <td>ASP.NET</td>
+            <td>C#</td>
+          </tr>
+          <tr>
+            <td>C</td>
+            <td>Objective-C</td>
+            <td>Swift</td>
+          </tr>
+          <tr>
+            <td>Java</td>
+            <td>SQL</td>
+            <td>JSON</td>
+          </tr>
+          <tr>
+            <td>XML</td>
+            <td>Git</td>
+            <td>Mercurial</td>
+          </tr>
+          <tr>
+            <td>MySQL</td>
+            <td>MSSQL</td>
+            <td>Spring MVC</td>
+          </tr>
+          <tr>
+            <td>Bootstrap</td>
+            <td>CoffeeScript</td>
+            <td>Selenium</td>
+          </tr>
+          <tr>
+            <td>Jenkins</td>
+            <td>GitHub</td>
+            <td>GitLab</td>
+          </tr>
+          <tr>
+            <td>Jira</td>
+            <td>VersionOne</td>
+            <td>Docker</td>
+          </tr>
+          <tr>
+            <td>nginx</td>
+            <td>Apache Web Server</td>
+            <td>DigitalOcean</td>
+          </tr>
+          <tr>
+            <td>VB.NET</td>
+            <td>Junit</td>
+            <td>Mockito</td>
+          </tr>
+          <tr>
+            <td>Yarn</td>
+            <td>BitBucket</td>
+            <td>ReactJS</td>
+          </tr>
+        </table>
+        <p>Expert at Git, I help my colleagues at CapitalOne with Git setup and roadblocks. I also continue tutoring students at Temple University on how to use Git and GitHub.</p>
+        <p>Expert at programming, worked on many different projects for school and in my free time. Run multiple Linux servers at home which host web, database, mail, DHCP, DNS, web proxy and data storage services.</p>
+        <p>Experience with Debian, Arch, Gentoo, Fedora and CentOS.</p>
+        <p>Troubleshoot and provide support to my family and friends for Mac OS X, Windows, Linux, iOS, Android and Windows Phone.</p>
+        <h2>spoken languages</h2>
+        <p>English (primary), Marathi and Hindi</p>
       </div>
     );
   }

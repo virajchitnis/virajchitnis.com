@@ -3,11 +3,20 @@
 
 .main-contents {
   margin: 0 auto;
-  width: 18.46cm;
   margin-bottom: 20px;
   font-family: 'Dosis', sans-serif;
   @include animation(main-contents-invisible 0.5s, main-contents-appear 3s);
   animation-delay: 0s, 0.5s;
+
+  @include phone {
+    width: 90%;
+  }
+  @include tablet {
+    width: 18.46cm;
+  }
+  @include desktop {
+    width: 18.46cm;
+  }
 
   * {
     font-family: 'Dosis', sans-serif;

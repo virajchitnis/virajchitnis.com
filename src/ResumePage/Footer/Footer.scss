@@ -2,11 +2,20 @@
 @import '../../common/mixins/browser-specific';
 
 .footer {
-  width: 18.46cm;
   margin: 0 auto;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
   border-top: 1px solid black;
   font-family: 'Dancing Script', cursive;
+
+  @include phone {
+    width: 90%;
+  }
+  @include tablet {
+    width: 18.46cm;
+  }
+  @include desktop {
+    width: 18.46cm;
+  }
 }

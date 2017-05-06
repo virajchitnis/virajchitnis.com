@@ -14,7 +14,7 @@ export default class MenuBarContents extends React.Component {
             <div className="nav-standard">resumé</div>
           </div>
           <div className="nav-link">
-            <div className="nav-standard">blog</div>
+            <div className="nav-standard">apps</div>
           </div>
           <div className="nav-link">
             <div className="nav-home">VC</div>
@@ -31,7 +31,7 @@ export default class MenuBarContents extends React.Component {
             <div className="nav-standard">resumé</div>
           </div>
           <div className="nav-link">
-            <div className="nav-standard">blog</div>
+            <div className="nav-standard">apps</div>
           </div>
           <div className="nav-link">
             <div className="nav-standard">winery</div>

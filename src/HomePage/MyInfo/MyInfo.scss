@@ -1,0 +1,193 @@
+@import '../../common/mixins/media';
+@import '../../common/mixins/browser-specific';
+
+$profile_img_size_phone: 60px;
+$profile_img_size: 90px;
+$name_font_size_phone: 40px;
+$name_font_size: 60px;
+$occupation_font_size_phone: 16px;
+$occupation_font_size: 24px;
+$bar_padding: 10px;
+
+.my-info {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  @include css3-prefix(transform, translate(0, -50%));
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+  @include border-shadow(0px 0px 8px 0px rgba(0,0,0,0.75));
+  padding-top: $bar_padding;
+  padding-bottom: $bar_padding;
+  background-color: rgba(255, 255, 255, 0.2);
+  @include animation(profile-bar-appear 0.5s, profile-bar-expand 0.5s);
+  animation-delay: 0s, 0.5s;
+
+  img {
+    height: $profile_img_size;
+    width: $profile_img_size;
+    @include border-radius($profile_img_size);
+    border: 4px solid white;
+    content: url('profile.jpg');
+    @include animation(profile-image-delay 3s, profile-image-appear 1s);
+    animation-delay: 0s, 3s;
+
+    @include phone {
+      height: $profile_img_size_phone;
+      width: $profile_img_size_phone;
+      @include border-radius($profile_img_size_phone);
+    }
+  }
+
+  h1 {
+    font-size: $name_font_size;
+    @include animation(profile-name-delay 2s, profile-name-appear 1s);
+    animation-delay: 0s, 2s;
+
+    @include phone {
+      font-size: $name_font_size_phone;
+    }
+  }
+
+  h2 {
+    font-size: $occupation_font_size;
+    @include animation(profile-occupation-delay 1s, profile-occupation-appear 1s);
+    animation-delay: 0s, 1s;
+
+    @include phone {
+      font-size: $occupation_font_size_phone;
+    }
+  }
+}
+
+@keyframes profile-bar-appear {
+  from {
+    @include border-shadow(none);
+    background-color: initial;
+    opacity: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  to {
+    @include border-shadow(0px 0px 8px 0px rgba(0,0,0,0.75));
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+@keyframes profile-bar-expand {
+  from {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  to {
+    padding-top: $bar_padding;
+    padding-bottom: $bar_padding;
+  }
+}
+
+@keyframes profile-image-delay {
+  from {
+    height: 0;
+    width: 0;
+    @include border-radius(0);
+    border: 0px solid white;
+  }
+  to {
+    height: 0;
+    width: 0;
+    @include border-radius(0);
+    border: 0px solid white;
+  }
+}
+
+@keyframes profile-image-appear {
+  from {
+    height: 0;
+    width: 0;
+    @include border-radius(0);
+    border: 0px solid white;
+    opacity: 0;
+  }
+  to {
+    border: 4px solid white;
+    opacity: 1;
+
+    @include phone {
+      height: $profile_img_size_phone;
+      width: $profile_img_size_phone;
+      @include border-radius($profile_img_size_phone);
+    }
+    @include tablet {
+      height: $profile_img_size;
+      width: $profile_img_size;
+      @include border-radius($profile_img_size);
+    }
+    @include desktop {
+      height: $profile_img_size;
+      width: $profile_img_size;
+      @include border-radius($profile_img_size);
+    }
+  }
+}
+
+@keyframes profile-name-delay {
+  from {
+    font-size: 0;
+  }
+  to {
+    font-size: 0;
+  }
+}
+
+@keyframes profile-name-appear {
+  from {
+    font-size: 0;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+
+    @include phone {
+      font-size: $name_font_size_phone;
+    }
+    @include tablet {
+      font-size: $name_font_size;
+    }
+    @include desktop {
+      font-size: $name_font_size;
+    }
+  }
+}
+
+@keyframes profile-occupation-delay {
+  from {
+    font-size: 0;
+  }
+  to {
+    font-size: 0;
+  }
+}
+
+@keyframes profile-occupation-appear {
+  from {
+    font-size: 0;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+
+    @include phone {
+      font-size: $occupation_font_size_phone;
+    }
+    @include tablet {
+      font-size: $occupation_font_size;
+    }
+    @include desktop {
+      font-size: $occupation_font_size;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import HomePage from '../HomePage/HomePage.jsx';
 import ResumePage from '../ResumePage/ResumePage.jsx';
 import AppsPage from '../AppsPage/AppsPage.jsx';
 import CreditsPage from '../CreditsPage/CreditsPage.jsx';
+import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 import './global.scss';
 
 export default class App extends React.Component {
@@ -35,9 +36,8 @@ export default class App extends React.Component {
       );
     }
     else {
-      window.location.pathname = '/';
       dom = (
-        <HomePage />
+        <ErrorPage />
       );
     }
 

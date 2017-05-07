@@ -9,6 +9,15 @@ const morgan = require('morgan');
 app.use(express.static(__dirname + '/public'));
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"'));
 
+app.use(function (req, res, next) {
+  res.status(404).sendFile(path.resolve(__dirname, 'public', 'index.html'));
+});
+
+app.use(function (err, req, res, next) {
+  console.error(err.stack)
+  res.status(500).sendFile(path.resolve(__dirname, 'public', 'index.html'));
+});
+
 app.get('/', function (req, res){
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });

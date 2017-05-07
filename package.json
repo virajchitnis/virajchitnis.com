@@ -13,6 +13,7 @@
     "stop": "forever stopall"
   },
   "dependencies": {
+    "crypto": "^0.0.3",
     "express": "^4.15.2",
     "forever": "^0.15.3",
     "morgan": "^1.8.1",

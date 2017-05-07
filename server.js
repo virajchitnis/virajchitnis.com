@@ -4,9 +4,10 @@ const port = process.env.PORT || 3000;
 const app = express();
 const sys = require('sys')
 const exec = require('child_process').exec;
+const morgan = require('morgan');
 
-// Serve static assets
 app.use(express.static(__dirname + '/public'));
+app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"'));
 
 app.get('/', function (req, res){
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));

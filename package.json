@@ -9,7 +9,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "deploy": "webpack && forever start server.js",
+    "deploy": "webpack && forever server.js",
     "stop": "forever stopall"
   },
   "dependencies": {

@@ -39,5 +39,9 @@ app.get('/githook', function (req, res) {
   res.send({});
 });
 
+app.get('/health', function (req, res){
+    res.send(200, 'Up!');
+});
+
 app.listen(port);
 console.log("Server started on port " + port);

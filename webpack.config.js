@@ -1,13 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
 const DEBUG = JSON.parse(process.env.DEBUG_ENV || '0');
 
-const ScriptExtHtmlWebpackPluginConfig = new ScriptExtHtmlWebpackPlugin({
-  defaultAttribute: 'async'
-});
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './src/App/index.html',
   filename: 'index.html',
@@ -21,11 +17,9 @@ module.exports = {
     filename: DEBUG ? 'bundle.js' : 'bundle.min.js'
   },
   plugins: DEBUG ? [
-    HtmlWebpackPluginConfig,
-    ScriptExtHtmlWebpackPluginConfig
+    HtmlWebpackPluginConfig
   ] : [
     HtmlWebpackPluginConfig,
-    ScriptExtHtmlWebpackPluginConfig,
     new webpack.optimize.UglifyJsPlugin({minimize: true})
   ],
   module: {

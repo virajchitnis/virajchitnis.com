@@ -2,6 +2,7 @@ import React from 'react';
 import HomePage from '../HomePage/HomePage.jsx';
 import ResumePage from '../ResumePage/ResumePage.jsx';
 import AppsPage from '../AppsPage/AppsPage.jsx';
+import WineryPage from '../WineryPage/WineryPage.jsx';
 import CreditsPage from '../CreditsPage/CreditsPage.jsx';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 import './global.scss';
@@ -25,9 +26,8 @@ export default class App extends React.Component {
       );
     }
     else if (window.location.pathname == '/winery') {
-      window.location.pathname = '/';
       dom = (
-        <HomePage />
+        <WineryPage />
       );
     }
     else if (window.location.pathname == '/credits') {

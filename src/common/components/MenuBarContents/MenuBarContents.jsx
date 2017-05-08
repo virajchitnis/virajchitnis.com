@@ -20,7 +20,7 @@ export default class MenuBarContents extends React.Component {
             <a className="nav-home" href='/'>VC</a>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href='/winery'><strike>winery</strike></a>
+            <a className="nav-standard" href='/winery'>winery</a>
           </div>
           <div className="nav-link">
             <a className="nav-standard" href='/credits'>credits</a>
@@ -37,7 +37,7 @@ export default class MenuBarContents extends React.Component {
             <a className="nav-standard" href='/apps'>apps</a>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href='/winery'><strike>winery</strike></a>
+            <a className="nav-standard" href='/winery'>winery</a>
           </div>
           <div className="nav-link">
             <a className="nav-standard" href='/credits'>credits</a>

@@ -9,7 +9,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "deploy": "yarn && webpack && forever start -o ./logs/console.log server.js && tail -f ./logs/console.log",
+    "deploy": "yarn && webpack && forever server.js",
     "stop": "forever stopall"
   },
   "dependencies": {

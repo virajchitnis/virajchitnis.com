@@ -36,10 +36,18 @@ app.post('/githook', function (req, res) {
   hmac = crypto.createHmac('sha1', 'somesecret');
   computedHubSig = hmac.digest('hex');
   if (xHubSig == computedHubSig) {
-    function puts(error, stdout, stderr) { sys.puts(stdout) }
-    exec("./githook.sh", puts);
+    // function puts(error, stdout, stderr) { sys.puts(stdout) }
+    // exec("./githook.sh", puts);
+    console.log(req.body);
+    res.send({
+      status: 'success'
+    });
   }
-  res.send({});
+  else {
+    res.status(403).send({
+      status: 'error'
+    });
+  }
 });
 
 app.get('/health', function (req, res){

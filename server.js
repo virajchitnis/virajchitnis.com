@@ -1,11 +1,16 @@
 const express = require('express');
 const path = require('path');
 const port = process.env.PORT || 3000;
-const app = express();
 const sys = require('sys')
 const exec = require('child_process').exec;
 const morgan = require('morgan');
 const crypto = require('crypto');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public'));
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"'));
@@ -34,10 +39,11 @@ app.post('/githook', function (req, res) {
   console.log('githook');
   xHubSig = req.headers['x-hub-signature'].substring(5);
   hmac = crypto.createHmac('sha1', 'somesecret');
+  hmac.update(JSON.stringify(req.body));
   computedHubSig = hmac.digest('hex');
   if (xHubSig == computedHubSig) {
-    // function puts(error, stdout, stderr) { sys.puts(stdout) }
-    // exec("./githook.sh", puts);
+    function puts(error, stdout, stderr) { sys.puts(stdout) }
+    exec("./githook.sh", puts);
     console.log(req.body);
     res.send({
       status: 'success'

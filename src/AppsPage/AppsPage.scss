@@ -1,8 +1,12 @@
 @import '../common/mixins/media';
 @import '../common/mixins/browser-specific';
 
-img.app-store {
-  content: url('app_store.jpg');
-  width: 140px;
-  margin-top: 20px;
+p.app-store-para {
+  text-align: center;
+  
+  img.app-store {
+    content: url('app_store.jpg');
+    width: 140px;
+    margin-top: 20px;
+  }
 }

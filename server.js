@@ -20,19 +20,19 @@ app.get('/', function (req, res){
 });
 
 app.get('/resume', function (req, res){
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'public', 'resume.html'));
 });
 
 app.get('/apps', function (req, res){
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'public', 'apps.html'));
 });
 
 app.get('/winery', function (req, res){
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'public', 'winery.html'));
 });
 
 app.get('/credits', function (req, res){
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'public', 'credits.html'));
 });
 
 app.post('/githook', function (req, res) {
@@ -62,12 +62,12 @@ app.get('/health', function (req, res){
 });
 
 app.use(function (req, res, next) {
-  res.status(404).sendFile(path.resolve(__dirname, 'public', 'index.html'));
+  res.status(404).sendFile(path.resolve(__dirname, 'public', 'error.html'));
 });
 
 app.use(function (err, req, res, next) {
   console.error(err.stack)
-  res.status(500).sendFile(path.resolve(__dirname, 'public', 'index.html'));
+  res.status(500).sendFile(path.resolve(__dirname, 'public', 'error.html'));
 });
 
 app.listen(port);

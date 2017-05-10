@@ -1,13 +1,16 @@
 @import '../../common/mixins/media';
 @import '../../common/mixins/browser-specific';
 
-$profile_img_size_phone: 60px;
+$profile_img_size_phone: 90px;
 $profile_img_size: 90px;
-$name_font_size_phone: 40px;
+$name_font_size_phone: 50px;
 $name_font_size: 60px;
-$occupation_font_size_phone: 16px;
+$occupation_font_size_phone: 20px;
 $occupation_font_size: 24px;
 $bar_padding: 10px;
+$social_icons_side_margins: 5px;
+$social_icons_height_phone: 25px;
+$social_icons_height: 20px;
 
 .my-info {
   margin: 0;
@@ -24,7 +27,7 @@ $bar_padding: 10px;
   @include animation(profile-bar-appear 0.5s, profile-bar-expand 0.5s);
   animation-delay: 0s, 0.5s;
 
-  img {
+  img.profile {
     height: $profile_img_size;
     width: $profile_img_size;
     @include border-radius($profile_img_size);
@@ -57,6 +60,84 @@ $bar_padding: 10px;
 
     @include phone {
       font-size: $occupation_font_size_phone;
+    }
+  }
+
+  div {
+    display: inline-block;
+    margin-top: 10px;
+
+    a {
+      display: block;
+      height: 20px;
+      @include animation(profile-social-links-delay 4s, profile-social-links-appear 1s);
+      animation-delay: 0s, 4s;
+
+      img {
+        @include animation(profile-social-links-delay 4s, profile-social-links-appear 1s);
+        animation-delay: 0s, 4s;
+
+        &.github {
+          content: url('GitHub-Mark-32px.png');
+          margin-left: $social_icons_side_margins;
+          margin-right: $social_icons_side_margins;
+
+          @include phone {
+            height: $social_icons_height_phone;
+          }
+          @include tablet {
+            height: $social_icons_height;
+          }
+          @include desktop {
+            height: $social_icons_height;
+          }
+        }
+        &.linkedin {
+          content: url('LinkedIn-2C-28px-R.png');
+          margin-left: $social_icons_side_margins;
+          margin-right: $social_icons_side_margins;
+
+          @include phone {
+            height: $social_icons_height_phone;
+          }
+          @include tablet {
+            height: $social_icons_height;
+          }
+          @include desktop {
+            height: $social_icons_height;
+          }
+        }
+        &.twitter {
+          content: url('Twitter_Logo_Blue.png');
+          margin-left: $social_icons_side_margins;
+          margin-right: $social_icons_side_margins;
+
+          @include phone {
+            height: $social_icons_height_phone;
+          }
+          @include tablet {
+            height: $social_icons_height;
+          }
+          @include desktop {
+            height: $social_icons_height;
+          }
+        }
+        &.instagram {
+          content: url('IG_Glyph_Fill.png');
+          margin-left: $social_icons_side_margins;
+          margin-right: $social_icons_side_margins;
+
+          @include phone {
+            height: $social_icons_height_phone;
+          }
+          @include tablet {
+            height: $social_icons_height;
+          }
+          @include desktop {
+            height: $social_icons_height;
+          }
+        }
+      }
     }
   }
 }
@@ -188,6 +269,38 @@ $bar_padding: 10px;
     }
     @include desktop {
       font-size: $occupation_font_size;
+    }
+  }
+}
+
+@keyframes profile-social-links-delay {
+  from {
+    height: 0;
+    font-size: 0;
+  }
+  to {
+    height: 0;
+    font-size: 0;
+  }
+}
+
+@keyframes profile-social-links-appear {
+  from {
+    height: 0;
+    font-size: 0;
+  }
+  to {
+    @include phone {
+      height: $social_icons_height_phone;
+      font-size: $social_icons_height_phone;
+    }
+    @include tablet {
+      height: $social_icons_height;
+      font-size: $social_icons_height;
+    }
+    @include desktop {
+      height: $social_icons_height;
+      font-size: $social_icons_height;
     }
   }
 }

@@ -16,3 +16,10 @@
   // font-family: 'Eagle Lake', cursive;
   // font-family: 'Dancing Script', cursive;
 }
+
+.clearfix::after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
+}

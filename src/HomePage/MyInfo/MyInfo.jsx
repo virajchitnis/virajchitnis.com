@@ -25,7 +25,7 @@ export default class MyInfo extends React.Component {
           <a href="https://www.linkedin.com/in/viraj-chitnis-ba605894/" target="_blank"><img className="linkedin" /></a>
         </div>
         <div>
-          <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x984AF184466C570D" target="_blank" title="PGP/GPG Public Key"><img className="gpg" /></a>
+          <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0xBF5C94BA44F790E2" target="_blank" title="PGP/GPG Public Key"><img className="gpg" /></a>
         </div>
         <div>
           <a href="mailto:vc@virajchitnis.com" target="_blank" title="Email"><img className="mail" /></a>

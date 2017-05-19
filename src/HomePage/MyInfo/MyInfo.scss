@@ -137,6 +137,36 @@ $social_icons_height: 20px;
             height: $social_icons_height;
           }
         }
+        &.mail {
+          content: url('519948-008_Mail-128.png');
+          margin-left: $social_icons_side_margins;
+          margin-right: $social_icons_side_margins;
+
+          @include phone {
+            height: $social_icons_height_phone;
+          }
+          @include tablet {
+            height: $social_icons_height;
+          }
+          @include desktop {
+            height: $social_icons_height;
+          }
+        }
+        &.gpg {
+          content: url('09_Keychain_v2.png');
+          margin-left: $social_icons_side_margins;
+          margin-right: $social_icons_side_margins;
+
+          @include phone {
+            height: $social_icons_height_phone;
+          }
+          @include tablet {
+            height: $social_icons_height;
+          }
+          @include desktop {
+            height: $social_icons_height;
+          }
+        }
       }
     }
   }

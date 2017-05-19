@@ -21,7 +21,7 @@ export default class ResumePage extends React.Component {
             <div className="address">
               <p>••••••••••••••••<br />••••••••••<br />Wynnewood, PA 19096</p>
               <p>M 215.•••.••••</p>
-              <p>viraj@virajchitnis.com<br />www.virajchitnis.com<br />github.com/virajchitnis</p>
+              <p>vc@virajchitnis.com<br />www.virajchitnis.com<br />github.com/virajchitnis</p>
             </div>
           </div>
           <div className="resume-contents clearfix">

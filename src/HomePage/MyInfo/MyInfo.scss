@@ -160,6 +160,9 @@ $social_icons_height: 20px;
             @include src('09_Keychain_v2.png', $social_icons_height, $social_icons_height);
           }
         }
+        &.bitcoin {
+          content: url('Bitcoin_Logo_30x30.png');
+        }
       }
     }
   }

@@ -36,18 +36,25 @@ app.get('/credits', function (req, res){
 });
 
 app.post('/githook', function (req, res) {
-  console.log('githook');
   xHubSig = req.headers['x-hub-signature'].substring(5);
   hmac = crypto.createHmac('sha1', 'somesecret');
   hmac.update(JSON.stringify(req.body));
   computedHubSig = hmac.digest('hex');
   if (xHubSig == computedHubSig) {
-    function puts(error, stdout, stderr) { sys.puts(stdout) }
-    exec("./githook.sh", puts);
-    console.log(req.body);
-    res.send({
-      status: 'success'
-    });
+    if (req.body.ref == "refs/heads/master") {
+      function puts(error, stdout, stderr) { sys.puts(stdout) }
+      exec("./githook.sh", puts);
+      res.send({
+        status: 'success',
+        code_updated: true
+      });
+    }
+    else {
+      res.send({
+        status: 'success',
+        code_updated: false
+      });
+    }
   }
   else {
     res.status(403).send({

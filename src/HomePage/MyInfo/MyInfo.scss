@@ -76,96 +76,36 @@ $social_icons_height: 20px;
       img {
         @include animation(profile-social-links-delay 4s, profile-social-links-appear 1s);
         animation-delay: 0s, 4s;
+        margin-left: $social_icons_side_margins;
+        margin-right: $social_icons_side_margins;
+
+        @include phone {
+          height: $social_icons_height_phone;
+        }
+        @include tablet {
+          height: $social_icons_height;
+        }
+        @include desktop {
+          height: $social_icons_height;
+        }
 
         &.github {
           content: url('GitHub-Mark-64px.png');
-          margin-left: $social_icons_side_margins;
-          margin-right: $social_icons_side_margins;
-
-          @include phone {
-            height: $social_icons_height_phone;
-          }
-          @include tablet {
-            height: $social_icons_height;
-          }
-          @include desktop {
-            height: $social_icons_height;
-          }
         }
         &.linkedin {
           content: url('In-2C-59px-R.png');
-          margin-left: $social_icons_side_margins;
-          margin-right: $social_icons_side_margins;
-
-          @include phone {
-            height: $social_icons_height_phone;
-          }
-          @include tablet {
-            height: $social_icons_height;
-          }
-          @include desktop {
-            height: $social_icons_height;
-          }
         }
         &.twitter {
           content: url('Twitter_Logo_Blue.png');
-          margin-left: $social_icons_side_margins;
-          margin-right: $social_icons_side_margins;
-
-          @include phone {
-            height: $social_icons_height_phone;
-          }
-          @include tablet {
-            height: $social_icons_height;
-          }
-          @include desktop {
-            height: $social_icons_height;
-          }
         }
         &.instagram {
           content: url('IG_Glyph_Fill.png');
-          margin-left: $social_icons_side_margins;
-          margin-right: $social_icons_side_margins;
-
-          @include phone {
-            height: $social_icons_height_phone;
-          }
-          @include tablet {
-            height: $social_icons_height;
-          }
-          @include desktop {
-            height: $social_icons_height;
-          }
         }
         &.mail {
           content: url('519948-008_Mail-128.png');
-          margin-left: $social_icons_side_margins;
-          margin-right: $social_icons_side_margins;
-
-          @include phone {
-            height: $social_icons_height_phone;
-          }
-          @include tablet {
-            height: $social_icons_height;
-          }
-          @include desktop {
-            height: $social_icons_height;
-          }
         }
         &.gpg {
           content: url('09_Keychain_v2.png');
-          margin-left: $social_icons_side_margins;
-          margin-right: $social_icons_side_margins;
-
-          @include phone {
-            height: $social_icons_height_phone;
-          }
-          @include tablet {
-            height: $social_icons_height;
-          }
-          @include desktop {
-            height: $social_icons_height;
-          }
         }
       }
     }

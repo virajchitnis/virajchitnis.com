@@ -14,6 +14,7 @@ app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:htt
 
 app.use('/', require('./routes/pages'));
 app.use('/', require('./routes/endpoints'));
+app.use('/api', require('./routes/api'));
 
 app.use(function (req, res, next) {
   res.status(404).sendFile(path.resolve(__dirname, 'public', 'error.html'));

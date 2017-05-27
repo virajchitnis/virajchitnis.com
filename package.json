@@ -9,7 +9,8 @@
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack",
-    "deploy": "yarn && webpack && forever server.js",
+    "deploy": "yarn && webpack -p && forever server.js",
+    "redeploy": "yarn && webpack -p",
     "stop": "forever stopall"
   },
   "dependencies": {

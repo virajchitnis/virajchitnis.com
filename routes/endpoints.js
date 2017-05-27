@@ -4,10 +4,11 @@ const path = require('path');
 const sys = require('sys')
 const exec = require('child_process').exec;
 const crypto = require('crypto');
+const configJSON = require('../config.json');
 
 router.post('/githook', function (req, res) {
   xHubSig = req.headers['x-hub-signature'].substring(5);
-  hmac = crypto.createHmac('sha1', 'somesecret');
+  hmac = crypto.createHmac('sha1', configJSON.githook_secret);
   hmac.update(JSON.stringify(req.body));
   computedHubSig = hmac.digest('hex');
   if (xHubSig == computedHubSig) {

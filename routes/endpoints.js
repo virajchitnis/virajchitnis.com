@@ -35,7 +35,7 @@ router.post('/githook', function (req, res) {
 
 router.get('/health', function (req, res){
   console.log('health');
-    res.send(200, 'Up!');
+  res.status(200).send('Up!')
 });
 
 module.exports = router;

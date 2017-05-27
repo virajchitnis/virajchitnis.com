@@ -6,13 +6,21 @@
   "repository": "git@github.com:virajchitnis/virajchitnis.com.git",
   "author": "Viraj Chitnis <chitnisviraj@gmail.com>",
   "license": "MIT",
+  "watch": {
+    "start-server-watch": {
+      "patterns": ["src", "routes", "server.js"],
+      "extensions": "html,js,jsx,scss,jpg,png",
+      "quiet": true
+    }
+  },
   "scripts": {
-    "start-ui": "webpack-dev-server",
-    "start-server": "webpack && forever server.js",
+    "start": "npm-watch start-server-watch",
+    "stop": "forever stopall",
     "build": "webpack",
+    "start-webpack": "webpack-dev-server",
+    "start-server-watch": "webpack && forever server.js",
     "deploy": "yarn && webpack -p && forever server.js",
-    "redeploy": "yarn && webpack -p",
-    "stop": "forever stopall"
+    "redeploy": "yarn && webpack -p"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
@@ -31,6 +39,7 @@
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
     "node-sass": "^4.5.2",
+    "npm-watch": "^0.1.9",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-ga": "^2.2.0",

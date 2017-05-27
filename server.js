@@ -15,25 +15,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"'));
 
-app.get('/', function (req, res){
-    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
-});
-
-app.get('/resume', function (req, res){
-    res.sendFile(path.resolve(__dirname, 'public', 'resume.html'));
-});
-
-app.get('/apps', function (req, res){
-    res.sendFile(path.resolve(__dirname, 'public', 'apps.html'));
-});
-
-app.get('/winery', function (req, res){
-    res.sendFile(path.resolve(__dirname, 'public', 'winery.html'));
-});
-
-app.get('/credits', function (req, res){
-    res.sendFile(path.resolve(__dirname, 'public', 'credits.html'));
-});
+app.use('/', require('./routes/pages'));
 
 app.post('/githook', function (req, res) {
   xHubSig = req.headers['x-hub-signature'].substring(5);

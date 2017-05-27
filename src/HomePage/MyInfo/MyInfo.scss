@@ -28,18 +28,20 @@ $social_icons_height: 20px;
   animation-delay: 0s, 0.5s;
 
   img.profile {
+    border: 4px solid white;
+    @include animation(profile-image-delay 3s, profile-image-appear 1s);
+    animation-delay: 0s, 3s;
+    margin: 0 auto;
     height: $profile_img_size;
     width: $profile_img_size;
     @include border-radius($profile_img_size);
-    border: 4px solid white;
-    content: url('profile.jpg');
-    @include animation(profile-image-delay 3s, profile-image-appear 1s);
-    animation-delay: 0s, 3s;
+    @include src('profile.jpg', $profile_img_size_phone - 8px, $profile_img_size_phone - 8px);
 
     @include phone {
       height: $profile_img_size_phone;
       width: $profile_img_size_phone;
       @include border-radius($profile_img_size_phone);
+      @include src('profile.jpg', $profile_img_size_phone - 8px, $profile_img_size_phone - 8px);
     }
   }
 
@@ -81,31 +83,82 @@ $social_icons_height: 20px;
 
         @include phone {
           height: $social_icons_height_phone;
+          width: $social_icons_height_phone;
         }
         @include tablet {
           height: $social_icons_height;
+          width: $social_icons_height;
         }
         @include desktop {
           height: $social_icons_height;
+          width: $social_icons_height;
         }
 
         &.github {
-          content: url('GitHub-Mark-64px.png');
+          @include phone {
+            @include src('GitHub-Mark-64px.png', $social_icons_height_phone, $social_icons_height_phone);
+          }
+          @include tablet {
+            @include src('GitHub-Mark-64px.png', $social_icons_height, $social_icons_height);
+          }
+          @include desktop {
+            @include src('GitHub-Mark-64px.png', $social_icons_height, $social_icons_height);
+          }
         }
         &.linkedin {
-          content: url('In-2C-59px-R.png');
+          @include phone {
+            @include src('In-2C-59px-R.png', $social_icons_height_phone, $social_icons_height_phone);
+          }
+          @include tablet {
+            @include src('In-2C-59px-R.png', $social_icons_height, $social_icons_height);
+          }
+          @include desktop {
+            @include src('In-2C-59px-R.png', $social_icons_height, $social_icons_height);
+          }
         }
         &.twitter {
-          content: url('Twitter_Logo_Blue.png');
+          @include phone {
+            @include src('Twitter_Logo_Blue.png', $social_icons_height_phone, $social_icons_height_phone);
+          }
+          @include tablet {
+            @include src('Twitter_Logo_Blue.png', $social_icons_height, $social_icons_height);
+          }
+          @include desktop {
+            @include src('Twitter_Logo_Blue.png', $social_icons_height, $social_icons_height);
+          }
         }
         &.instagram {
-          content: url('IG_Glyph_Fill.png');
+          @include phone {
+            @include src('IG_Glyph_Fill.png', $social_icons_height_phone, $social_icons_height_phone);
+          }
+          @include tablet {
+            @include src('IG_Glyph_Fill.png', $social_icons_height, $social_icons_height);
+          }
+          @include desktop {
+            @include src('IG_Glyph_Fill.png', $social_icons_height, $social_icons_height);
+          }
         }
         &.mail {
-          content: url('519948-008_Mail-128.png');
+          @include phone {
+            @include src('519948-008_Mail-128.png', $social_icons_height_phone, $social_icons_height_phone);
+          }
+          @include tablet {
+            @include src('519948-008_Mail-128.png', $social_icons_height, $social_icons_height);
+          }
+          @include desktop {
+            @include src('519948-008_Mail-128.png', $social_icons_height, $social_icons_height);
+          }
         }
         &.gpg {
-          content: url('09_Keychain_v2.png');
+          @include phone {
+            @include src('09_Keychain_v2.png', $social_icons_height_phone, $social_icons_height_phone);
+          }
+          @include tablet {
+            @include src('09_Keychain_v2.png', $social_icons_height, $social_icons_height);
+          }
+          @include desktop {
+            @include src('09_Keychain_v2.png', $social_icons_height, $social_icons_height);
+          }
         }
       }
     }

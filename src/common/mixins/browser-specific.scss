@@ -12,6 +12,15 @@
           box-shadow: $shadow;
 }
 
+@mixin box-sizing($value...) {
+  -webkit-box-sizing: $value;
+   -khtml-box-sizing: $value;
+     -moz-box-sizing: $value;
+      -ms-box-sizing: $value;
+       -o-box-sizing: $value;
+          box-sizing: $value;
+}
+
 @mixin animation($value...) {
   -webkit-animation: $value;
    -khtml-animation: $value;
@@ -28,4 +37,12 @@
       -ms-#{$property}: #{$value};
        -o-#{$property}: #{$value};
           #{$property}: #{$value};
+}
+
+@mixin src($image, $width, $height) {
+  content: url($image);
+  background: url($image) no-repeat;
+  background-size: $width $height;
+  @include box-sizing(border-box);
+  display: block;
 }

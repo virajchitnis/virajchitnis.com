@@ -34,3 +34,6 @@ public
 
 # Yarn
 yarn.lock
+
+# Config file
+config.json

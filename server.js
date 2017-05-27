@@ -1,10 +1,7 @@
 const express = require('express');
 const path = require('path');
 const port = process.env.PORT || 3000;
-const sys = require('sys')
-const exec = require('child_process').exec;
 const morgan = require('morgan');
-const crypto = require('crypto');
 const bodyParser = require('body-parser');
 
 const app = express();

@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+const sys = require('sys')
+const exec = require('child_process').exec;
+const crypto = require('crypto');
 
 router.post('/githook', function (req, res) {
   xHubSig = req.headers['x-hub-signature'].substring(5);

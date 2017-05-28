@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const DEBUG = JSON.parse(process.env.DEBUG_ENV || '0');
 
@@ -48,6 +49,7 @@ module.exports = {
     filename: DEBUG ? 'bundle.js' : 'bundle.min.js'
   },
   plugins: DEBUG ? [
+    new FaviconsWebpackPlugin('./src/favicon.png'),
     HtmlWebpackPluginConfigIndex,
     HtmlWebpackPluginConfigResume,
     HtmlWebpackPluginConfigApps,
@@ -55,6 +57,7 @@ module.exports = {
     HtmlWebpackPluginConfigCredits,
     HtmlWebpackPluginConfigError
   ] : [
+    new FaviconsWebpackPlugin('./src/favicon.png'),
     HtmlWebpackPluginConfigIndex,
     HtmlWebpackPluginConfigResume,
     HtmlWebpackPluginConfigApps,

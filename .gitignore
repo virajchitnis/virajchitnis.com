@@ -37,3 +37,6 @@ yarn.lock
 
 # Config file
 config.json
+
+# Database
+db.db3

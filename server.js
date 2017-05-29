@@ -9,7 +9,10 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public', {
+  maxAge: 315360000,
+  setHeaders: setCustomCacheControl
+}));
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"'));
 
 app.use('/', require('./routes/pages'));
@@ -27,3 +30,10 @@ app.use(function (err, req, res, next) {
 
 app.listen(port);
 console.log("Server started on port " + port);
+
+function setCustomCacheControl (res, path, stat) {
+  if (express.static.mime.lookup(path) === 'text/html') {
+    // Custom Cache-Control for HTML files
+    res.setHeader('Cache-Control', 'public, max-age=0')
+  }
+}

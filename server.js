@@ -34,6 +34,10 @@ console.log("Server started on port " + port);
 function setCustomCacheControl (res, path, stat) {
   if (express.static.mime.lookup(path) === 'text/html') {
     // Custom Cache-Control for HTML files
-    res.setHeader('Cache-Control', 'public, max-age=0')
+    res.setHeader('Cache-Control', 'public, max-age=-1');
+    res.setHeader("Expires", new Date(Date.now() - 1).toUTCString());
+  }
+  else {
+    res.setHeader("Expires", new Date(Date.now() + 315360000).toUTCString());
   }
 }

@@ -21,6 +21,7 @@
     "start": "npm-watch start-server-watch",
     "stop": "forever stopall",
     "build": "webpack",
+    "build-prod": "webpack -p",
     "start-webpack": "webpack-dev-server",
     "start-server-watch": "webpack && forever server.js",
     "deploy": "yarn && webpack -p && forever server.js",

@@ -2,8 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
-const DEBUG = JSON.parse(process.env.DEBUG_ENV || '0');
-
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfigIndex = new HtmlWebpackPlugin({
   title: 'Viraj Chitnis',
@@ -46,9 +44,9 @@ module.exports = {
   entry: './src/App/index.jsx',
   output: {
     path: path.resolve('public'),
-    filename: DEBUG ? 'bundle.js' : 'bundle.min.js'
+    filename: 'bundle.[hash].js'
   },
-  plugins: DEBUG ? [
+  plugins: [
     new FaviconsWebpackPlugin('./src/favicon.png'),
     HtmlWebpackPluginConfigIndex,
     HtmlWebpackPluginConfigResume,
@@ -56,15 +54,6 @@ module.exports = {
     HtmlWebpackPluginConfigWinery,
     HtmlWebpackPluginConfigCredits,
     HtmlWebpackPluginConfigError
-  ] : [
-    new FaviconsWebpackPlugin('./src/favicon.png'),
-    HtmlWebpackPluginConfigIndex,
-    HtmlWebpackPluginConfigResume,
-    HtmlWebpackPluginConfigApps,
-    HtmlWebpackPluginConfigWinery,
-    HtmlWebpackPluginConfigCredits,
-    HtmlWebpackPluginConfigError,
-    new webpack.optimize.UglifyJsPlugin({minimize: true})
   ],
   module: {
     loaders: [

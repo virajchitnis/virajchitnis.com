@@ -10,7 +10,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(express.static(__dirname + '/public', {
-  maxAge: 315360000,
   setHeaders: setCustomCacheControl
 }));
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"'));
@@ -33,11 +32,12 @@ console.log("Server started on port " + port);
 
 function setCustomCacheControl (res, path, stat) {
   if (express.static.mime.lookup(path) === 'text/html') {
-    // Custom Cache-Control for HTML files
+    // Do not cache HTML files
     res.setHeader('Cache-Control', 'public, max-age=-1');
     res.setHeader("Expires", new Date(Date.now() - 1).toUTCString());
   }
   else {
-    res.setHeader("Expires", new Date(Date.now() + 315360000).toUTCString());
+    res.setHeader("Cache-Control", "public, max-age=31536000")
+    res.setHeader("Expires", new Date(Date.now() + 31536000000).toUTCString());
   }
 }

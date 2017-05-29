@@ -51,6 +51,7 @@
     "react-ga": "^2.2.0",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
+    "superagent": "^3.5.2",
     "trianglify": "^1.0.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.4.1",

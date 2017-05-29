@@ -18,4 +18,17 @@
   @include desktop {
     width: 18.46cm;
   }
+
+  p {
+    margin: 0 auto;
+
+    &.copyright {
+      font-family: 'Dancing Script', cursive;
+    }
+    &.commit {
+      margin-top: 5px;
+      font-size: 8pt;
+      font-family: 'Dosis', sans-serif;
+    }
+  }
 }

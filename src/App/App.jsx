@@ -6,17 +6,9 @@ import WineryPage from '../WineryPage/WineryPage.jsx';
 import CreditsPage from '../CreditsPage/CreditsPage.jsx';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 import './global.scss';
-import ReactGA from 'react-ga';
-ReactGA.initialize('UA-49231243-1');
 
 export default class App extends React.Component {
-  fireTracking() {
-    ReactGA.pageview(window.location.pathname);
-  }
-
   render() {
-    this.fireTracking();
-
     var dom;
     if (window.location.pathname == '/') {
       dom = (

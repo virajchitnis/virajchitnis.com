@@ -10,7 +10,8 @@ router.get('/gitcommit', function (req, res){
     exec('git rev-parse HEAD', function(err, stdout) {
       const commitId = stdout.substring(0,7);
       res.status(200).send({
-        commit_id: commitId
+        commit_id: commitId,
+        updated_at: configJSON.last_start_time
       });
     });
   }

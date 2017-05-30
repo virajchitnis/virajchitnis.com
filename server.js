@@ -3,8 +3,14 @@ const path = require('path');
 const port = process.env.PORT || 3000;
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 
 const app = express();
+
+let configJSON = require('./config.json');
+configJSON.last_start_time = new Date(Date.now()).toUTCString();
+const json = JSON.stringify(configJSON, null, 2);
+fs.writeFile('./config.json', json, 'utf8');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

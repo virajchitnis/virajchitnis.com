@@ -5,6 +5,7 @@ import AppsPage from '../AppsPage/AppsPage.jsx';
 import WineryPage from '../WineryPage/WineryPage.jsx';
 import CreditsPage from '../CreditsPage/CreditsPage.jsx';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
+import KeyModal from '../common/components/KeyModal/KeyModal.jsx';
 import './global.scss';
 
 export default class App extends React.Component {
@@ -41,6 +42,11 @@ export default class App extends React.Component {
       );
     }
 
-    return dom;
+    return (
+      <div>
+        <KeyModal />
+        {dom}
+      </div>
+    );
   }
 };

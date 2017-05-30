@@ -10,9 +10,27 @@ export default class Footer extends React.Component {
       commit_id: '',
       key: ''
     };
+
+    this.keyUpdated = this.keyUpdated.bind(this);
   }
 
   componentDidMount() {
+    document.addEventListener('api-key', this.keyUpdated);
+
+    const key = getCookie('key');
+    this.setState({
+      key: key
+    });
+    if (key != '') {
+      this.getGitCommit(key);
+    }
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('api-key', this.keyUpdated);
+  }
+
+  keyUpdated(e) {
     const key = getCookie('key');
     this.setState({
       key: key
@@ -31,6 +49,11 @@ export default class Footer extends React.Component {
       if (res.statusCode == 200) {
         self.setState({
           commit_id: res.body.commit_id
+        });
+      }
+      else {
+        self.setState({
+          commit_id: ''
         });
       }
     });

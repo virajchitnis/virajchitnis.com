@@ -4,12 +4,59 @@ import './MyInfo.scss';
 export default class MyInfo extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      keySequence: {
+        oneProfilePic: false,
+        twoProfilePic: false,
+        threeProfilePic: false
+      }
+    };
+    /* The sequence is: profile_pic -> profile_pic -> profile_name ->
+     *    profile_name -> profile_occupation -> profile_occupation ->
+     *    profile_pic -> profile_name -> profile_occupation
+     */
+
+     this.profileImageClick = this.profileImageClick.bind(this);
+  }
+
+  profileImageClick() {
+    const keySequence = this.state.keySequence;
+    if (!keySequence.oneProfilePic) {
+      this.setState({
+        keySequence: {
+          oneProfilePic: true,
+          twoProfilePic: false,
+          threeProfilePic: false
+        }
+      });
+    }
+    else if (keySequence.oneProfilePic && !keySequence.twoProfilePic && !keySequence.threeProfilePic) {
+      this.setState({
+        keySequence: {
+          oneProfilePic: true,
+          twoProfilePic: true,
+          threeProfilePic: false
+        }
+      });
+    }
+    else if (keySequence.oneProfilePic && keySequence.twoProfilePic && !keySequence.threeProfilePic) {
+      this.setState({
+        keySequence: {
+          oneProfilePic: false,
+          twoProfilePic: false,
+          threeProfilePic: false
+        }
+      });
+
+      var sequenceTriggeredEvent = new Event('sequenceTriggered');
+      document.dispatchEvent(sequenceTriggeredEvent);
+    }
   }
 
   render() {
     return (
       <div className="my-info">
-        <img className="profile" />
+        <img className="profile" onClick={this.profileImageClick} />
         <h1>Viraj Chitnis</h1>
         <h2>web developer, ios developer, and hobbyist vintner</h2>
         <div>

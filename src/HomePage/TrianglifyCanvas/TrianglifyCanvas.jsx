@@ -13,8 +13,8 @@ export default class TrianglifyCanvas extends React.Component {
   componentDidMount() {
     this.setState({
       pattern: Trianglify({
-        width: this.trianglifyCanvas.clientWidth,
-        height: this.trianglifyCanvas.clientHeight,
+        width: window.innerWidth,
+        height: window.innerHeight,
         cell_size: 40,
         seed: 'Viraj Chitnis',
         x_colors: 'YlGnBu',

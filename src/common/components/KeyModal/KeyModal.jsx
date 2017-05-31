@@ -96,7 +96,7 @@ export default class KeyModal extends React.Component {
             <p>Congratulations! You have discovered my secret portal to another world.</p>
             <p>A word of warning, if you choose to enter the portal, there is no comming back.</p>
             <form onSubmit={this.handleSubmit}>
-              <input placeholder="Enter key" value={this.state.input} onChange={this.handleChange} />
+              <input type="password" placeholder="Enter key" value={this.state.input} onChange={this.handleChange} />
             </form>
             <p>P.S. Don't waste your time trying to guess the key. There is no validation, and no indication as to whether the key you entered is valid or invalid. Only a valid key will take you to the other world, an invalid key will simply do nothing.</p>
             <p className="modal-dismiss-msg-desktop">To close this box, either press <b>esc</b>.</p>

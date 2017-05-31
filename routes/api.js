@@ -22,4 +22,6 @@ router.get('/gitcommit', function (req, res){
   }
 });
 
+router.use('/resume', require('./apis/resume'));
+
 module.exports = router;

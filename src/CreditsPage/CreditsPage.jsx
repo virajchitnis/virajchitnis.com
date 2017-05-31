@@ -18,7 +18,7 @@ export default class CreditsPage extends React.Component {
           <h3>homepage background</h3>
           <p>The homepage background is generated using the <a href="https://qrohlf.com/trianglify/" target="_blank">Trianglify</a> JavaScript library.</p>
           <h3>website</h3>
-          <p>The rest of the website is designed and built by me.</p>
+          <p>The rest of the website is designed, built and hosted completely by me. It uses <a href="https://facebook.github.io/react/" target="_blank">ReactJS</a>, <a href="https://webpack.js.org" target="_blank">Webpack</a>, <a href="https://nodejs.org/en/" target="_blank">Node.js</a>, <a href="https://expressjs.com" target="_blank">ExpressJS</a>, <a href="http://sass-lang.com" target="_blank">SASS</a>, <a href="https://www.nginx.com" target="_blank">Nginx</a>, and <a href="https://www.docker.com" target="_blank">Docker</a></p>
         </MainContents>
         <Footer />
       </div>

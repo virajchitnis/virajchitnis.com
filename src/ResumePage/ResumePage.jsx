@@ -149,6 +149,8 @@ export default class ResumePage extends React.Component {
                 </tr>
               </table>
               <br />
+              <p className="resume-frameworks-for-website">This website is designed, built and hosted completely by me. It uses <a href="https://facebook.github.io/react/" target="_blank">ReactJS</a>, <a href="https://webpack.js.org" target="_blank">Webpack</a>, <a href="https://nodejs.org/en/" target="_blank">Node.js</a>, <a href="https://expressjs.com" target="_blank">ExpressJS</a>, <a href="http://sass-lang.com" target="_blank">SASS</a>, <a href="https://www.nginx.com" target="_blank">Nginx</a>, and <a href="https://www.docker.com" target="_blank">Docker</a></p>
+              <br />
               <p>Expert at Git, I help my colleagues at CapitalOne with Git setup and roadblocks. I also continue tutoring students at Temple University on how to use Git and GitHub.</p>
               <br />
               <p>Expert at programming, worked on many different projects for school and in my free time. Run multiple Linux servers at home which host web, database, mail, DHCP, DNS, web proxy and data storage services.</p>

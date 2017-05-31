@@ -7,6 +7,8 @@ import CreditsPage from '../CreditsPage/CreditsPage.jsx';
 import ErrorPage from '../ErrorPage/ErrorPage.jsx';
 import KeyModal from '../common/components/KeyModal/KeyModal.jsx';
 import './global.scss';
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-49231243-1');
 
 export default class App extends React.Component {
   constructor(props) {
@@ -127,7 +129,13 @@ export default class App extends React.Component {
     });
   }
 
+  fireTracking() {
+    ReactGA.pageview(window.location.pathname);
+  }
+
   render() {
+    this.fireTracking();
+
     var dom;
     if (this.state.page === '') {
       if (window.location.pathname == '/') {

@@ -45,6 +45,7 @@ div.key-modal-background {
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
+      @include user-select(auto);
     }
     p.modal-dismiss-msg-desktop {
       @include phone {

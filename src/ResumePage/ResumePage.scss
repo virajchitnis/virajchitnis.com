@@ -4,8 +4,20 @@
 div.resume-header {
   display: none;
 }
+p.resume-my-website {
+  display: none;
+}
+p.resume-this-website {
+  display: block;
+}
 
 @include print {
+  p.resume-this-website {
+    display: none;
+  }
+  p.resume-my-website {
+    display: block;
+  }
   .menu-bar-top {
     display: none;
   }
@@ -26,7 +38,7 @@ div.resume-header {
 
         h1 {
           font-size: 60pt;
-          color: rgb(113, 126, 215);
+          color: rgb(93, 99, 209);
         }
       }
       div.address {

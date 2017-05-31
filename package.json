@@ -23,7 +23,7 @@
     "build": "webpack",
     "build-prod": "webpack -p",
     "start-webpack": "webpack-dev-server",
-    "start-server-watch": "webpack && forever server.js",
+    "start-server-watch": "yarn && webpack && forever server.js",
     "deploy": "yarn && webpack -p && forever server.js",
     "redeploy": "yarn && webpack -p"
   },

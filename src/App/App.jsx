@@ -38,31 +38,42 @@ export default class App extends React.Component {
     document.removeEventListener("creditsClick", this.creditsClick);
   }
 
+  resetScrollPosition() {
+    if (window.location.pathname === '/') {
+      window.scrollTo(0,0);
+    }
+  }
+
   resumeClick() {
+    this.resetScrollPosition();
     this.setState({
       page: 'ResumePage'
     });
   }
 
   appsClick() {
+    this.resetScrollPosition();
     this.setState({
       page: 'AppsPage'
     });
   }
 
   homeClick() {
+    this.resetScrollPosition();
     this.setState({
       page: 'HomePage'
     });
   }
 
   wineryClick() {
+    this.resetScrollPosition();
     this.setState({
       page: 'WineryPage'
     });
   }
 
   creditsClick() {
+    this.resetScrollPosition();
     this.setState({
       page: 'CreditsPage'
     });

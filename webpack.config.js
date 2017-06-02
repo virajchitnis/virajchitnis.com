@@ -39,6 +39,12 @@ const HtmlWebpackPluginConfigError = new HtmlWebpackPlugin({
   filename: 'error.html',
   inject: 'body'
 });
+const HtmlWebpackPluginConfigError50x = new HtmlWebpackPlugin({
+  title: 'Error - Viraj Chitnis',
+  template: './src/error50x.ejs',
+  filename: 'error50x.html',
+  inject: false
+});
 
 module.exports = {
   entry: './src/App/index.jsx',
@@ -53,7 +59,8 @@ module.exports = {
     HtmlWebpackPluginConfigApps,
     HtmlWebpackPluginConfigWinery,
     HtmlWebpackPluginConfigCredits,
-    HtmlWebpackPluginConfigError
+    HtmlWebpackPluginConfigError,
+    HtmlWebpackPluginConfigError50x
   ],
   module: {
     loaders: [

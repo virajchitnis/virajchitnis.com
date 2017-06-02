@@ -13,7 +13,8 @@ export default class ErrorPage extends React.Component {
       <div>
         <MenuBar />
         <MainContents>
-          <h3>Something seems wrong, either the page you requested does not exist, or something broke on our side, please try again later or try double checking your request.</h3>
+          <h2>404 Not Found</h2>
+          <h3>The page you requested does not exist, please try double checking your request.</h3>
           <p>If you believe something is wrong with the website, please email me at <a href="mailto:viraj@virajchitnis.com">viraj@virajchitnis.com</a></p>
         </MainContents>
         <Footer />

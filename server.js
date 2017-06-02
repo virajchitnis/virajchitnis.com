@@ -30,7 +30,7 @@ app.use(function (req, res, next) {
 
 app.use(function (err, req, res, next) {
   console.error(err.stack)
-  res.status(500).sendFile(path.resolve(__dirname, 'public', 'error.html'));
+  res.status(500).sendFile(path.resolve(__dirname, 'public', 'error50x.html'));
 });
 
 app.listen(port);

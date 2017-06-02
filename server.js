@@ -4,11 +4,36 @@ const port = process.env.PORT || 3000;
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const fs = require('fs');
+const exec = require('child_process').exec;
+const Mailgun = require('mailgun-js');
+const configJSON = require('./config/config.json');
+
+// Send status email
+if (configJSON.mailgun_api_key != '') {
+  exec('git rev-parse HEAD', function(err, stdout) {
+    const commitId = stdout.substring(0,7);
+    const currDate = new Date(Date.now()).toLocaleTimeString();
+    const mailgun = new Mailgun({apiKey: configJSON.mailgun_api_key, domain: 'virajchitnis.com'});
+    var mailgun_data = {
+      from: 'no-reply@virajchitnis.com',
+      to: 'chitnisviraj@gmail.com',
+      subject: 'Website restarted at ' + currDate,
+      html: '<p>The website was restarted at ' + currDate + '.</p><p>The current Git commit ID is <a href="https://github.com/virajchitnis/virajchitnis.com/commit/' + commitId + '">' + commitId + '</a>.</p>'
+    }
+    mailgun.messages().send(mailgun_data, function (err, body) {
+      if (err) {
+        console.error("got an error: ", err);
+      }
+      else {
+        console.log(body);
+      }
+    });
+  });
+}
 
 const app = express();
 app.set('trust proxy', true);
 
-let configJSON = require('./config/config.json');
 configJSON.last_start_time = new Date(Date.now()).toUTCString();
 const json = JSON.stringify(configJSON, null, 2);
 fs.writeFile('./config/config.json', json, 'utf8');

@@ -35,6 +35,7 @@ config.json
 ```
 {
   "githook_secret": "secret",
-  "api_key": "B4BD32A1-74EC-40A3-B1B9-01CD1DAD3650"
+  "api_key": "B4BD32A1-74EC-40A3-B1B9-01CD1DAD3650",
+  "mailgun_api_key": ""
 }
 ```

@@ -40,3 +40,6 @@ config.json
 
 # Database
 db.db3
+
+# Config
+config

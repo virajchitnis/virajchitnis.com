@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const exec = require('child_process').exec;
-const configJSON = require('../config.json');
+const configJSON = require('../config/config.json');
 
 router.get('/gitcommit', function (req, res){
   const apikey = req.headers['api-key'];

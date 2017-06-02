@@ -4,7 +4,7 @@ const path = require('path');
 const sys = require('sys')
 const exec = require('child_process').exec;
 const crypto = require('crypto');
-const configJSON = require('../config.json');
+const configJSON = require('../config/config.json');
 
 router.post('/githook', function (req, res) {
   xHubSig = req.headers['x-hub-signature'].substring(5);

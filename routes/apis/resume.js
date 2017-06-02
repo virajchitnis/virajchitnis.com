@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const configJSON = require('../../config.json');
+const configJSON = require('../../config/config.json');
 const resumeJSON = require('../../config/resume.json')
 
 router.get('/', function (req, res){

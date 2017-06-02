@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 
 const app = express();
+app.set('trust proxy', true);
 
 let configJSON = require('./config/config.json');
 configJSON.last_start_time = new Date(Date.now()).toUTCString();

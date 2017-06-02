@@ -6,27 +6,32 @@ export default class MenuBarContents extends React.Component {
     super(props);
   }
 
-  resumeClick() {
+  resumeClick(e) {
+    e.preventDefault();
     var resumeClickEvent = new Event('resumeClick');
     document.dispatchEvent(resumeClickEvent);
   }
 
-  appsClick() {
+  appsClick(e) {
+    e.preventDefault();
     var appsClickEvent = new Event('appsClick');
     document.dispatchEvent(appsClickEvent);
   }
 
-  homeClick() {
+  homeClick(e) {
+    e.preventDefault();
     var homeClickEvent = new Event('homeClick');
     document.dispatchEvent(homeClickEvent);
   }
 
-  wineryClick() {
+  wineryClick(e) {
+    e.preventDefault();
     var wineryClickEvent = new Event('wineryClick');
     document.dispatchEvent(wineryClickEvent);
   }
 
-  creditsClick() {
+  creditsClick(e) {
+    e.preventDefault();
     var creditsClickEvent = new Event('creditsClick');
     document.dispatchEvent(creditsClickEvent);
   }
@@ -36,39 +41,39 @@ export default class MenuBarContents extends React.Component {
       <div>
         <div className="container">
           <div className="nav-link">
-            <a className="nav-standard" href="javascript:void(0);" onClick={this.resumeClick}>resumé</a>
+            <a className="nav-standard" href="/resume" onClick={this.resumeClick}>resumé</a>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="javascript:void(0);" onClick={this.appsClick}>apps</a>
+            <a className="nav-standard" href="/apps" onClick={this.appsClick}>apps</a>
           </div>
           <div className="nav-link">
-            <a className="nav-home" href="javascript:void(0);" onClick={this.homeClick}>VC</a>
+            <a className="nav-home" href="/" onClick={this.homeClick}>VC</a>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="javascript:void(0);" onClick={this.wineryClick}>winery</a>
+            <a className="nav-standard" href="/winery" onClick={this.wineryClick}>winery</a>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="javascript:void(0);" onClick={this.creditsClick}>credits</a>
+            <a className="nav-standard" href="/credits" onClick={this.creditsClick}>credits</a>
           </div>
         </div>
         <div className="container-mobile">
           <div className="nav-link nav-link-top-home">
-            <a className="nav-home" href="javascript:void(0);" onClick={this.homeClick}>VC</a>
+            <a className="nav-home" href="/" onClick={this.homeClick}>VC</a>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="javascript:void(0);" onClick={this.resumeClick}>resumé</a>
+            <a className="nav-standard" href="/resume" onClick={this.resumeClick}>resumé</a>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="javascript:void(0);" onClick={this.appsClick}>apps</a>
+            <a className="nav-standard" href="/apps" onClick={this.appsClick}>apps</a>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="javascript:void(0);" onClick={this.wineryClick}>winery</a>
+            <a className="nav-standard" href="/winery" onClick={this.wineryClick}>winery</a>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="javascript:void(0);" onClick={this.creditsClick}>credits</a>
+            <a className="nav-standard" href="/credits" onClick={this.creditsClick}>credits</a>
           </div>
           <div className="nav-link nav-link-bottom-home">
-            <a className="nav-home" href="javascript:void(0);" onClick={this.homeClick}>VC</a>
+            <a className="nav-home" href="/" onClick={this.homeClick}>VC</a>
           </div>
         </div>
       </div>

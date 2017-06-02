@@ -69,6 +69,12 @@ p.resume-this-website {
         h3, h4 {
           color: rgb(122, 122, 122);
         }
+        div {
+          margin-top: 30px;
+        }
+        div:first-of-type {
+          margin-top: 0;
+        }
         h3:first-of-type {
           margin-top: 0;
         }

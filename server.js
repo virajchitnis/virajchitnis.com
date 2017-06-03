@@ -11,15 +11,15 @@ const configJSON = require('./config/config.json');
 
 // Send status email
 if (configJSON.mailgun_api_key != '') {
-  exec('git rev-parse HEAD', function(err, stdout) {
-    const commitId = stdout.substring(0,7);
+  exec('git tag -l --points-at HEAD', function(err, stdout) {
+    const commitId = stdout;
     const currDate = new Date(Date.now()).toUTCString();
     const mailgun = new Mailgun({apiKey: configJSON.mailgun_api_key, domain: 'virajchitnis.com'});
     var mailgun_data = {
       from: 'no-reply@virajchitnis.com',
       to: 'chitnisviraj@gmail.com',
       subject: 'Website restarted at ' + currDate,
-      html: '<p>The website was restarted at ' + currDate + '.</p><p>The current Git commit ID is <a href="https://github.com/virajchitnis/virajchitnis.com/commit/' + commitId + '">' + commitId + '</a>.</p>'
+      html: '<p>The website was restarted at ' + currDate + '.</p><p>The current website version is <a href="https://github.com/virajchitnis/virajchitnis.com/tree/' + commitId + '">' + commitId + '</a>.</p>'
     }
     mailgun.messages().send(mailgun_data, function (err, body) {
       if (err) {

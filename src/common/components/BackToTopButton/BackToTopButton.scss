@@ -1,0 +1,53 @@
+@import '../../mixins/media';
+@import '../../mixins/browser-specific';
+
+$button_size: 50px;
+
+.back-to-top-button-float {
+  img {
+    @include src('chevron-up.png', $button_size, $button_size);
+    width: $button_size;
+    height: $button_size;
+    border-radius: $button_size / 2;
+    background-color: rgb(255, 255, 255);
+    @include border-shadow(0px 0px 4px 0px rgba(0,0,0,0.5));
+    z-index: 5;
+    position: fixed;
+    bottom: 10px;
+
+    @include phone {
+      right: 10px;
+    }
+    @include tablet {
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    @include desktop {
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+  div {
+    display: none;
+  }
+}
+
+.back-to-top-button-inpage {
+  text-align: center;
+  margin-top: 30px;
+
+  img {
+    display: none;
+  }
+  div {
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 5px;
+    padding-left: 9px;
+    padding-right: 9px;
+    border-radius: 5px;
+    background-color: #efe;
+  }
+}

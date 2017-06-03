@@ -4,6 +4,7 @@ import {getCookie} from '../common/functions/Cookies.js';
 import MenuBar from '../common/components/MenuBar/MenuBar.jsx';
 import MainContents from '../common/components/MainContents/MainContents.jsx';
 import Footer from '../common/components/Footer/Footer.jsx';
+import BackToTopButton from '../common/components/BackToTopButton/BackToTopButton.jsx';
 import './ResumePage.scss';
 
 export default class ResumePage extends React.Component {
@@ -291,6 +292,7 @@ export default class ResumePage extends React.Component {
               <p>English (primary), Marathi and Hindi</p>
             </div>
           </div>
+          <BackToTopButton type="back-to-top-button-inpage" />
         </MainContents>
         <Footer />
       </div>

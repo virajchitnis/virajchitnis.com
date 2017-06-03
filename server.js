@@ -3,6 +3,7 @@ const path = require('path');
 const port = process.env.PORT || 3000;
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const fs = require('fs');
 const exec = require('child_process').exec;
 const Mailgun = require('mailgun-js');
@@ -12,7 +13,7 @@ const configJSON = require('./config/config.json');
 if (configJSON.mailgun_api_key != '') {
   exec('git rev-parse HEAD', function(err, stdout) {
     const commitId = stdout.substring(0,7);
-    const currDate = new Date(Date.now()).toLocaleTimeString();
+    const currDate = new Date(Date.now()).toUTCString();
     const mailgun = new Mailgun({apiKey: configJSON.mailgun_api_key, domain: 'virajchitnis.com'});
     var mailgun_data = {
       from: 'no-reply@virajchitnis.com',
@@ -40,6 +41,7 @@ fs.writeFile('./config/config.json', json, 'utf8');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cookieParser(configJSON.cookie_parser_secret));
 
 app.use(express.static(__dirname + '/public', {
   setHeaders: setCustomCacheControl

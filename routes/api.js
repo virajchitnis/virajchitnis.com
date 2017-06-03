@@ -8,7 +8,7 @@ const configJSON = require('../config/config.json');
 router.get('/gitcommit', function (req, res){
   const apikey = req.headers['api-key'];
   if (apikey == configJSON.api_key) {
-    newDevice(req.signedCookies['_vcid'], req.headers['user-agent'], '_vcid', res, configJSON.mailgun_api_key, req.ip);
+    newDevice('_vcid', res, req, configJSON.mailgun_api_key, configJSON.authorized_device_secret);
     exec('git rev-parse HEAD', function(err, stdout) {
       const commitId = stdout.substring(0,7);
       res.status(200).send({

@@ -74,7 +74,7 @@ export default class Footer extends React.Component {
     let formattedDate = '';
 
     if (commit_id != '') {
-      commitURL = "https://github.com/virajchitnis/virajchitnis.com/commit/" + commit_id;
+      commitURL = "https://github.com/virajchitnis/virajchitnis.com/tree/" + commit_id;
       formattedDate = new Date(updated_at).toLocaleTimeString("en-us", options);
       commitFooter = (
         <p className="commit">

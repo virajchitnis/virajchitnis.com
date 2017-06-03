@@ -12,7 +12,7 @@ router.post('/githook', function (req, res) {
   hmac.update(JSON.stringify(req.body));
   computedHubSig = hmac.digest('hex');
   if (xHubSig == computedHubSig) {
-    if (req.body.ref == "refs/heads/master") {
+    if (req.body.ref.startsWith("refs/tags/")) {
       function puts(error, stdout, stderr) { sys.puts(stdout) }
       exec("./githook.sh", puts);
       res.send({

@@ -9,8 +9,8 @@ router.get('/gitcommit', function (req, res){
   const apikey = req.headers['api-key'];
   if (apikey == configJSON.api_key) {
     newDevice('_vcid', res, req, configJSON.mailgun_api_key, configJSON.authorized_device_secret);
-    exec('git rev-parse HEAD', function(err, stdout) {
-      const commitId = stdout.substring(0,7);
+    exec('git tag -l --points-at HEAD', function(err, stdout) {
+      const commitId = stdout;
       res.status(200).send({
         commit_id: commitId,
         updated_at: configJSON.last_start_time

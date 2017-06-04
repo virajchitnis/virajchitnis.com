@@ -1,7 +1,6 @@
 const uuidV4 = require('uuid/v4');
 const crypto = require('crypto');
 const Mailgun = require('mailgun-js');
-const shasum = crypto.createHash('sha1');
 
 module.exports = newDevice;
 
@@ -43,6 +42,7 @@ function newDevice(name, res, req, mailgunKey, serverSecret) {
 }
 
 function authorizedDevice(secret) {
+  const shasum = crypto.createHash('sha1');
   shasum.update(secret);
   hashedSecret = shasum.digest('hex');
   return hashedSecret;

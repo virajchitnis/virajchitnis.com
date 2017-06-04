@@ -1,4 +1,5 @@
 import React from 'react';
+import {RouterLink} from 'reactjs-router';
 import './MenuBarContents.scss';
 
 export default class MenuBarContents extends React.Component {
@@ -6,74 +7,44 @@ export default class MenuBarContents extends React.Component {
     super(props);
   }
 
-  resumeClick(e) {
-    e.preventDefault();
-    var resumeClickEvent = new Event('resumeClick');
-    document.dispatchEvent(resumeClickEvent);
-  }
-
-  appsClick(e) {
-    e.preventDefault();
-    var appsClickEvent = new Event('appsClick');
-    document.dispatchEvent(appsClickEvent);
-  }
-
-  homeClick(e) {
-    e.preventDefault();
-    var homeClickEvent = new Event('homeClick');
-    document.dispatchEvent(homeClickEvent);
-  }
-
-  wineryClick(e) {
-    e.preventDefault();
-    var wineryClickEvent = new Event('wineryClick');
-    document.dispatchEvent(wineryClickEvent);
-  }
-
-  creditsClick(e) {
-    e.preventDefault();
-    var creditsClickEvent = new Event('creditsClick');
-    document.dispatchEvent(creditsClickEvent);
-  }
-
   render() {
     return (
       <div>
         <div className="container">
           <div className="nav-link">
-            <a className="nav-standard" href="/resume" onClick={this.resumeClick}>resumé</a>
+            <RouterLink className="nav-standard" title="Resumé - Viraj Chitnis" href="/resume" resetScrollPos>resumé</RouterLink>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="/apps" onClick={this.appsClick}>apps</a>
+            <RouterLink className="nav-standard" title="Apps - Viraj Chitnis" href="/apps" resetScrollPos>apps</RouterLink>
           </div>
           <div className="nav-link">
-            <a className="nav-home" href="/" onClick={this.homeClick}>VC</a>
+            <RouterLink className="nav-home" title="Viraj Chitnis" href="/">VC</RouterLink>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="/winery" onClick={this.wineryClick}>winery</a>
+            <RouterLink className="nav-standard" title="Winery - Viraj Chitnis" href="/winery" resetScrollPos>winery</RouterLink>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="/credits" onClick={this.creditsClick}>credits</a>
+            <RouterLink className="nav-standard" title="Credits - Viraj Chitnis" href="/credits" resetScrollPos>credits</RouterLink>
           </div>
         </div>
         <div className="container-mobile">
           <div className="nav-link nav-link-top-home">
-            <a className="nav-home" href="/" onClick={this.homeClick}>VC</a>
+            <RouterLink className="nav-home" title="Viraj Chitnis" href="/">VC</RouterLink>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="/resume" onClick={this.resumeClick}>resumé</a>
+            <RouterLink className="nav-standard" title="Resumé - Viraj Chitnis" href="/resume" resetScrollPos>resumé</RouterLink>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="/apps" onClick={this.appsClick}>apps</a>
+            <RouterLink className="nav-standard" title="Apps - Viraj Chitnis" href="/apps" resetScrollPos>apps</RouterLink>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="/winery" onClick={this.wineryClick}>winery</a>
+            <RouterLink className="nav-standard" title="Winery - Viraj Chitnis" href="/winery" resetScrollPos>winery</RouterLink>
           </div>
           <div className="nav-link">
-            <a className="nav-standard" href="/credits" onClick={this.creditsClick}>credits</a>
+            <RouterLink className="nav-standard" title="Credits - Viraj Chitnis" href="/credits" resetScrollPos>credits</RouterLink>
           </div>
           <div className="nav-link nav-link-bottom-home">
-            <a className="nav-home" href="/" onClick={this.homeClick}>VC</a>
+            <RouterLink className="nav-home" title="Viraj Chitnis" href="/">VC</RouterLink>
           </div>
         </div>
       </div>

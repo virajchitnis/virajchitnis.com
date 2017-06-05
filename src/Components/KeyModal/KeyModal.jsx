@@ -1,5 +1,5 @@
 import React from 'react';
-import {getCookie,setCookie} from '../../Classes/Cookies.js';
+import Cookies from '../../Classes/Cookies.js';
 import './KeyModal.scss';
 
 export default class KeyModal extends React.Component {
@@ -31,7 +31,7 @@ export default class KeyModal extends React.Component {
   }
 
   handleTapSequence() {
-    const key = getCookie('key');
+    const key = Cookies.getCookie('key');
     this.setState({
       displayModal: true,
       input: key
@@ -45,7 +45,7 @@ export default class KeyModal extends React.Component {
   }
 
   handleSubmit(event) {
-    setCookie('key', this.state.input, 30);
+    Cookies.setCookie('key', this.state.input, 30);
     var apiKeyEvent = new Event('api-key');
     document.dispatchEvent(apiKeyEvent);
 
@@ -69,7 +69,7 @@ export default class KeyModal extends React.Component {
       });
 
       if (keys[16] && keys[75]) {
-        const key = getCookie('key');
+        const key = Cookies.getCookie('key');
         this.setState({
           displayModal: true,
           input: key

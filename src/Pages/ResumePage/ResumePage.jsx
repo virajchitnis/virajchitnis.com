@@ -1,6 +1,6 @@
 import React from 'react';
 import request from 'superagent';
-import {getCookie} from '../../Classes/Cookies.js';
+import Cookies from '../../Classes/Cookies.js';
 import MenuBar from '../../Components/MenuBar/MenuBar.jsx';
 import MainContents from '../../Components/MainContents/MainContents.jsx';
 import Footer from '../../Components/Footer/Footer.jsx';
@@ -32,7 +32,7 @@ export default class ResumePage extends React.Component {
   }
 
   getPrivateResumeData() {
-    const key = getCookie('key');
+    const key = Cookies.getCookie('key');
     this.setState({
       key: key
     });

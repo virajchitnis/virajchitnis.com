@@ -1,6 +1,6 @@
 import React from 'react';
 import request from 'superagent';
-import {getCookie} from '../../Classes/Cookies.js';
+import Cookies from '../../Classes/Cookies.js';
 import './Footer.scss';
 
 export default class Footer extends React.Component {
@@ -17,7 +17,7 @@ export default class Footer extends React.Component {
   componentDidMount() {
     document.addEventListener('api-key', this.keyUpdated);
 
-    const key = getCookie('key');
+    const key = Cookies.getCookie('key');
     this.setState({
       key: key
     });
@@ -31,7 +31,7 @@ export default class Footer extends React.Component {
   }
 
   keyUpdated(e) {
-    const key = getCookie('key');
+    const key = Cookies.getCookie('key');
     this.setState({
       key: key
     });

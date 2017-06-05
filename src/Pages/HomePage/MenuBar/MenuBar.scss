@@ -1,0 +1,59 @@
+@import '../../../App/scss/media';
+@import '../../../App/scss/browser-specific';
+
+$background_color: white;
+
+.menu-bar {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  background-color: $background_color;
+  @include border-shadow(0px 0px 8px 0px rgba(0,0,0,0.75));
+  width: 100%;
+
+  @include phone {
+    bottom: -96px;
+  }
+  @include tablet {
+    bottom: -63px;
+  }
+  @include desktop {
+    bottom: -63px;
+  }
+
+  .show-up {
+    @include animation(menu-bar-slide-up 0.5s);
+    bottom: 0;
+    display: block;
+  }
+
+  @include phone {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  @include tablet {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @include desktop {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+@keyframes menu-bar-slide-up {
+  from {
+    @include phone {
+      bottom: -96px;
+    }
+    @include tablet {
+      bottom: -63px;
+    }
+    @include desktop {
+      bottom: -63px;
+    }
+  }
+  to {
+    bottom: 0;
+  }
+}

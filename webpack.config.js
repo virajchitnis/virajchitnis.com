@@ -5,43 +5,43 @@ let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackPluginConfigIndex = new HtmlWebpackPlugin({
   title: 'Viraj Chitnis',
-  template: './src/App/index.ejs',
+  template: './src/App/html/index.ejs',
   filename: 'index.html',
   inject: 'body'
 });
 const HtmlWebpackPluginConfigResume = new HtmlWebpackPlugin({
   title: 'Resumé - Viraj Chitnis',
-  template: './src/App/index.ejs',
+  template: './src/App/html/index.ejs',
   filename: 'resume.html',
   inject: 'body'
 });
 const HtmlWebpackPluginConfigApps = new HtmlWebpackPlugin({
   title: 'Apps - Viraj Chitnis',
-  template: './src/App/index.ejs',
+  template: './src/App/html/index.ejs',
   filename: 'apps.html',
   inject: 'body'
 });
 const HtmlWebpackPluginConfigWinery = new HtmlWebpackPlugin({
   title: 'Winery - Viraj Chitnis',
-  template: './src/App/index.ejs',
+  template: './src/App/html/index.ejs',
   filename: 'winery.html',
   inject: 'body'
 });
 const HtmlWebpackPluginConfigCredits = new HtmlWebpackPlugin({
   title: 'Credits - Viraj Chitnis',
-  template: './src/App/index.ejs',
+  template: './src/App/html/index.ejs',
   filename: 'credits.html',
   inject: 'body'
 });
 const HtmlWebpackPluginConfigError = new HtmlWebpackPlugin({
   title: 'Error - Viraj Chitnis',
-  template: './src/App/index.ejs',
+  template: './src/App/html/index.ejs',
   filename: 'error.html',
   inject: 'body'
 });
 const HtmlWebpackPluginConfigError50x = new HtmlWebpackPlugin({
   title: 'Error - Viraj Chitnis',
-  template: './src/error50x.ejs',
+  template: './src/App/html/error50x.ejs',
   filename: 'error50x.html',
   inject: false
 });
@@ -53,7 +53,7 @@ module.exports = {
     filename: 'bundle.[hash].js'
   },
   plugins: [
-    new FaviconsWebpackPlugin('./src/favicon.png'),
+    new FaviconsWebpackPlugin('./src/App/favicon.png'),
     HtmlWebpackPluginConfigIndex,
     HtmlWebpackPluginConfigResume,
     HtmlWebpackPluginConfigApps,

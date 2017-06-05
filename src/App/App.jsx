@@ -1,13 +1,13 @@
 import React from 'react';
-import HomePage from '../HomePage/HomePage.jsx';
-import ResumePage from '../ResumePage/ResumePage.jsx';
-import AppsPage from '../AppsPage/AppsPage.jsx';
-import WineryPage from '../WineryPage/WineryPage.jsx';
-import CreditsPage from '../CreditsPage/CreditsPage.jsx';
-import ErrorPage from '../ErrorPage/ErrorPage.jsx';
-import KeyModal from '../common/components/KeyModal/KeyModal.jsx';
+import HomePage from '../Pages/HomePage/HomePage.jsx';
+import ResumePage from '../Pages/ResumePage/ResumePage.jsx';
+import AppsPage from '../Pages/AppsPage/AppsPage.jsx';
+import WineryPage from '../Pages/WineryPage/WineryPage.jsx';
+import CreditsPage from '../Pages/CreditsPage/CreditsPage.jsx';
+import ErrorPage from '../Pages/ErrorPage/ErrorPage.jsx';
+import KeyModal from '../Components/KeyModal/KeyModal.jsx';
 import {RouterRoute} from 'reactjs-router';
-import './global.scss';
+import './scss/global.scss';
 import ReactGA from 'react-ga';
 ReactGA.initialize('UA-49231243-1');
 

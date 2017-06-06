@@ -66,11 +66,10 @@ module.exports = {
     loaders: [
       {
         test: /\.(jpg|png|svg)$/,
-        loader: 'url-loader',
-        include: __dirname + '/src',
+        loader: 'file-loader',
         options: {
-          limit: 25000,
-        },
+          name: './images/[name].[hash].[ext]',
+        }
       },
       {
         test: /\.jsx$/,

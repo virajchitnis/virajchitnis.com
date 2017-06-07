@@ -1,6 +1,8 @@
 virajchitnis.com
 ================
 
+Built using ReactJS, Webpack, Node.js, ExpressJS and SASS.
+
 Requirements
 ------------
 

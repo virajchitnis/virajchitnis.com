@@ -3,7 +3,8 @@ const router = express.Router();
 const path = require('path');
 const exec = require('child_process').exec;
 const newDevice = require('../modules/new-device');
-const configJSON = require('../config/config.json');
+const configJSON = require('../config/config.json')
+const downloadsJSON = require('../config/downloads.json');
 
 router.get('/gitcommit', function (req, res){
   const apikey = req.headers['api-key'];
@@ -22,6 +23,10 @@ router.get('/gitcommit', function (req, res){
       status: "error"
     });
   }
+});
+
+router.get('/downloads', function (req, res){
+  res.status(200).send(downloadsJSON);
 });
 
 router.use('/resume', require('./apis/resume'));

@@ -22,4 +22,8 @@ router.get('/credits', function (req, res){
     res.sendFile(path.resolve('public', 'credits.html'));
 });
 
+router.get('/downloads', function (req, res){
+    res.sendFile(path.resolve('public', 'downloads.html'));
+});
+
 module.exports = router;

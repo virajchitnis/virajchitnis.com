@@ -7,37 +7,50 @@ const HtmlWebpackPluginConfigIndex = new HtmlWebpackPlugin({
   title: 'Viraj Chitnis',
   template: './src/App/html/index.ejs',
   filename: 'index.html',
-  inject: 'body'
+  inject: true,
+  chunks: ['main']
 });
 const HtmlWebpackPluginConfigResume = new HtmlWebpackPlugin({
   title: 'Resumé - Viraj Chitnis',
   template: './src/App/html/index.ejs',
   filename: 'resume.html',
-  inject: 'body'
+  inject: true,
+  chunks: ['main']
 });
 const HtmlWebpackPluginConfigApps = new HtmlWebpackPlugin({
   title: 'Apps - Viraj Chitnis',
   template: './src/App/html/index.ejs',
   filename: 'apps.html',
-  inject: 'body'
+  inject: true,
+  chunks: ['main']
 });
 const HtmlWebpackPluginConfigWinery = new HtmlWebpackPlugin({
   title: 'Winery - Viraj Chitnis',
   template: './src/App/html/index.ejs',
   filename: 'winery.html',
-  inject: 'body'
+  inject: true,
+  chunks: ['main']
 });
 const HtmlWebpackPluginConfigCredits = new HtmlWebpackPlugin({
   title: 'Credits - Viraj Chitnis',
   template: './src/App/html/index.ejs',
   filename: 'credits.html',
-  inject: 'body'
+  inject: true,
+  chunks: ['main']
 });
 const HtmlWebpackPluginConfigError = new HtmlWebpackPlugin({
   title: 'Error - Viraj Chitnis',
   template: './src/App/html/index.ejs',
   filename: 'error.html',
-  inject: 'body'
+  inject: true,
+  chunks: ['main']
+});
+const HtmlWebpackPluginConfigDownloads = new HtmlWebpackPlugin({
+  title: 'Downloads - Viraj Chitnis',
+  template: './src/App/html/index.ejs',
+  filename: 'downloads.html',
+  inject: true,
+  chunks: ['downloads']
 });
 const HtmlWebpackPluginConfigError50x = new HtmlWebpackPlugin({
   title: 'Error - Viraj Chitnis',
@@ -47,10 +60,13 @@ const HtmlWebpackPluginConfigError50x = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-  entry: './src/App/index.jsx',
+  entry: {
+    main: './src/App/index.jsx',
+    downloads: './src/Pages/DownloadsPage/entry.jsx'
+  },
   output: {
     path: path.resolve('public'),
-    filename: 'bundle.[hash].js'
+    filename: 'bundle.[name].[hash].js'
   },
   plugins: [
     new FaviconsWebpackPlugin('./src/App/favicon.png'),
@@ -60,6 +76,7 @@ module.exports = {
     HtmlWebpackPluginConfigWinery,
     HtmlWebpackPluginConfigCredits,
     HtmlWebpackPluginConfigError,
+    HtmlWebpackPluginConfigDownloads,
     HtmlWebpackPluginConfigError50x
   ],
   module: {

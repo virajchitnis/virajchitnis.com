@@ -1,5 +1,5 @@
 import React from 'react';
-import {RouterLink} from 'reactjs-router';
+import {RouterLink} from '../../Classes/Router.jsx';
 import './MenuBarContents.scss';
 
 export default class MenuBarContents extends React.Component {

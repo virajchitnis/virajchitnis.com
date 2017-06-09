@@ -72,7 +72,7 @@ module.exports = {
         }
       },
       {
-        test: /\.jsx$/,
+        test: /\.(jsx|js)$/,
         loader: 'babel-loader',
         include: __dirname + '/src'
       },

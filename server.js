@@ -46,6 +46,7 @@ app.use(cookieParser(configJSON.cookie_parser_secret));
 app.use(express.static(__dirname + '/public', {
   setHeaders: setCustomCacheControl
 }));
+app.use('/dist', express.static(__dirname + '/config/dist'));
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"'));
 
 app.use('/', require('./routes/pages'));

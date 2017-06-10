@@ -76,7 +76,8 @@ export default class DownloadsPage extends React.Component {
           });
           const appInfoHTMLRet = (
             <div className="app-info">
-              <p>What's new:</p>
+              <p className="release-date"><b>Build Date:</b> {releaseItem.date}</p>
+              <p><b>What's new:</b></p>
               <p>
                 <ul>
                   {changelogHTML}
@@ -111,7 +112,7 @@ export default class DownloadsPage extends React.Component {
   render() {
     return (
       <div className="downloads-page">
-        <h1>Downloads</h1>
+        <h1>Pre-release Downloads</h1>
         {this.displayDownloads()}
         <div className="footer">
           <p>Copyright &copy; 2017 Viraj Chitnis</p>

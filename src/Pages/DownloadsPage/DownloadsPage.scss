@@ -27,7 +27,17 @@
     margin-top: 20px;
     color: #025268;
   }
+  div.notice {
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #05A5D1;
+    border-radius: 3px;
+    color: red;
 
+    a {
+      color: red;
+    }
+  }
   .app-menu {
     p {
       margin-top: 10px;

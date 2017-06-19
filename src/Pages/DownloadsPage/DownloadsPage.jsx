@@ -113,6 +113,12 @@ export default class DownloadsPage extends React.Component {
     return (
       <div className="downloads-page">
         <h1>Pre-release Downloads</h1>
+        <div className="notice">
+          <p>This is pre-release software that can only be installed on <b>iOS</b> devices that have been authorized by <a href="/">me</a>. If you would like your device to be authorized, email me.</p>
+          <p>Include your iOS device(s)'s <a href="http://whatsmyudid.com" target="_blank">UDID</a> number(s) in the email your request.</p>
+          <br />
+          <p><b>P.S.</b> There are websites out there that will ask you to install a configuration profile on your device in order to give you easy access to your device's UDID number. Please <b>do not</b> install those configuration profiles. By installing them, you will be granting that website a backdoor into your device, thereby compromising your security.</p>
+        </div>
         {this.displayDownloads()}
         <div className="footer">
           <p>Copyright &copy; 2017 Viraj Chitnis</p>

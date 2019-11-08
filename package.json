@@ -30,6 +30,7 @@
     "ember-cli-dependency-checker": "^3.1.0",
     "ember-cli-htmlbars": "^4.0.0",
     "ember-cli-inject-live-reload": "^2.0.1",
+    "ember-cli-sass": "^10.0.1",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-uglify": "^3.0.0",
     "ember-data": "~3.13.0",
@@ -40,12 +41,14 @@
     "ember-resolver": "^5.1.3",
     "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/beta/shas/7d4a746ce41cf68f882d72d52f01f3c67485c233.tgz",
     "ember-template-lint": "^1.5.0",
+    "ember-uikit": "^0.9.0",
     "ember-welcome-page": "^4.0.0",
     "eslint": "^6.1.0",
     "eslint-plugin-ember": "^7.1.0",
     "eslint-plugin-node": "^10.0.0",
     "loader.js": "^4.7.0",
-    "qunit-dom": "^0.9.0"
+    "qunit-dom": "^0.9.0",
+    "sass": "^1.23.3"
   },
   "engines": {
     "node": "8.* || >= 10.*"

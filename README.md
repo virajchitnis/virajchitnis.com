@@ -1,45 +1,57 @@
-virajchitnis.com
-================
+# virajchitnis-com
 
-Built using ReactJS, Webpack, Node.js, ExpressJS and SASS.
+This README outlines the details of collaborating on this Ember application.
+A short introduction of this app could easily go here.
 
-Requirements
-------------
+## Prerequisites
 
-- Node v6.10.1
-- NPM v3.10.x
+You will need the following things properly installed on your computer.
 
-Develop
--------
+* [Git](https://git-scm.com/)
+* [Node.js](https://nodejs.org/) (with npm)
+* [Ember CLI](https://ember-cli.com/)
+* [Google Chrome](https://google.com/chrome/)
 
-yarn start
+## Installation
 
-Simply build assets
--------------------
+* `git clone <repository-url>` this repository
+* `cd virajchitnis-com`
+* `npm install`
 
-yarn build
+## Running / Development
 
-Deploy
-------
+* `ember serve`
+* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
 
-yarn deploy
+### Code Generators
 
-Stop
-----
+Make use of the many generators for code, try `ember help generate` for more details
 
-yarn stop
+### Running Tests
 
-Config Templates
-----------------
+* `ember test`
+* `ember test --server`
 
-config.json
+### Linting
 
-```
-{
-  "githook_secret": "secret",
-  "api_key": "B4BD32A1-74EC-40A3-B1B9-01CD1DAD3650",
-  "mailgun_api_key": "",
-  "cookie_parser_secret": "secret",
-  "authorized_device_secret": "secret"
-}
-```
+* `npm run lint:hbs`
+* `npm run lint:js`
+* `npm run lint:js -- --fix`
+
+### Building
+
+* `ember build` (development)
+* `ember build --environment production` (production)
+
+### Deploying
+
+Specify what it takes to deploy your app.
+
+## Further Reading / Useful Links
+
+* [ember.js](https://emberjs.com/)
+* [ember-cli](https://ember-cli.com/)
+* Development Browser Extensions
+  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
+  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)

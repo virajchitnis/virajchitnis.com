@@ -1,64 +1,53 @@
 {
-  "name": "virajchitnis.com",
-  "version": "3.0.0",
-  "description": "My website",
-  "main": "./src/jsx/index.jsx",
-  "repository": "git@github.com:virajchitnis/virajchitnis.com.git",
-  "author": "Viraj Chitnis <chitnisviraj@gmail.com>",
+  "name": "virajchitnis-com",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Small description for virajchitnis-com goes here",
+  "repository": "",
   "license": "MIT",
-  "watch": {
-    "start-server-watch": {
-      "patterns": [
-        "src",
-        "routes",
-        "server.js"
-      ],
-      "extensions": "html,js,jsx,scss,jpg,png",
-      "quiet": true
-    }
+  "author": "",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
   },
   "scripts": {
-    "start": "npm-watch start-server-watch",
-    "stop": "forever stopall",
-    "build": "webpack",
-    "build-prod": "webpack -p",
-    "start-webpack": "webpack-dev-server",
-    "start-server-watch": "yarn && webpack && forever server.js",
-    "deploy": "yarn && webpack -p && forever server.js",
-    "redeploy": "yarn && webpack -p"
-  },
-  "dependencies": {
-    "body-parser": "^1.17.1",
-    "cookie-parser": "^1.4.3",
-    "crypto": "^0.0.3",
-    "express": "^4.15.2",
-    "forever": "^0.15.3",
-    "mailgun-js": "^0.11.2",
-    "morgan": "^1.8.1",
-    "path": "^0.12.7",
-    "uuid": "^3.0.1"
+    "build": "ember build",
+    "lint:hbs": "ember-template-lint .",
+    "lint:js": "eslint .",
+    "start": "ember serve",
+    "test": "ember test"
   },
   "devDependencies": {
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.0",
-    "favicons-webpack-plugin": "^0.0.7",
-    "file-loader": "^0.11.1",
-    "html-webpack-plugin": "^2.28.0",
-    "node-sass": "^4.5.2",
-    "npm-watch": "^0.1.9",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-ga": "^2.2.0",
-    "sass-loader": "^6.0.3",
-    "style-loader": "^0.16.1",
-    "superagent": "^3.5.2",
-    "trianglify": "^1.0.1",
-    "url-loader": "^0.5.8",
-    "webpack": "^2.4.1",
-    "webpack-dev-server": "^2.4.4",
-    "zenscroll": "^4.0.0"
+    "@ember/edition-utils": "^1.1.1",
+    "@ember/optional-features": "^1.0.0",
+    "@glimmer/component": "^0.14.0-alpha.12",
+    "babel-eslint": "^10.0.2",
+    "broccoli-asset-rev": "^3.0.0",
+    "ember-auto-import": "^1.2.20",
+    "ember-cli": "3.14.0-beta.2",
+    "ember-cli-app-version": "^3.2.0",
+    "ember-cli-babel": "^7.11.1",
+    "ember-cli-dependency-checker": "^3.1.0",
+    "ember-cli-htmlbars": "^4.0.0",
+    "ember-cli-inject-live-reload": "^2.0.1",
+    "ember-cli-sri": "^2.1.1",
+    "ember-cli-uglify": "^3.0.0",
+    "ember-data": "~3.13.0",
+    "ember-export-application-global": "^2.0.0",
+    "ember-load-initializers": "^2.0.0",
+    "ember-maybe-import-regenerator": "^0.1.6",
+    "ember-qunit": "^4.4.1",
+    "ember-resolver": "^5.1.3",
+    "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/beta/shas/7d4a746ce41cf68f882d72d52f01f3c67485c233.tgz",
+    "ember-template-lint": "^1.5.0",
+    "ember-welcome-page": "^4.0.0",
+    "eslint": "^6.1.0",
+    "eslint-plugin-ember": "^7.1.0",
+    "eslint-plugin-node": "^10.0.0",
+    "loader.js": "^4.7.0",
+    "qunit-dom": "^0.9.0"
+  },
+  "engines": {
+    "node": "8.* || >= 10.*"
   }
 }

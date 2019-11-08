@@ -1,2 +1,12 @@
 $global-font-family: 'Lora', serif;
 @import 'ember-uikit';
+
+.profile-img {
+    $size: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: $size;
+    height: $size;
+    border-radius: $size;
+}

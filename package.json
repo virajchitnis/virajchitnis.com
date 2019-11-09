@@ -15,7 +15,8 @@
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "ember test",
+    "publish": "ember build --environment=production && surge dist www.virajchitnis.com"
   },
   "devDependencies": {
     "@ember/edition-utils": "^1.1.1",

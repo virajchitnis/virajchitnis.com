@@ -1,10 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection, getEntry, render } from 'astro:content';
+
+const profileEntry = await getEntry('profile', 'profile');
+if (!profileEntry) throw new Error('Missing src/content/profile.md entry');
+const { Content } = await render(profileEntry);
+const workEntries = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
 ---
 
-<BaseLayout
-  title="Viraj Chitnis"
-  description="Senior Software Engineer based in the New York City area."
->
-  <h1 style="font-family: var(--font-mono); color: var(--accent);">layout smoke test</h1>
+<BaseLayout title={profileEntry.data.name} description={profileEntry.data.tagline}>
+  <h1 style="font-family: var(--font-mono); color: var(--accent);">content collection smoke test</h1>
+  <p>{profileEntry.data.name} — {profileEntry.data.tagline}</p>
+  <Content />
+  <ul>
+    {workEntries.map((entry) => (
+      <li>{entry.data.order}: {entry.data.title} — {entry.data.description} {entry.data.url}</li>
+    ))}
+  </ul>
+  <ul>
+    {profileEntry.data.links.map((link) => (
+      <li><a href={link.url}>{link.label}</a></li>
+    ))}
+  </ul>
 </BaseLayout>

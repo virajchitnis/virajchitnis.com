@@ -1,0 +1,144 @@
+---
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined;
+---
+
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+  <p class="marker" id="contact-heading">// get in touch</p>
+  <form id="contact-form" novalidate>
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required maxlength="100" autocomplete="name" />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required maxlength="200" autocomplete="email" />
+    </div>
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required maxlength="4000" rows="5"></textarea>
+    </div>
+    {siteKey && <div class="cf-turnstile" data-sitekey={siteKey}></div>}
+    <button type="submit">Send message</button>
+    <p id="contact-status" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+{siteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('contact-status');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    if (submitButton) submitButton.disabled = true;
+    if (status) status.textContent = 'Sending…';
+
+    const formData = new FormData(form);
+    const payload = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message'),
+      turnstileToken: formData.get('cf-turnstile-response'),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) throw new Error('Request failed');
+      if (status) status.textContent = "Thanks — I'll get back to you soon.";
+      form.reset();
+      (window as any).turnstile?.reset();
+    } catch {
+      if (status) status.textContent = 'Something went wrong. Please try again, or reach out on GitHub/LinkedIn instead.';
+    } finally {
+      if (submitButton) submitButton.disabled = false;
+    }
+  });
+</script>
+
+<style>
+  .contact {
+    padding: var(--space-4) 0 var(--space-8);
+  }
+
+  .marker {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin: 0 0 var(--space-4);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    max-width: 32rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  label {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+  }
+
+  input,
+  textarea {
+    font: inherit;
+    font-size: var(--text-base);
+    color: var(--text-primary);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-2) var(--space-3);
+  }
+
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 1px;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button[type='submit'] {
+    align-self: flex-start;
+    font: inherit;
+    font-weight: 500;
+    color: var(--bg);
+    background: var(--accent);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+  }
+
+  button[type='submit']:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  #contact-status {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    min-height: 1.2em;
+    margin: 0;
+  }
+</style>

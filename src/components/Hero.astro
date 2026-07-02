@@ -1,0 +1,120 @@
+---
+import { Image } from 'astro:assets';
+import portrait from '../assets/portrait.jpg';
+import ThemeToggle from './ThemeToggle.astro';
+
+interface Props {
+  name: string;
+  tagline: string;
+}
+
+const { name, tagline } = Astro.props;
+const handle = name.toLowerCase().replace(/\s+/g, '');
+---
+
+<header class="hero-bar">
+  <span class="prompt">{handle}<span class="dim">@site:~$</span></span>
+  <ThemeToggle />
+</header>
+
+<section class="hero">
+  <div class="portrait-wrap">
+    <Image src={portrait} alt={`Portrait of ${name}`} width={168} height={168} loading="eager" />
+  </div>
+  <p class="whoami">
+    &gt; whoami<span class="cursor" aria-hidden="true"></span>
+  </p>
+  <h1>{name}</h1>
+  <p class="tagline">{tagline}</p>
+</section>
+
+<style>
+  .hero-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-6) 0;
+  }
+
+  .prompt {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--accent);
+  }
+
+  .dim {
+    color: var(--text-muted);
+  }
+
+  .hero {
+    text-align: center;
+    padding: var(--space-8) 0 var(--space-12);
+  }
+
+  .portrait-wrap {
+    position: relative;
+    width: 168px;
+    height: 168px;
+    margin: 0 auto var(--space-6);
+  }
+
+  .portrait-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    border-radius: var(--radius-full);
+    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 35%, transparent), transparent 70%);
+  }
+
+  .portrait-wrap :global(img) {
+    position: relative;
+    width: 168px;
+    height: 168px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    display: block;
+  }
+
+  .whoami {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--accent);
+    margin: 0 0 var(--space-3);
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 7px;
+    height: 1em;
+    margin-left: 4px;
+    background: var(--accent);
+    vertical-align: -0.15em;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor {
+      animation: none;
+    }
+  }
+
+  h1 {
+    font-size: var(--text-3xl);
+    font-weight: 500;
+    margin: 0 0 var(--space-3);
+    letter-spacing: -0.01em;
+  }
+
+  .tagline {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    margin: 0;
+  }
+</style>

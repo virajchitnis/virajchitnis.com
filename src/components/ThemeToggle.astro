@@ -1,0 +1,74 @@
+---
+---
+
+<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle color theme">
+  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="4"></circle>
+    <line x1="12" y1="1" x2="12" y2="3"></line>
+    <line x1="12" y1="21" x2="12" y2="23"></line>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+    <line x1="1" y1="12" x2="3" y2="12"></line>
+    <line x1="21" y1="12" x2="23" y2="12"></line>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+  </svg>
+  <svg class="icon-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12.3 2a9.5 9.5 0 1 0 9.7 12.3 8 8 0 0 1-9.7-12.3z"></path>
+  </svg>
+</button>
+
+<style>
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+  }
+
+  .theme-toggle:hover {
+    border-color: var(--border-strong);
+    color: var(--text-primary);
+  }
+
+  .theme-toggle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .icon-moon {
+    display: none;
+  }
+
+  :root[data-theme='light'] .icon-sun {
+    display: none;
+  }
+
+  :root[data-theme='light'] .icon-moon {
+    display: block;
+  }
+</style>
+
+<script>
+  function getPreferredTheme(): 'light' | 'dark' {
+    const stored = localStorage.getItem('theme');
+    if (stored === 'light' || stored === 'dark') return stored;
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  }
+
+  function applyTheme(theme: 'light' | 'dark') {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }
+
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const current = (document.documentElement.getAttribute('data-theme') as 'light' | 'dark' | null) ?? getPreferredTheme();
+    applyTheme(current === 'light' ? 'dark' : 'light');
+  });
+</script>

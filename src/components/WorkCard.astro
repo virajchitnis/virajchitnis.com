@@ -1,0 +1,69 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  url?: string;
+}
+
+const { title, description, url } = Astro.props;
+const Tag = url ? 'a' : 'div';
+---
+
+<Tag class="work-card" href={url} target={url ? '_blank' : undefined} rel={url ? 'noopener noreferrer' : undefined}>
+  <div class="work-card-head">
+    <p class="work-title">{title}</p>
+    {
+      url && (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M7 17 17 7" />
+          <path d="M8 7h9v9" />
+        </svg>
+      )
+    }
+  </div>
+  <p class="work-description">{description}</p>
+</Tag>
+
+<style>
+  .work-card {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+    background: var(--surface);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.15s ease;
+  }
+
+  a.work-card:hover {
+    border-color: var(--border-strong);
+  }
+
+  .work-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-2);
+  }
+
+  .work-title {
+    font-size: var(--text-base);
+    font-weight: 500;
+    margin: 0 0 var(--space-2);
+  }
+
+  .work-card-head svg {
+    width: 16px;
+    height: 16px;
+    color: var(--text-muted);
+    flex-shrink: 0;
+  }
+
+  .work-description {
+    font-size: var(--text-sm);
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+</style>

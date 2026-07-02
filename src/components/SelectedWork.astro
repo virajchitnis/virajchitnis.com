@@ -1,0 +1,42 @@
+---
+import WorkCard from './WorkCard.astro';
+
+interface WorkItem {
+  title: string;
+  description: string;
+  url?: string;
+}
+
+interface Props {
+  items: WorkItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="selected-work" aria-labelledby="work-heading">
+  <p class="marker" id="work-heading">// selected work</p>
+  <div class="grid">
+    {items.map((item) => <WorkCard title={item.title} description={item.description} url={item.url} />)}
+  </div>
+</section>
+
+<style>
+  .selected-work {
+    padding: var(--space-4) 0 var(--space-8);
+  }
+
+  .marker {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin: 0 0 var(--space-4);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-3);
+  }
+</style>

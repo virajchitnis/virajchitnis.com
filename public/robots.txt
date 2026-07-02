@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://virajchitnis.com/sitemap-index.xml

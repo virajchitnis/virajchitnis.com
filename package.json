@@ -10,7 +10,11 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check",
+    "test": "playwright test",
+    "lint:links": "linkinator ./dist --recurse",
+    "lhci": "lhci autorun"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
@@ -22,6 +26,9 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@cloudflare/workers-types": "^4.20260702.1",
+    "@lhci/cli": "^0.15.1",
+    "@playwright/test": "^1.61.1",
+    "linkinator": "^7.6.1",
     "typescript": "^6.0.3"
   }
 }

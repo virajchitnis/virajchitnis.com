@@ -3,7 +3,10 @@
     "collect": {
       "startServerCommand": "npm run preview -- --host 127.0.0.1 --port 4321",
       "url": ["http://127.0.0.1:4321/"],
-      "numberOfRuns": 3
+      "numberOfRuns": 3,
+      "settings": {
+        "chromeFlags": "--no-sandbox"
+      }
     },
     "assert": {
       "assertions": {

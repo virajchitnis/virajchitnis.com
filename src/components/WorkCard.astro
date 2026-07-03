@@ -21,7 +21,7 @@ const Tag = url ? 'a' : 'div';
       )
     }
   </div>
-  <p class="work-description">{description}</p>
+  <p class="work-description" set:html={description} />
 </Tag>
 
 <style>

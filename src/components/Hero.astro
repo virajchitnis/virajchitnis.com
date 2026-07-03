@@ -10,6 +10,10 @@ interface Props {
 
 const { name, tagline } = Astro.props;
 const handle = name.toLowerCase().replace(/\s+/g, '');
+const highlightedTagline = tagline.replace(
+  'Senior Software Engineer',
+  '<span class="hl-teal">Senior Software Engineer</span>'
+);
 ---
 
 <header class="hero-bar">
@@ -25,7 +29,7 @@ const handle = name.toLowerCase().replace(/\s+/g, '');
     &gt; whoami<span class="cursor" aria-hidden="true"></span>
   </p>
   <h1>{name}</h1>
-  <p class="tagline">{tagline}</p>
+  <p class="tagline" set:html={highlightedTagline} />
 </section>
 
 <style>
@@ -43,7 +47,7 @@ const handle = name.toLowerCase().replace(/\s+/g, '');
   }
 
   .dim {
-    color: var(--comment);
+    color: var(--text-muted);
   }
 
   .hero {
@@ -111,16 +115,6 @@ const handle = name.toLowerCase().replace(/\s+/g, '');
     margin: 0 0 var(--space-3);
     letter-spacing: -0.01em;
     color: var(--text-primary);
-  }
-
-  @supports (background-clip: text) or (-webkit-background-clip: text) {
-    h1 {
-      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
-    }
   }
 
   .tagline {

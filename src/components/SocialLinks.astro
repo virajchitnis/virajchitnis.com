@@ -21,7 +21,7 @@ const icons: Record<string, string> = {
 <nav class="social-links" aria-label="Elsewhere">
   {
     links.map((link) => (
-      <a href={link.url} rel="me noopener noreferrer" target="_blank">
+      <a class="external" href={link.url} rel="me noopener noreferrer" target="_blank">
         {icons[link.label] && (
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d={icons[link.label]} />
@@ -31,7 +31,7 @@ const icons: Record<string, string> = {
       </a>
     ))
   }
-  <a href="#contact">
+  <a class="primary" href="#contact">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <rect x="2.5" y="5" width="19" height="14" rx="2"></rect>
       <path d="m3.5 6.5 8.5 6 8.5-6"></path>
@@ -60,10 +60,18 @@ const icons: Record<string, string> = {
   }
 
   .social-links a:hover {
-    color: var(--accent);
+    text-decoration: underline;
   }
 
-  .social-links a[href^='#'] {
+  .social-links .external svg {
+    color: var(--accent-secondary);
+  }
+
+  .social-links .external:hover {
+    color: var(--accent-secondary);
+  }
+
+  .social-links .primary {
     color: var(--accent);
   }
 

@@ -43,7 +43,7 @@ const handle = name.toLowerCase().replace(/\s+/g, '');
   }
 
   .dim {
-    color: var(--text-muted);
+    color: var(--comment);
   }
 
   .hero {
@@ -110,6 +110,17 @@ const handle = name.toLowerCase().replace(/\s+/g, '');
     font-weight: 500;
     margin: 0 0 var(--space-3);
     letter-spacing: -0.01em;
+    color: var(--text-primary);
+  }
+
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    h1 {
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
   }
 
   .tagline {

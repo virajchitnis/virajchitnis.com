@@ -22,16 +22,16 @@ test('home page renders identity, links, theme toggle, and contact form', async 
   const messageInput = page.locator('#message');
   const submitButton = page.getByRole('button', { name: 'Send message' });
 
-  const contactLink = page.getByRole('link', { name: 'Get in touch' });
+  const contactToggle = page.getByRole('button', { name: 'Get in touch' });
 
   await expect(nameInput).toBeHidden();
-  await contactLink.click();
+  await contactToggle.click();
   await expect(nameInput).toBeVisible();
 
-  await contactLink.click();
+  await contactToggle.click();
   await expect(nameInput).toBeHidden();
 
-  await contactLink.click();
+  await contactToggle.click();
   await expect(nameInput).toBeVisible();
 
   await submitButton.click();
@@ -50,4 +50,9 @@ test('home page renders identity, links, theme toggle, and contact form', async 
 
   await expect(page.getByText("Thanks — I'll get back to you soon.")).toBeVisible();
   expect(requestReceived).toBe(true);
+});
+
+test('contact form stays hidden even when the URL already has #contact', async ({ page }) => {
+  await page.goto('/#contact');
+  await expect(page.locator('#name')).toBeHidden();
 });

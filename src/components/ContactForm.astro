@@ -4,7 +4,7 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined;
 
 <details class="contact">
   <summary class="sr-only-summary">Get in touch</summary>
-  <form id="contact" novalidate>
+  <form id="contact-form" novalidate>
     <div class="field">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" required maxlength="100" autocomplete="name" />
@@ -27,16 +27,18 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined;
 
 <script>
   const details = document.querySelector('details.contact');
-  const trigger = document.querySelector<HTMLAnchorElement>('a[href="#contact"]');
+  const trigger = document.getElementById('contact-toggle');
 
-  trigger?.addEventListener('click', (event) => {
-    if (details?.hasAttribute('open')) {
-      event.preventDefault();
-      details.removeAttribute('open');
+  trigger?.addEventListener('click', () => {
+    if (!details) return;
+    const willOpen = !details.hasAttribute('open');
+    details.toggleAttribute('open', willOpen);
+    if (willOpen) {
+      details.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 
-  const form = document.getElementById('contact') as HTMLFormElement | null;
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const status = document.getElementById('contact-status');
 
   form?.addEventListener('submit', async (event) => {

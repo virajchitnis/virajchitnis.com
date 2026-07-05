@@ -26,6 +26,16 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined;
 {siteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
 
 <script>
+  const details = document.querySelector('details.contact');
+  const trigger = document.querySelector<HTMLAnchorElement>('a[href="#contact"]');
+
+  trigger?.addEventListener('click', (event) => {
+    if (details?.hasAttribute('open')) {
+      event.preventDefault();
+      details.removeAttribute('open');
+    }
+  });
+
   const form = document.getElementById('contact') as HTMLFormElement | null;
   const status = document.getElementById('contact-status');
 

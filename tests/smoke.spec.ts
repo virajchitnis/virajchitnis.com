@@ -22,8 +22,16 @@ test('home page renders identity, links, theme toggle, and contact form', async 
   const messageInput = page.locator('#message');
   const submitButton = page.getByRole('button', { name: 'Send message' });
 
+  const contactLink = page.getByRole('link', { name: 'Get in touch' });
+
   await expect(nameInput).toBeHidden();
-  await page.getByRole('link', { name: 'Get in touch' }).click();
+  await contactLink.click();
+  await expect(nameInput).toBeVisible();
+
+  await contactLink.click();
+  await expect(nameInput).toBeHidden();
+
+  await contactLink.click();
   await expect(nameInput).toBeVisible();
 
   await submitButton.click();

@@ -2,15 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
-import SelectedWork from '../components/SelectedWork.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import ContactForm from '../components/ContactForm.astro';
-import { getCollection, getEntry, render } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 
 const profileEntry = await getEntry('profile', 'profile');
 if (!profileEntry) throw new Error('Missing src/content/profile.md entry');
 const { Content } = await render(profileEntry);
-const workEntries = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
 ---
 
 <BaseLayout title={profileEntry.data.name} description={profileEntry.data.tagline}>
@@ -19,7 +17,6 @@ const workEntries = (await getCollection('work')).sort((a, b) => a.data.order - 
     <About>
       <Content />
     </About>
-    <SelectedWork items={workEntries.map((entry) => entry.data)} />
     <SocialLinks links={profileEntry.data.links} />
     <ContactForm />
   </div>

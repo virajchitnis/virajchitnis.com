@@ -2,9 +2,14 @@
 const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined;
 ---
 
-<section class="contact" id="contact" aria-labelledby="contact-heading">
-  <p class="marker" id="contact-heading">// get in touch</p>
-  <form id="contact-form" novalidate>
+<details class="contact">
+  <summary class="marker">
+    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="m9 6 6 6-6 6"></path>
+    </svg>
+    // get in touch
+  </summary>
+  <form id="contact" novalidate>
     <div class="field">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" required maxlength="100" autocomplete="name" />
@@ -21,12 +26,12 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined;
     <button type="submit">Send message</button>
     <p id="contact-status" role="status" aria-live="polite"></p>
   </form>
-</section>
+</details>
 
 {siteKey && <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
 
 <script>
-  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const form = document.getElementById('contact') as HTMLFormElement | null;
   const status = document.getElementById('contact-status');
 
   form?.addEventListener('submit', async (event) => {
@@ -71,12 +76,37 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY as string | undefined;
     padding: var(--space-4) 0 var(--space-8);
   }
 
-  .marker {
+  summary.marker {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
     font-family: var(--font-mono);
     font-size: var(--text-xs);
     letter-spacing: 0.06em;
     color: var(--text-muted);
     margin: 0 0 var(--space-4);
+    cursor: pointer;
+    list-style: none;
+    width: fit-content;
+  }
+
+  summary.marker::-webkit-details-marker {
+    display: none;
+  }
+
+  summary.marker:hover {
+    color: var(--accent);
+  }
+
+  .chevron {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
+  }
+
+  details[open] .chevron {
+    transform: rotate(90deg);
   }
 
   form {

@@ -22,6 +22,10 @@ test('home page renders identity, links, theme toggle, and contact form', async 
   const messageInput = page.locator('#message');
   const submitButton = page.getByRole('button', { name: 'Send message' });
 
+  await expect(nameInput).toBeHidden();
+  await page.getByText('// get in touch').click();
+  await expect(nameInput).toBeVisible();
+
   await submitButton.click();
   await expect(nameInput).toHaveJSProperty('validity.valueMissing', true);
 

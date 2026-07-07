@@ -1,5 +1,6 @@
 ---
 name: Viraj Chitnis
+jobTitle: Senior Software Engineer
 tagline: Senior Software Engineer based in the New York City area.
 links:
   - label: GitHub

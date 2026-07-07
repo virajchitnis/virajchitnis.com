@@ -6,6 +6,7 @@ const profile = defineCollection({
   loader: glob({ pattern: 'profile.md', base: './src/content' }),
   schema: z.object({
     name: z.string(),
+    jobTitle: z.string(),
     tagline: z.string(),
     links: z.array(
       z.object({

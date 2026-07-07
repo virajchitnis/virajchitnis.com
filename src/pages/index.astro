@@ -7,12 +7,23 @@ import { getEntry } from 'astro:content';
 
 const profileEntry = await getEntry('profile', 'profile');
 if (!profileEntry) throw new Error('Missing src/content/profile.md entry');
+const { name, jobTitle, tagline, links } = profileEntry.data;
+
+const pageTitle = `${name} — ${jobTitle}`;
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name,
+  jobTitle,
+  url: new URL('/', Astro.site).toString(),
+  sameAs: links.map((link) => link.url),
+};
 ---
 
-<BaseLayout title={profileEntry.data.name} description={profileEntry.data.tagline}>
+<BaseLayout title={pageTitle} description={tagline} siteName={name} structuredData={structuredData}>
   <div class="page">
-    <Hero name={profileEntry.data.name} tagline={profileEntry.data.tagline} />
-    <SocialLinks links={profileEntry.data.links} />
+    <Hero name={name} tagline={tagline} />
+    <SocialLinks links={links} />
     <ContactForm />
   </div>
 </BaseLayout>

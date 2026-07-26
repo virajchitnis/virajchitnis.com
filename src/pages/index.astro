@@ -7,7 +7,7 @@ import { getEntry, render } from 'astro:content';
 
 const profileEntry = await getEntry('profile', 'profile');
 if (!profileEntry) throw new Error('Missing src/content/profile.md entry');
-const { name, jobTitle, tagline, links } = profileEntry.data;
+const { name, jobTitle, tagline, metaDescription, links } = profileEntry.data;
 const { Content } = await render(profileEntry);
 
 const pageTitle = `${name} — ${jobTitle}`;
@@ -16,12 +16,15 @@ const structuredData = {
   '@type': 'Person',
   name,
   jobTitle,
+  description: metaDescription,
+  image: new URL('/og-image.png', Astro.site).toString(),
   url: new URL('/', Astro.site).toString(),
   sameAs: links.map((link) => link.url),
+  knowsAbout: ['Software Engineering', 'Web Development', 'AI-Assisted Software Development'],
 };
 ---
 
-<BaseLayout title={pageTitle} description={tagline} siteName={name} structuredData={structuredData}>
+<BaseLayout title={pageTitle} description={metaDescription} siteName={name} structuredData={structuredData}>
   <div class="page">
     <Hero name={name} tagline={tagline}>
       <Content />

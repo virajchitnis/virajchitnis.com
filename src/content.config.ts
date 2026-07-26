@@ -8,6 +8,7 @@ const profile = defineCollection({
     name: z.string(),
     jobTitle: z.string(),
     tagline: z.string(),
+    metaDescription: z.string(),
     links: z.array(
       z.object({
         label: z.string(),

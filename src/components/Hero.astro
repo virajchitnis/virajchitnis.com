@@ -30,6 +30,9 @@ const highlightedTagline = tagline.replace(
   </p>
   <h1>{name}</h1>
   <p class="tagline" set:html={highlightedTagline} />
+  <div class="tagline-secondary">
+    <slot />
+  </div>
 </section>
 
 <style>
@@ -120,6 +123,16 @@ const highlightedTagline = tagline.replace(
   .tagline {
     font-size: var(--text-lg);
     color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .tagline-secondary {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    margin: var(--space-2) 0 0;
+  }
+
+  .tagline-secondary :global(p) {
     margin: 0;
   }
 </style>

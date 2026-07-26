@@ -9,4 +9,4 @@ links:
     url: https://www.linkedin.com/in/viraj-chitnis-ba605894
 ---
 
-Uses AI and careful prompt engineering to deliver in weeks what would traditionally take a team months.
+AI-accelerated delivery: team-month projects, delivered in weeks.

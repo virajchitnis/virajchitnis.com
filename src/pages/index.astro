@@ -1,13 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import ContactForm from '../components/ContactForm.astro';
-import { getEntry } from 'astro:content';
+import { getEntry, render } from 'astro:content';
 
 const profileEntry = await getEntry('profile', 'profile');
 if (!profileEntry) throw new Error('Missing src/content/profile.md entry');
 const { name, jobTitle, tagline, links } = profileEntry.data;
+const { Content } = await render(profileEntry);
 
 const pageTitle = `${name} — ${jobTitle}`;
 const structuredData = {
@@ -23,6 +25,9 @@ const structuredData = {
 <BaseLayout title={pageTitle} description={tagline} siteName={name} structuredData={structuredData}>
   <div class="page">
     <Hero name={name} tagline={tagline} />
+    <About>
+      <Content />
+    </About>
     <SocialLinks links={links} />
     <ContactForm />
   </div>

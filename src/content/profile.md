@@ -9,4 +9,4 @@ links:
     url: https://www.linkedin.com/in/viraj-chitnis-ba605894
 ---
 
-Viraj Chitnis is a Senior Software Engineer based in the New York City area, working across the web stack.
+Uses AI and careful prompt engineering to deliver in weeks what would traditionally take a team months.
